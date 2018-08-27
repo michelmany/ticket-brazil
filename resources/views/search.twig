@@ -1,0 +1,19 @@
+{% extends "base.twig" %}
+
+{% block content %}
+  {% if posts is not empty %}
+    <h1 class="title is-1">{{ title }}</h1>
+    {% for post in posts %}
+      {% include 'components/article.twig' %}
+      <hr/>
+    {% endfor %}
+
+    {% if posts.pagination.pages %}
+      {% include 'components/pagination.twig' %}
+    {% endif %}
+
+  {% else %}
+    <h1 class="title is-2">{{ messages.search.no_results }}</h1>
+    {% include 'searchform.twig' %}
+  {% endif %}
+{% endblock %}

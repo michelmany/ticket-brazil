@@ -1,0 +1,55 @@
+{
+  "name": "suomato/base-camp",
+  "description":
+    "Awesome WordPress starter theme with own CLI for developers based on modern web technologies.",
+  "license": "MIT",
+  "keywords": [
+    "bulma",
+    "webpack",
+    "timber",
+    "starter-theme",
+    "wordpress",
+    "composer"
+  ],
+  "type": "wordpress-theme",
+  "minimum-stability": "stable",
+  "authors": [
+    {
+      "name": "Toni Suomalainen",
+      "email": "toni.suomalainen@gmail.com"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "extra": {
+    "installer-paths": {
+      "../../plugins/{$name}/": ["wpackagist-plugin/*", "type:wordpress-plugin"]
+    }
+  },
+  "require": {
+    "php": "^7.0",
+    "symfony/var-dumper": "^4.1",
+    "symfony/console": "^4.1",
+    "league/flysystem": "^1.0",
+    "symfony/finder": "^4.1",
+    "vlucas/phpdotenv": "^2.4",
+    "suomato/luna": "^1.3",
+    "timber/timber": "^1.7"
+  },
+  "autoload": {
+    "files": ["app/helpers.php", "resources/languages/messages.php"],
+    "classmap": ["app/timber-extends"],
+    "psr-4": {
+      "Basecamp\\Models\\": "app/models/"
+    }
+  },
+  "scripts": {
+    "post-create-project-cmd": [
+      "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    ]
+  }
+}
