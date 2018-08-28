@@ -73,7 +73,7 @@ function add_to_context($data)
     $data['messages'] = get_template_messages();
 
     // Logo
-    $data['logo'] = images_path('base-camp-logo.png');
+    $data['logo'] = images_path('logo.png');
 
     // Favicon
     $data['favicon'] = images_path('favicon.png');

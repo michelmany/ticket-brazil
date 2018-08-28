@@ -1,7 +1,21 @@
 nav.navbar
+
+  min-height: 148px
+
   .navbar-brand
     align-items: center
+    top: 20px
 
+    +desktop
+      position: absolute
+
+    .logo
+      width: 120px
+      height: auto
+      max-height: none!important
+      +tablet
+        width: 330px
+            
   +desktop
     .second-level
       li
