@@ -1,0 +1,52 @@
+
+.featured-boxes
+
+    &.section
+        padding-top: 56px
+        padding-bottom: 114px
+
+    &__headline
+        @extend %headline
+        margin-bottom: 45px
+
+    &__item
+        height: 248px
+        background: $gray-light center / cover no-repeat
+        position: relative
+        transition: .4s
+        max-width: 432px
+        margin-left: auto
+        margin-right: auto
+
+        &:hover
+            .featured-boxes__item-title
+                +desktop
+                    transition: .4s
+                    padding-left: 40px
+
+        &-title
+            transition: .4s
+            padding: 10px 24px  
+            color: white
+            font-size: 18px
+            position: relative
+            top: calc(100% - 75px)
+            left: 0
+
+            +desktop
+                font-size: 24px
+                display: inline-block
+
+            &--one
+                background-color: $dark-primary
+            &--two
+                background-color: $orange
+            &--three
+                background-color: $green
+
+        &-link
+            width: 100%
+            height: 100%
+            position: absolute
+            top: 0
+            left: 0
