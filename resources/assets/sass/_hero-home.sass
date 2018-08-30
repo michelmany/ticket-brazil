@@ -1,5 +1,47 @@
 
 .hero-home
+    background: $blue center / cover no-repeat
+    display: flex
+    align-items: center
+
     +desktop
         min-height: 538px
         background-color: $blue
+
+    &__title
+        font-family: $font-title
+        color: $yellow
+        font-size: 90px
+        letter-spacing: -2px
+        text-align: right
+        line-height: 100px
+        text-shadow: 2px 2px 0 #000000
+        &:nth-of-type(2)
+            margin-bottom: 24px
+    
+    &__cta
+        text-align: right
+        background-color: $pink
+        border-color: $pink
+        color: $white
+        font-family: $font-text
+        font-weight: 700
+        font-size: 16px
+        color: $white
+        letter-spacing: 3px
+        text-align: right
+        text-transform: uppercase
+
+        &:hover
+            background-color: #E12C7D
+            border-color: #E12C7D
+            color: white
+
+        &.button
+            padding-top: 22px
+            padding-bottom: 22px
+            padding-left: 22px
+            padding-right: 28px
+
+        .icon-cart
+            margin-right: 20px
