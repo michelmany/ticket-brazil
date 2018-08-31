@@ -1,19 +1,29 @@
 nav.navbar
 
-  min-height: 148px
+  +desktop
+    min-height: 148px
 
   .navbar-brand
     align-items: center
-    top: 20px
+    padding-left: 15px
+    padding-right: 15px
 
     +desktop
       position: absolute
+      top: 20px
 
     .logo
       width: 120px
       height: auto
-      max-height: none!important
+      max-height: none !important
+      position: relative
+      top: 24px
+      z-index: 999
+
       +tablet
+        width: 120px
+
+      +desktop
         width: 330px
             
   +desktop
@@ -56,3 +66,10 @@ nav.navbar
           padding-left: 3rem
           font-size: 95%
 
+  .navbar-menu
+    background: $yellow
+    text-align: right
+    color: $white
+
+    +desktop
+      background: transparent

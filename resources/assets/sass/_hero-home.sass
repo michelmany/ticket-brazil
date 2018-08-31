@@ -4,23 +4,35 @@
     display: flex
     align-items: center
 
+    min-height: 275px
+
     +desktop
         min-height: 538px
         background-color: $blue
 
+    &__item
+        width: 100%
+
     &__title
         font-family: $font-title
         color: $yellow
-        font-size: 90px
+        font-size: 48px
+        line-height: 50px
         letter-spacing: -2px
         text-align: right
-        line-height: 100px
         text-shadow: 2px 2px 0 #000000
         &:nth-of-type(2)
             margin-bottom: 24px
+
+        +tablet
+            font-size: 70px
+            line-height: 65px
+        
+        +desktop
+            font-size: 90px
+            line-height: 100px
     
     &__cta
-        text-align: right
         background-color: $pink
         border-color: $pink
         color: $white
