@@ -1,0 +1,74 @@
+
+.section-tours
+    background-color: #F0F2F6
+
+    &.section
+        padding-top: 78px
+        padding-bottom: 90px    
+
+    &__headline
+        @extend %subline
+        margin-bottom: 35px
+
+    &__card
+        max-width: 296px
+        border-radius: 5px
+        margin-left: auto
+        margin-right: auto
+        -webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.15)
+        -moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.15)
+        box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.15)
+
+        &-title
+            font-family: $font-text
+            font-size: 22px
+            color: #fff
+            letter-spacing: 0.8px
+            line-height: 18px
+            text-shadow: 0 2px 2px rgba(0,0,0,0.50)
+            position: absolute
+            bottom: 25px
+            left: 22px
+            z-index: 999
+
+        &-copy
+            font-family: $font-text
+            font-size: 14px
+            color: $gray-light
+            letter-spacing: 0
+            line-height: 18px
+            margin-bottom: 13px
+
+        &-cta
+            font-family: $font-text
+            font-weight: 700
+            font-size: 12px
+            color: #595656
+            letter-spacing: 0
+            line-height: 18px
+            text-transform: uppercase
+
+    &__header
+        height: 222px
+        border-top-left-radius: 5px
+        border-top-right-radius: 5px
+        position: relative
+        background: $gray-dark center / cover no-repeat
+
+        &:after
+            content: ""
+            position: absolute
+            width: 100%
+            height: 100%
+            background-color: #000
+            opacity: 0.35
+            border-radius: 5px
+
+
+    &__footer
+        padding: 26px 22px 24px
+        background-color: #fff
+        border-bottom-left-radius: 5px
+        border-bottom-right-radius: 5px
+    
+    
