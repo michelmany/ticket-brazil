@@ -1,75 +1,128 @@
 nav.navbar
+              
+    +desktop
+        min-height: 80px
 
-  +desktop
-    min-height: 148px
+        a.navbar-item
+            padding: 0 1rem
 
-  .navbar-brand
+        .second-level
+            li
+                position: relative
+
+                a.has-children::after
+                    +arrow($link)
+                    margin-top: -0.375em
+                    right: 1.125em
+                    top: 50%
+                    transform: rotate(-135deg)
+                    font-size: 85%
+                    &:hover
+                        .third-level
+                            display: block!important
+
+                .third-level
+                    left: 100%
+                    top: -6px
+                    display: none!important
+                    border-top-right-radius: 5px
+
+    +touch
+        ul.navbar-item
+            padding-bottom: 1rem
+
+    .navbar-dropdown
+        padding: 0
+
+    .second-level
+        a
+            padding-left: 2rem
+            padding-right: 2rem
+
+        .third-level
+            padding: 0
+            a
+                padding-left: 3rem
+                font-size: 95%
+
+    .navbar-brand
+        align-items: center
+        padding-left: 15px
+        padding-right: 15px
+
+        +desktop
+            top: 20px
+
+        .logo
+            width: 120px
+            height: auto
+            max-height: none !important
+            z-index: 999
+            position: absolute
+
+            +tablet
+                width: 200px    
+                top: -34px
+
+            +desktop
+                width: 330px                
+
+    .navbar-menu
+        background: $yellow
+        text-align: right
+        color: $white
+        text-transform: uppercase
+        font-weight: 500
+        font-size: 16px
+        color: $gray-dark
+        letter-spacing: 1px 
+
+        +desktop
+            background: transparent
+
+        .navbar-item
+            &:hover
+                color: #000
+                background: transparent            
+
+
+.navbar-top
+    height: 40px
+    display: flex
     align-items: center
+    justify-content: flex-end
+    margin-bottom: 0px
+    margin-top: 20px
     padding-left: 15px
     padding-right: 15px
 
-    +desktop
-      position: absolute
-      top: 20px
+    .lang-menu
+        text-align: center
 
-    .logo
-      width: 120px
-      height: auto
-      max-height: none !important
-      position: relative
-      top: 24px
-      z-index: 999
+        +tablet
+            text-align: right
+        
+        .navbar-item
+            display: inline-flex
+            font-size: 14px
+            color: $gray-dark
+            &:hover
+                color: inherit
 
-      +tablet
-        width: 120px
+            img
+                width: 16px
+                height: 16px
+                margin-right: 5px
 
-      +desktop
-        width: 330px
-            
-  +desktop
-    .second-level
-      li
-        position: relative
+    .account-menu
+        margin-left: 10px
 
-        a.has-children::after
-          +arrow($link)
-          margin-top: -0.375em
-          right: 1.125em
-          top: 50%
-          transform: rotate(-135deg)
-          font-size: 85%
-        &:hover
-          .third-level
-            display: block!important
+        .navbar-item
+            display: inline-flex
+            padding: 10px
+            &:hover
+                background-color: #F5F5F5
 
-        .third-level
-          left: 100%
-          top: -6px
-          display: none!important
-          border-top-right-radius: 5px
-
-  +touch
-    ul.navbar-item
-      padding-bottom: 1rem
-
-    .navbar-dropdown
-      padding: 0
-
-    .second-level
-      a
-        padding-left: 2rem
-        padding-right: 2rem
-
-      .third-level
-        padding: 0
-        a
-          padding-left: 3rem
-          font-size: 95%
-
-  .navbar-menu
-    background: $yellow
-    text-align: right
-    color: $white
-
-    +desktop
-      background: transparent
+            img
+                width: 18px
+                height: 18px
