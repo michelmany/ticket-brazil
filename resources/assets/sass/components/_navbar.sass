@@ -59,6 +59,7 @@ nav.navbar
             max-height: none !important
             z-index: 999
             position: absolute
+            top: 0
 
             +tablet
                 width: 200px    
@@ -90,12 +91,17 @@ nav.navbar
     height: 40px
     display: flex
     align-items: center
-    justify-content: flex-end
-    margin-bottom: 0px
-    margin-top: 20px
+    justify-content: center
     padding-left: 15px
     padding-right: 15px
+    margin-top: 15px
+    margin-bottom: 10px
 
+    +tablet
+        margin-bottom: 0px
+        margin-top: 20px    
+        justify-content: flex-end
+    
     .lang-menu
         text-align: center
 
@@ -113,6 +119,12 @@ nav.navbar
                 width: 16px
                 height: 16px
                 margin-right: 5px
+
+            span
+                display: none
+
+                +tablet
+                    display: block
 
     .account-menu
         margin-left: 10px
