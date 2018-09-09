@@ -7320,6 +7320,12 @@ nav.navbar .navbar-menu {
     .hero-home {
       height: 538px;
       background-color: #2376B3; } }
+  @media screen and (min-width: 1408px) {
+    .hero-home {
+      height: 620px; } }
+  @media screen and (min-width: 2000px) {
+    .hero-home {
+      height: 720px; } }
   .hero-home__item {
     width: 100%; }
   .hero-home__title {
