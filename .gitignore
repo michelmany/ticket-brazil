@@ -1,6 +1,5 @@
 vendor
 node_modules
-static
 .idea
 .vscode
 .env

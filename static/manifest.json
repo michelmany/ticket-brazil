@@ -1,0 +1,18 @@
+{
+  "app.css": "css/app.51e836feb2b2295e90e1.css",
+  "app.js": "js/app.f6aac32878067aa45537.js",
+  "login.css": "css/login.22330d2d8eb3f36c124d.css",
+  "login.js": "js/login.e07c5d3fc1b55e6b289a.js",
+  "admin.css": "css/admin.036258367d0bdd0d38cc.css",
+  "admin.js": "js/admin.97fdb1a7db0f07b5b271.js",
+  "vendor.js": "js/vendor.2b8ebc17bb7476c230a0.js",
+  "images/base-camp-logo.png": "images/base-camp-logo.png",
+  "images/logo.png": "images/logo.png",
+  "fonts/fontawesome-webfont.woff2?v=4.7.0": "fonts/fontawesome-webfont.af7ae50.woff2",
+  "fonts/fontawesome-webfont.woff?v=4.7.0": "fonts/fontawesome-webfont.fee66e7.woff",
+  "fonts/fontawesome-webfont.ttf?v=4.7.0": "fonts/fontawesome-webfont.b06871f.ttf",
+  "images/fontawesome-webfont.svg?v=4.7.0": "images/fontawesome-webfont.svg",
+  "images/texture-blue-carnival.jpg": "images/texture-blue-carnival.jpg",
+  "images/icon-cart-white.png": "images/icon-cart-white.png",
+  "fonts/fontawesome-webfont.eot": "fonts/fontawesome-webfont.674f50d.eot"
+}
