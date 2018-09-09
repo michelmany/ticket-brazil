@@ -7310,10 +7310,15 @@ nav.navbar .navbar-menu {
   background: #2376B3 center/cover no-repeat;
   display: flex;
   align-items: center;
-  min-height: 275px; }
+  height: 275px;
+  position: relative;
+  overflow: hidden; }
+  @media screen and (min-width: 769px), print {
+    .hero-home {
+      height: 388px; } }
   @media screen and (min-width: 1024px) {
     .hero-home {
-      min-height: 538px;
+      height: 538px;
       background-color: #2376B3; } }
   .hero-home__item {
     width: 100%; }
@@ -7357,6 +7362,23 @@ nav.navbar .navbar-menu {
       padding-right: 28px; }
     .hero-home__cta .icon-cart {
       margin-right: 20px; }
+  .hero-home__curve {
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 102%;
+    max-width: 102%;
+    height: auto; }
+    @media screen and (min-width: 769px), print {
+      .hero-home__curve {
+        bottom: -15px; } }
+    @media screen and (min-width: 1024px) {
+      .hero-home__curve {
+        bottom: -50px; } }
+    @media screen and (min-width: 1408px) {
+      .hero-home__curve {
+        bottom: -64px; } }
 
 .featured-boxes.section {
   padding-top: 56px;

@@ -3,11 +3,15 @@
     background: $blue center / cover no-repeat
     display: flex
     align-items: center
+    height: 275px
+    position: relative
+    overflow: hidden
 
-    min-height: 275px
+    +tablet
+        height: 388px
 
     +desktop
-        min-height: 538px
+        height: 538px
         background-color: $blue
 
     &__item
@@ -57,3 +61,21 @@
 
         .icon-cart
             margin-right: 20px
+    
+    &__curve
+        position: absolute
+        bottom: -2px
+        left: 50%
+        transform: translateX(-50%)
+        width: 102%
+        max-width: 102%
+        height: auto 
+
+        +tablet
+            bottom: -15px
+
+        +desktop
+            bottom: -50px
+
+        +fullhd
+            bottom: -64px
