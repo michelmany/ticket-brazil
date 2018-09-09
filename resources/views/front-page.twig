@@ -3,7 +3,7 @@
 {% block content %}
 
 <section class="hero-home section" style="background-image: url('{{ theme.link }}/resources/assets/images/placeholder-hero-01.jpg')">
-
+    
     
     <div class="hero-home__item">
         <div class="container">
@@ -18,15 +18,15 @@
         </div>
         
     </div>
-
+    
     <div class="hero-home__line"></div>
-
+    
 </section>
 
 <section class="featured-boxes section">
     <div class="container wrapper">
         <div class="featured-boxes__headline has-text-centered">Rio Carnival 2019</div>
-
+        
         <div class="featured-boxes__items columns">
             <div class="column">
                 <div class="featured-boxes__item" style="background-image: url('{{ theme.link }}/resources/assets/images/placeholder-carnival-01.png')">
@@ -53,63 +53,85 @@
 <section class="section-tours section">
     <div class="container">
         <div class="section-tours__headline has-text-centered">Rio de Janeiro Tours</div>
+        
+        <div class="section-tours__cards">
 
-        <div class="section-tours__cards columns">
-            <div class="column">
-                <div class="section-tours__card">
-                    <div class="section-tours__header" style="background-image: url('{{ theme.link }}/resources/assets/images/placeholder-tours-01.jpg')">
+            <slick ref="slick" :options="slickOptions">
+                <div class="column">
+                    <div class="section-tours__card">
+                        <div class="section-tours__header" style="background-image: url('{{ theme.link }}/resources/assets/images/placeholder-tours-01.jpg')">
                             <div class="section-tours__card-title">Lorem Ipsum</div>
-                    </div>
-                    <div class="section-tours__footer">
-                        <div class="section-tours__card-copy">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
-                        <a href="" class=" section-tours__card-cta">Read More</a>
+                        </div>
+                        <div class="section-tours__footer">
+                            <div class="section-tours__card-copy">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
+                            <a href="" class=" section-tours__card-cta">Read More</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="column">
-                <div class="section-tours__card">
-                    <div class="section-tours__header" style="background-image: url('{{ theme.link }}/resources/assets/images/placeholder-tours-02.jpg')">
+                <div class="column">
+                    <div class="section-tours__card">
+                        <div class="section-tours__header" style="background-image: url('{{ theme.link }}/resources/assets/images/placeholder-tours-02.jpg')">
                             <div class="section-tours__card-title">Lorem Ipsum</div>
-                    </div>
-                    <div class="section-tours__footer">
-                        <div class="section-tours__card-copy">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
-                        <a href="" class="section-tours__card-cta">Read More</a>
+                        </div>
+                        <div class="section-tours__footer">
+                            <div class="section-tours__card-copy">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
+                            <a href="" class=" section-tours__card-cta">Read More</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="column">
-                <div class="section-tours__card">
-                    <div class="section-tours__header" style="background-image: url('{{ theme.link }}/resources/assets/images/placeholder-tours-03.jpg')">
+                <div class="column">
+                    <div class="section-tours__card">
+                        <div class="section-tours__header" style="background-image: url('{{ theme.link }}/resources/assets/images/placeholder-tours-03.jpg')">
                             <div class="section-tours__card-title">Lorem Ipsum</div>
-                    </div>
-                    <div class="section-tours__footer">
-                        <div class="section-tours__card-copy">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
-                        <a href="" class="section-tours__card-cta">Read More</a>
+                        </div>
+                        <div class="section-tours__footer">
+                            <div class="section-tours__card-copy">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
+                            <a href="" class=" section-tours__card-cta">Read More</a>
+                        </div>
                     </div>
                 </div>
-            </div>
+                <div class="column">
+                    <div class="section-tours__card">
+                        <div class="section-tours__header" style="background-image: url('{{ theme.link }}/resources/assets/images/placeholder-tours-01.jpg')">
+                            <div class="section-tours__card-title">Lorem Ipsum</div>
+                        </div>
+                        <div class="section-tours__footer">
+                            <div class="section-tours__card-copy">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
+                            <a href="" class=" section-tours__card-cta">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+            </slick> 
+
         </div>
+        <div class="slick__dots"></div>
     </div>
 </section>
+
+
+
+
 
 <section class="section-about section">
     <div class="container wrapper">
         <div class="columns">
+            
             <div class="column">
                 <h3 class="section-title">About Lorem Ipsum</h3>
                 <p class="section-copy">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                 <a href="#" class="button is-info is-rounded">Read More</a>
             </div>
-
+            
             <div class="latest-articles column">
                 <h3 class="section-title">Latest Articles</h3>
                 <a href="#" class="latest-articles__see-all">See all articles</a>
-
+                
                 <div class="latest-articles__items">
                     <div class="latest-articles__item">
                         <div class="latest-articles__item-image"></div>
                         <div class="latest-articles__item-content">
-                            <div class="latest-articles__item-title">Lorem Ipsum</div>
+                            <div class="latest-articles__item-title">Lorem Ipsum Article Title here two lines</div>
                             <div class="latest-articles__item-copy">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</div>
                             <a href="#" class="latest-articles__item-button">Read More</a>
                         </div>
@@ -117,7 +139,7 @@
                     <div class="latest-articles__item">
                         <div class="latest-articles__item-image"></div>
                         <div class="latest-articles__item-content">
-                            <div class="latest-articles__item-title">Lorem Ipsum</div>
+                            <div class="latest-articles__item-title">Lorem Ipsum Blog Title here which is a little longer test</div>
                             <div class="latest-articles__item-copy">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</div>
                             <a href="#" class="latest-articles__item-button">Read More</a>
                         </div>
@@ -132,6 +154,7 @@
                     </div>
                 </div>
             </div>
+            
         </div>
     </div>
 </section>

@@ -138,20 +138,27 @@ module.exports = {
   plugins: [
     new VueLoaderPlugin(),
 
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jquery: 'jquery',
+      'window.jQuery': 'jquery',
+      jQuery: 'jquery'
+    }),    
+
     new CleanWebpackPlugin(['static/css/*', 'static/js/*'], {
       root: path.join(__dirname, '../'),
-      watch: false,
+      watch: true,
     }),
 
     new MiniCssExtractPlugin({
       filename: `css/[name].[${styleHash}].css`,
     }),
 
-    new PurgecssPlugin({
-      paths: () =>
-        glob.sync(path.join(__dirname, '../resources/**/*'), { nodir: true }),
-      only: ['app'],
-    }),
+    // new PurgecssPlugin({
+    //   paths: () =>
+    //     glob.sync(path.join(__dirname, '../resources/**/*'), { nodir: true }),
+    //   only: ['app'],
+    // }),
 
     new ManifestPlugin(),
 
@@ -160,6 +167,12 @@ module.exports = {
       port: 3000,
       proxy: config.devUrl, // YOUR DEV-SERVER URL
       files: ['./*.php', './resources/views/**/*.twig', './static/*.*'],
-    }),
+    },
+    {
+        injectCss: true,
+        injectChanges: true,
+        reload: false
+    }
+    ),
   ],
 };

@@ -6,6 +6,8 @@
 function base_camp_scripts_and_styles()
 {
     // Register styles
+    wp_register_style('slick-style', '//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css', [], '', 'all');
+    wp_register_style('slick-style-theme', '//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css', [], '', 'all');
     wp_register_style('base-camp-styles', assets('app.css'), [], '', 'all');
 
     // Register scripts
@@ -15,6 +17,8 @@ function base_camp_scripts_and_styles()
     // Enqueue scripts and styles
     wp_enqueue_script('base-camp-scripts');
     wp_enqueue_script('base-camp-vendor');
+    wp_enqueue_style('slick-style');
+    // wp_enqueue_style('slick-style-theme');
     wp_enqueue_style('base-camp-styles');
 
     // comment reply script for threaded comments
