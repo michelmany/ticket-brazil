@@ -140,7 +140,7 @@ module.exports = {
 
     new CleanWebpackPlugin(['static/css/*', 'static/js/*'], {
       root: path.join(__dirname, '../'),
-      watch: true,
+      watch: false,
     }),
 
     new MiniCssExtractPlugin({
