@@ -1,14 +1,19 @@
 
 import Vue from 'vue';
-import Example from './components/Example';
 import Slick from 'vue-slick';
 
+
+import Example from './components/Example';
+import Purchase from './components/Purchase';
+
 Vue.component('slick', Slick)
+Vue.component('purchase', Purchase)
 
 new Vue({
     el: '#app',
     components: {
         Example,
+        Purchase
     },
     data() {
         return {

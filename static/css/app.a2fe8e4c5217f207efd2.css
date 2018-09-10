@@ -7,6 +7,97 @@
   color: #2376B3;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*! bulma.io v0.6.2 | MIT License | github.com/jgthms/bulma */
 @keyframes spinAround {
   from {
@@ -7585,6 +7676,27 @@ nav.navbar .navbar-menu {
     letter-spacing: 0.6px;
     line-height: 18px;
     text-transform: uppercase; }
+
+.hero__body {
+  height: 108px; }
+  .hero__body-title {
+    font-family: "Knewave", cursive;
+    font-size: 48px;
+    color: #fff;
+    letter-spacing: 1.71px;
+    text-align: right;
+    position: relative;
+    top: 18px; }
+
+.tickets .purchase__step {
+  margin-bottom: 50px; }
+  .tickets .purchase__step-label {
+    border-bottom: 1px solid #989898;
+    font-family: "Cabin", sans-serif;
+    font-size: 18px;
+    color: #5D5D5D;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px; }
 
 footer.footer {
   background-color: #2376B3;
