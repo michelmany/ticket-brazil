@@ -2,7 +2,25 @@
 .tickets
 
     .intro
+        
+        &.section
+            padding-top: 100px
+            padding-bottom: 100px
 
+        &__title
+            font-family: $font-title
+            font-size: 28px
+            color: $gray-dark
+            letter-spacing: 1px
+            margin-bottom: 23px
+
+        &__copy
+            font-family: $font-text
+            font-size: 16px
+            color: $gray-dark
+            letter-spacing: 0.44px
+            line-height: 25px     
+            max-width: 348px   
 
     .purchase
 
@@ -16,3 +34,80 @@
                 color: #5D5D5D
                 letter-spacing: 0.5px
                 margin-bottom: 15px
+                display: flex
+                align-items: center
+                padding-bottom: 15px
+
+            span.number
+                font-family: Cabin-Regular
+                font-size: 14px
+                color: #fff
+                letter-spacing: 0.5px
+                text-align: center             
+                background: $bc-primary
+                padding: 17px 0
+                border-radius: 50%
+
+        &__item
+            margin-top: 15px
+
+            &:not(:last-child)
+                margin-right: 10px
+                +tablet
+                    margin-right: 30px
+
+            &.button
+                font-size: 22px
+                transition: 0.2s
+                width: 100%
+                max-width: 350px
+                background-color: $gray-light
+                height: 85px
+                border-color: transparent
+                border-bottom: solid 15px #8D8D8D
+                font-family: $font-text
+                color: #fff
+                letter-spacing: 0.86px
+
+                +tablet
+                    font-size: 32px
+
+                +desktop
+                    max-width: calc(100% / 3 - 25px) 
+
+
+                &:hover,
+                &.selected
+                    background-color: $green
+                    border-bottom: solid 15px #3FAC5D
+
+                &:hover
+                    &:not(.selected)
+                        transform: scale(1.05)
+
+                &.sector
+                    max-width: calc(50% - 25px)
+
+                    +tablet
+                        max-width: 110px
+
+            &-total
+                display: flex
+                align-items: center
+
+                span
+                    font-size: 32px
+                    color: $gray-dark
+                    letter-spacing: 0.86px
+                    text-align: center
+                    margin-right: 30px
+
+        &__add-to-cart-btn
+            @extend .purchase__item.button
+            background-color: #2B9AE5
+            border-bottom-color: #248BCF
+            max-width: 281px
+
+            &:hover
+                background-color: #2B9AE5
+                border-bottom-color: #248BCF

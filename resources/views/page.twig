@@ -1,8 +1,11 @@
 {% extends "base.twig" %}
 
 {% block content %}
-  <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
 
+<div class="section container">
+    <div class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+        {{ post.content }}
+    </div>
+</div>
 
-  </article>
 {% endblock %}

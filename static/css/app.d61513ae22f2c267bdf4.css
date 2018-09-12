@@ -8,95 +8,12 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
 
 /*! bulma.io v0.6.2 | MIT License | github.com/jgthms/bulma */
 @keyframes spinAround {
@@ -1958,7 +1875,7 @@ a.box:active {
 .content.is-large {
   font-size: 1.5rem; }
 
-.input, .woocommerce input,
+.input, .woocommerce input:not([type='checkbox']),
 .textarea,
 .woocommerce textarea {
   -moz-appearance: none;
@@ -1984,7 +1901,7 @@ a.box:active {
   box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
   max-width: 100%;
   width: 100%; }
-  .input:focus, .woocommerce input:focus, .input.is-focused, .woocommerce input.is-focused, .input:active, .woocommerce input:active, .input.is-active, .woocommerce input.is-active,
+  .input:focus, .woocommerce input:focus:not([type='checkbox']), .input.is-focused, .woocommerce input.is-focused:not([type='checkbox']), .input:active, .woocommerce input:active:not([type='checkbox']), .input.is-active, .woocommerce input.is-active:not([type='checkbox']),
   .textarea:focus,
   .woocommerce textarea:focus,
   .textarea.is-focused,
@@ -1994,33 +1911,33 @@ a.box:active {
   .textarea.is-active,
   .woocommerce textarea.is-active {
     outline: none; }
-  .input[disabled], .woocommerce input[disabled],
+  .input[disabled], .woocommerce input[disabled]:not([type='checkbox']),
   .textarea[disabled],
   .woocommerce textarea[disabled] {
     cursor: not-allowed; }
-  .input::-moz-placeholder, .woocommerce input::-moz-placeholder,
+  .input::-moz-placeholder, .woocommerce input:not([type='checkbox'])::-moz-placeholder,
   .textarea::-moz-placeholder,
   .woocommerce textarea::-moz-placeholder {
     color: rgba(54, 54, 54, 0.3); }
-  .input::-webkit-input-placeholder, .woocommerce input::-webkit-input-placeholder,
+  .input::-webkit-input-placeholder, .woocommerce input:not([type='checkbox'])::-webkit-input-placeholder,
   .textarea::-webkit-input-placeholder,
   .woocommerce textarea::-webkit-input-placeholder {
     color: rgba(54, 54, 54, 0.3); }
-  .input:-moz-placeholder, .woocommerce input:-moz-placeholder,
+  .input:-moz-placeholder, .woocommerce input:-moz-placeholder:not([type='checkbox']),
   .textarea:-moz-placeholder,
   .woocommerce textarea:-moz-placeholder {
     color: rgba(54, 54, 54, 0.3); }
-  .input:-ms-input-placeholder, .woocommerce input:-ms-input-placeholder,
+  .input:-ms-input-placeholder, .woocommerce input:-ms-input-placeholder:not([type='checkbox']),
   .textarea:-ms-input-placeholder,
   .woocommerce textarea:-ms-input-placeholder {
     color: rgba(54, 54, 54, 0.3); }
-  .input:hover, .woocommerce input:hover, .input.is-hovered, .woocommerce input.is-hovered,
+  .input:hover, .woocommerce input:hover:not([type='checkbox']), .input.is-hovered, .woocommerce input.is-hovered:not([type='checkbox']),
   .textarea:hover,
   .woocommerce textarea:hover,
   .textarea.is-hovered,
   .woocommerce textarea.is-hovered {
     border-color: #b5b5b5; }
-  .input:focus, .woocommerce input:focus, .input.is-focused, .woocommerce input.is-focused, .input:active, .woocommerce input:active, .input.is-active, .woocommerce input.is-active,
+  .input:focus, .woocommerce input:focus:not([type='checkbox']), .input.is-focused, .woocommerce input.is-focused:not([type='checkbox']), .input:active, .woocommerce input:active:not([type='checkbox']), .input.is-active, .woocommerce input.is-active:not([type='checkbox']),
   .textarea:focus,
   .woocommerce textarea:focus,
   .textarea.is-focused,
@@ -2031,38 +1948,38 @@ a.box:active {
   .woocommerce textarea.is-active {
     border-color: #2376B3;
     box-shadow: 0 0 0 0.125em rgba(35, 118, 179, 0.25); }
-  .input[disabled], .woocommerce input[disabled],
+  .input[disabled], .woocommerce input[disabled]:not([type='checkbox']),
   .textarea[disabled],
   .woocommerce textarea[disabled] {
     background-color: whitesmoke;
     border-color: whitesmoke;
     box-shadow: none;
     color: #7a7a7a; }
-    .input[disabled]::-moz-placeholder, .woocommerce input[disabled]::-moz-placeholder,
+    .input[disabled]::-moz-placeholder, .woocommerce input:not([type='checkbox'])[disabled]::-moz-placeholder,
     .textarea[disabled]::-moz-placeholder,
     .woocommerce textarea[disabled]::-moz-placeholder {
       color: rgba(122, 122, 122, 0.3); }
-    .input[disabled]::-webkit-input-placeholder, .woocommerce input[disabled]::-webkit-input-placeholder,
+    .input[disabled]::-webkit-input-placeholder, .woocommerce input:not([type='checkbox'])[disabled]::-webkit-input-placeholder,
     .textarea[disabled]::-webkit-input-placeholder,
     .woocommerce textarea[disabled]::-webkit-input-placeholder {
       color: rgba(122, 122, 122, 0.3); }
-    .input[disabled]:-moz-placeholder, .woocommerce input[disabled]:-moz-placeholder,
+    .input[disabled]:-moz-placeholder, .woocommerce input[disabled]:-moz-placeholder:not([type='checkbox']),
     .textarea[disabled]:-moz-placeholder,
     .woocommerce textarea[disabled]:-moz-placeholder {
       color: rgba(122, 122, 122, 0.3); }
-    .input[disabled]:-ms-input-placeholder, .woocommerce input[disabled]:-ms-input-placeholder,
+    .input[disabled]:-ms-input-placeholder, .woocommerce input[disabled]:-ms-input-placeholder:not([type='checkbox']),
     .textarea[disabled]:-ms-input-placeholder,
     .woocommerce textarea[disabled]:-ms-input-placeholder {
       color: rgba(122, 122, 122, 0.3); }
-  .input[readonly], .woocommerce input[readonly],
+  .input[readonly], .woocommerce input[readonly]:not([type='checkbox']),
   .textarea[readonly],
   .woocommerce textarea[readonly] {
     box-shadow: none; }
-  .input.is-white, .woocommerce input.is-white,
+  .input.is-white, .woocommerce input.is-white:not([type='checkbox']),
   .textarea.is-white,
   .woocommerce textarea.is-white {
     border-color: white; }
-    .input.is-white:focus, .woocommerce input.is-white:focus, .input.is-white.is-focused, .woocommerce input.is-white.is-focused, .input.is-white:active, .woocommerce input.is-white:active, .input.is-white.is-active, .woocommerce input.is-white.is-active,
+    .input.is-white:focus, .woocommerce input.is-white:focus:not([type='checkbox']), .input.is-white.is-focused, .woocommerce input.is-white.is-focused:not([type='checkbox']), .input.is-white:active, .woocommerce input.is-white:active:not([type='checkbox']), .input.is-white.is-active, .woocommerce input.is-white.is-active:not([type='checkbox']),
     .textarea.is-white:focus,
     .woocommerce textarea.is-white:focus,
     .textarea.is-white.is-focused,
@@ -2072,11 +1989,11 @@ a.box:active {
     .textarea.is-white.is-active,
     .woocommerce textarea.is-white.is-active {
       box-shadow: 0 0 0 0.125em rgba(255, 255, 255, 0.25); }
-  .input.is-black, .woocommerce input.is-black,
+  .input.is-black, .woocommerce input.is-black:not([type='checkbox']),
   .textarea.is-black,
   .woocommerce textarea.is-black {
     border-color: #0a0a0a; }
-    .input.is-black:focus, .woocommerce input.is-black:focus, .input.is-black.is-focused, .woocommerce input.is-black.is-focused, .input.is-black:active, .woocommerce input.is-black:active, .input.is-black.is-active, .woocommerce input.is-black.is-active,
+    .input.is-black:focus, .woocommerce input.is-black:focus:not([type='checkbox']), .input.is-black.is-focused, .woocommerce input.is-black.is-focused:not([type='checkbox']), .input.is-black:active, .woocommerce input.is-black:active:not([type='checkbox']), .input.is-black.is-active, .woocommerce input.is-black.is-active:not([type='checkbox']),
     .textarea.is-black:focus,
     .woocommerce textarea.is-black:focus,
     .textarea.is-black.is-focused,
@@ -2086,11 +2003,11 @@ a.box:active {
     .textarea.is-black.is-active,
     .woocommerce textarea.is-black.is-active {
       box-shadow: 0 0 0 0.125em rgba(10, 10, 10, 0.25); }
-  .input.is-light, .woocommerce input.is-light,
+  .input.is-light, .woocommerce input.is-light:not([type='checkbox']),
   .textarea.is-light,
   .woocommerce textarea.is-light {
     border-color: whitesmoke; }
-    .input.is-light:focus, .woocommerce input.is-light:focus, .input.is-light.is-focused, .woocommerce input.is-light.is-focused, .input.is-light:active, .woocommerce input.is-light:active, .input.is-light.is-active, .woocommerce input.is-light.is-active,
+    .input.is-light:focus, .woocommerce input.is-light:focus:not([type='checkbox']), .input.is-light.is-focused, .woocommerce input.is-light.is-focused:not([type='checkbox']), .input.is-light:active, .woocommerce input.is-light:active:not([type='checkbox']), .input.is-light.is-active, .woocommerce input.is-light.is-active:not([type='checkbox']),
     .textarea.is-light:focus,
     .woocommerce textarea.is-light:focus,
     .textarea.is-light.is-focused,
@@ -2100,11 +2017,11 @@ a.box:active {
     .textarea.is-light.is-active,
     .woocommerce textarea.is-light.is-active {
       box-shadow: 0 0 0 0.125em rgba(245, 245, 245, 0.25); }
-  .input.is-dark, .woocommerce input.is-dark,
+  .input.is-dark, .woocommerce input.is-dark:not([type='checkbox']),
   .textarea.is-dark,
   .woocommerce textarea.is-dark {
     border-color: #363636; }
-    .input.is-dark:focus, .woocommerce input.is-dark:focus, .input.is-dark.is-focused, .woocommerce input.is-dark.is-focused, .input.is-dark:active, .woocommerce input.is-dark:active, .input.is-dark.is-active, .woocommerce input.is-dark.is-active,
+    .input.is-dark:focus, .woocommerce input.is-dark:focus:not([type='checkbox']), .input.is-dark.is-focused, .woocommerce input.is-dark.is-focused:not([type='checkbox']), .input.is-dark:active, .woocommerce input.is-dark:active:not([type='checkbox']), .input.is-dark.is-active, .woocommerce input.is-dark.is-active:not([type='checkbox']),
     .textarea.is-dark:focus,
     .woocommerce textarea.is-dark:focus,
     .textarea.is-dark.is-focused,
@@ -2114,9 +2031,10 @@ a.box:active {
     .textarea.is-dark.is-active,
     .woocommerce textarea.is-dark.is-active {
       box-shadow: 0 0 0 0.125em rgba(54, 54, 54, 0.25); }
-  .input.is-primary, .woocommerce input.is-primary, .woocommerce #respond input#submit,
-  .woocommerce input.button.alt, .woocommerce .blog-comment input.alt#cancel-comment-reply-link, .blog-comment .woocommerce input.alt#cancel-comment-reply-link, .woocommerce .blog-comment button.input.alt#cancel-comment-reply-link, .blog-comment .woocommerce button.input.alt#cancel-comment-reply-link, .woocommerce button.input.alt.button,
+  .input.is-primary, .woocommerce input.is-primary:not([type='checkbox']), .woocommerce #respond input#submit:not([type='checkbox']),
+  .woocommerce input.button.alt:not([type='checkbox']), .woocommerce .blog-comment input.alt#cancel-comment-reply-link:not([type='checkbox']), .blog-comment .woocommerce input.alt#cancel-comment-reply-link:not([type='checkbox']), .woocommerce #respond input.input#submit, .woocommerce .blog-comment button.input.alt#cancel-comment-reply-link, .blog-comment .woocommerce button.input.alt#cancel-comment-reply-link, .woocommerce button.input.alt.button,
   .woocommerce a.input.button.alt, .woocommerce .blog-comment a.input.alt#cancel-comment-reply-link, .blog-comment .woocommerce a.input.alt#cancel-comment-reply-link,
+  .woocommerce input.input.button.alt, .woocommerce .blog-comment input.input.alt#cancel-comment-reply-link, .blog-comment .woocommerce input.input.alt#cancel-comment-reply-link,
   .textarea.is-primary,
   .woocommerce textarea.is-primary,
   .woocommerce #respond input.textarea#submit,
@@ -2130,15 +2048,19 @@ a.box:active {
   .woocommerce .blog-comment input.textarea.alt#cancel-comment-reply-link,
   .blog-comment .woocommerce input.textarea.alt#cancel-comment-reply-link {
     border-color: #2376B3; }
-    .input.is-primary:focus, .woocommerce input.is-primary:focus, .woocommerce #respond input#submit:focus,
-    .woocommerce input.button.alt:focus, .woocommerce .blog-comment input.alt#cancel-comment-reply-link:focus, .blog-comment .woocommerce input.alt#cancel-comment-reply-link:focus, .woocommerce .blog-comment button.input.alt#cancel-comment-reply-link:focus, .blog-comment .woocommerce button.input.alt#cancel-comment-reply-link:focus, .woocommerce button.input.alt.button:focus,
-    .woocommerce a.input.button.alt:focus, .woocommerce .blog-comment a.input.alt#cancel-comment-reply-link:focus, .blog-comment .woocommerce a.input.alt#cancel-comment-reply-link:focus, .input.is-primary.is-focused, .woocommerce input.is-primary.is-focused, .woocommerce #respond input.is-focused#submit,
-    .woocommerce input.is-focused.button.alt, .woocommerce .blog-comment input.is-focused.alt#cancel-comment-reply-link, .blog-comment .woocommerce input.is-focused.alt#cancel-comment-reply-link, .woocommerce .blog-comment button.input.is-focused.alt#cancel-comment-reply-link, .blog-comment .woocommerce button.input.is-focused.alt#cancel-comment-reply-link, .woocommerce button.input.is-focused.alt.button,
-    .woocommerce a.input.is-focused.button.alt, .woocommerce .blog-comment a.input.is-focused.alt#cancel-comment-reply-link, .blog-comment .woocommerce a.input.is-focused.alt#cancel-comment-reply-link, .input.is-primary:active, .woocommerce input.is-primary:active, .woocommerce #respond input#submit:active,
-    .woocommerce input.button.alt:active, .woocommerce .blog-comment input.alt#cancel-comment-reply-link:active, .blog-comment .woocommerce input.alt#cancel-comment-reply-link:active, .woocommerce .blog-comment button.input.alt#cancel-comment-reply-link:active, .blog-comment .woocommerce button.input.alt#cancel-comment-reply-link:active, .woocommerce button.input.alt.button:active,
-    .woocommerce a.input.button.alt:active, .woocommerce .blog-comment a.input.alt#cancel-comment-reply-link:active, .blog-comment .woocommerce a.input.alt#cancel-comment-reply-link:active, .input.is-primary.is-active, .woocommerce input.is-primary.is-active, .woocommerce #respond input.is-active#submit,
-    .woocommerce input.is-active.button.alt, .woocommerce .blog-comment input.is-active.alt#cancel-comment-reply-link, .blog-comment .woocommerce input.is-active.alt#cancel-comment-reply-link, .woocommerce .blog-comment button.input.is-active.alt#cancel-comment-reply-link, .blog-comment .woocommerce button.input.is-active.alt#cancel-comment-reply-link, .woocommerce button.input.is-active.alt.button,
+    .input.is-primary:focus, .woocommerce input.is-primary:focus:not([type='checkbox']), .woocommerce #respond input#submit:focus:not([type='checkbox']),
+    .woocommerce input.button.alt:focus:not([type='checkbox']), .woocommerce .blog-comment input.alt#cancel-comment-reply-link:focus:not([type='checkbox']), .blog-comment .woocommerce input.alt#cancel-comment-reply-link:focus:not([type='checkbox']), .woocommerce #respond input.input#submit:focus, .woocommerce .blog-comment button.input.alt#cancel-comment-reply-link:focus, .blog-comment .woocommerce button.input.alt#cancel-comment-reply-link:focus, .woocommerce button.input.alt.button:focus,
+    .woocommerce a.input.button.alt:focus, .woocommerce .blog-comment a.input.alt#cancel-comment-reply-link:focus, .blog-comment .woocommerce a.input.alt#cancel-comment-reply-link:focus,
+    .woocommerce input.input.button.alt:focus, .woocommerce .blog-comment input.input.alt#cancel-comment-reply-link:focus, .blog-comment .woocommerce input.input.alt#cancel-comment-reply-link:focus, .input.is-primary.is-focused, .woocommerce input.is-primary.is-focused:not([type='checkbox']), .woocommerce #respond input.is-focused#submit:not([type='checkbox']),
+    .woocommerce input.is-focused.button.alt:not([type='checkbox']), .woocommerce .blog-comment input.is-focused.alt#cancel-comment-reply-link:not([type='checkbox']), .blog-comment .woocommerce input.is-focused.alt#cancel-comment-reply-link:not([type='checkbox']), .woocommerce #respond input.input.is-focused#submit, .woocommerce .blog-comment button.input.is-focused.alt#cancel-comment-reply-link, .blog-comment .woocommerce button.input.is-focused.alt#cancel-comment-reply-link, .woocommerce button.input.is-focused.alt.button,
+    .woocommerce a.input.is-focused.button.alt, .woocommerce .blog-comment a.input.is-focused.alt#cancel-comment-reply-link, .blog-comment .woocommerce a.input.is-focused.alt#cancel-comment-reply-link,
+    .woocommerce input.input.is-focused.button.alt, .woocommerce .blog-comment input.input.is-focused.alt#cancel-comment-reply-link, .blog-comment .woocommerce input.input.is-focused.alt#cancel-comment-reply-link, .input.is-primary:active, .woocommerce input.is-primary:active:not([type='checkbox']), .woocommerce #respond input#submit:active:not([type='checkbox']),
+    .woocommerce input.button.alt:active:not([type='checkbox']), .woocommerce .blog-comment input.alt#cancel-comment-reply-link:active:not([type='checkbox']), .blog-comment .woocommerce input.alt#cancel-comment-reply-link:active:not([type='checkbox']), .woocommerce #respond input.input#submit:active, .woocommerce .blog-comment button.input.alt#cancel-comment-reply-link:active, .blog-comment .woocommerce button.input.alt#cancel-comment-reply-link:active, .woocommerce button.input.alt.button:active,
+    .woocommerce a.input.button.alt:active, .woocommerce .blog-comment a.input.alt#cancel-comment-reply-link:active, .blog-comment .woocommerce a.input.alt#cancel-comment-reply-link:active,
+    .woocommerce input.input.button.alt:active, .woocommerce .blog-comment input.input.alt#cancel-comment-reply-link:active, .blog-comment .woocommerce input.input.alt#cancel-comment-reply-link:active, .input.is-primary.is-active, .woocommerce input.is-primary.is-active:not([type='checkbox']), .woocommerce #respond input.is-active#submit:not([type='checkbox']),
+    .woocommerce input.is-active.button.alt:not([type='checkbox']), .woocommerce .blog-comment input.is-active.alt#cancel-comment-reply-link:not([type='checkbox']), .blog-comment .woocommerce input.is-active.alt#cancel-comment-reply-link:not([type='checkbox']), .woocommerce #respond input.input.is-active#submit, .woocommerce .blog-comment button.input.is-active.alt#cancel-comment-reply-link, .blog-comment .woocommerce button.input.is-active.alt#cancel-comment-reply-link, .woocommerce button.input.is-active.alt.button,
     .woocommerce a.input.is-active.button.alt, .woocommerce .blog-comment a.input.is-active.alt#cancel-comment-reply-link, .blog-comment .woocommerce a.input.is-active.alt#cancel-comment-reply-link,
+    .woocommerce input.input.is-active.button.alt, .woocommerce .blog-comment input.input.is-active.alt#cancel-comment-reply-link, .blog-comment .woocommerce input.input.is-active.alt#cancel-comment-reply-link,
     .textarea.is-primary:focus,
     .woocommerce textarea.is-primary:focus,
     .woocommerce #respond input.textarea#submit:focus,
@@ -2188,11 +2110,11 @@ a.box:active {
     .woocommerce .blog-comment input.textarea.is-active.alt#cancel-comment-reply-link,
     .blog-comment .woocommerce input.textarea.is-active.alt#cancel-comment-reply-link {
       box-shadow: 0 0 0 0.125em rgba(35, 118, 179, 0.25); }
-  .input.is-link, .woocommerce input.is-link,
+  .input.is-link, .woocommerce input.is-link:not([type='checkbox']),
   .textarea.is-link,
   .woocommerce textarea.is-link {
     border-color: #2376B3; }
-    .input.is-link:focus, .woocommerce input.is-link:focus, .input.is-link.is-focused, .woocommerce input.is-link.is-focused, .input.is-link:active, .woocommerce input.is-link:active, .input.is-link.is-active, .woocommerce input.is-link.is-active,
+    .input.is-link:focus, .woocommerce input.is-link:focus:not([type='checkbox']), .input.is-link.is-focused, .woocommerce input.is-link.is-focused:not([type='checkbox']), .input.is-link:active, .woocommerce input.is-link:active:not([type='checkbox']), .input.is-link.is-active, .woocommerce input.is-link.is-active:not([type='checkbox']),
     .textarea.is-link:focus,
     .woocommerce textarea.is-link:focus,
     .textarea.is-link.is-focused,
@@ -2202,11 +2124,11 @@ a.box:active {
     .textarea.is-link.is-active,
     .woocommerce textarea.is-link.is-active {
       box-shadow: 0 0 0 0.125em rgba(35, 118, 179, 0.25); }
-  .input.is-info, .woocommerce input.is-info,
+  .input.is-info, .woocommerce input.is-info:not([type='checkbox']),
   .textarea.is-info,
   .woocommerce textarea.is-info {
     border-color: #209cee; }
-    .input.is-info:focus, .woocommerce input.is-info:focus, .input.is-info.is-focused, .woocommerce input.is-info.is-focused, .input.is-info:active, .woocommerce input.is-info:active, .input.is-info.is-active, .woocommerce input.is-info.is-active,
+    .input.is-info:focus, .woocommerce input.is-info:focus:not([type='checkbox']), .input.is-info.is-focused, .woocommerce input.is-info.is-focused:not([type='checkbox']), .input.is-info:active, .woocommerce input.is-info:active:not([type='checkbox']), .input.is-info.is-active, .woocommerce input.is-info.is-active:not([type='checkbox']),
     .textarea.is-info:focus,
     .woocommerce textarea.is-info:focus,
     .textarea.is-info.is-focused,
@@ -2216,11 +2138,11 @@ a.box:active {
     .textarea.is-info.is-active,
     .woocommerce textarea.is-info.is-active {
       box-shadow: 0 0 0 0.125em rgba(32, 156, 238, 0.25); }
-  .input.is-success, .woocommerce input.is-success,
+  .input.is-success, .woocommerce input.is-success:not([type='checkbox']),
   .textarea.is-success,
   .woocommerce textarea.is-success {
     border-color: #46B865; }
-    .input.is-success:focus, .woocommerce input.is-success:focus, .input.is-success.is-focused, .woocommerce input.is-success.is-focused, .input.is-success:active, .woocommerce input.is-success:active, .input.is-success.is-active, .woocommerce input.is-success.is-active,
+    .input.is-success:focus, .woocommerce input.is-success:focus:not([type='checkbox']), .input.is-success.is-focused, .woocommerce input.is-success.is-focused:not([type='checkbox']), .input.is-success:active, .woocommerce input.is-success:active:not([type='checkbox']), .input.is-success.is-active, .woocommerce input.is-success.is-active:not([type='checkbox']),
     .textarea.is-success:focus,
     .woocommerce textarea.is-success:focus,
     .textarea.is-success.is-focused,
@@ -2230,11 +2152,11 @@ a.box:active {
     .textarea.is-success.is-active,
     .woocommerce textarea.is-success.is-active {
       box-shadow: 0 0 0 0.125em rgba(70, 184, 101, 0.25); }
-  .input.is-warning, .woocommerce input.is-warning,
+  .input.is-warning, .woocommerce input.is-warning:not([type='checkbox']),
   .textarea.is-warning,
   .woocommerce textarea.is-warning {
     border-color: #FED040; }
-    .input.is-warning:focus, .woocommerce input.is-warning:focus, .input.is-warning.is-focused, .woocommerce input.is-warning.is-focused, .input.is-warning:active, .woocommerce input.is-warning:active, .input.is-warning.is-active, .woocommerce input.is-warning.is-active,
+    .input.is-warning:focus, .woocommerce input.is-warning:focus:not([type='checkbox']), .input.is-warning.is-focused, .woocommerce input.is-warning.is-focused:not([type='checkbox']), .input.is-warning:active, .woocommerce input.is-warning:active:not([type='checkbox']), .input.is-warning.is-active, .woocommerce input.is-warning.is-active:not([type='checkbox']),
     .textarea.is-warning:focus,
     .woocommerce textarea.is-warning:focus,
     .textarea.is-warning.is-focused,
@@ -2244,7 +2166,7 @@ a.box:active {
     .textarea.is-warning.is-active,
     .woocommerce textarea.is-warning.is-active {
       box-shadow: 0 0 0 0.125em rgba(254, 208, 64, 0.25); }
-  .input.is-danger, .blog-comment .input#cancel-comment-reply-link, .blog-comment .woocommerce input#cancel-comment-reply-link, .woocommerce .blog-comment input#cancel-comment-reply-link, .woocommerce input.is-danger, .woocommerce span.input.onsale,
+  .input.is-danger, .blog-comment .input#cancel-comment-reply-link, .blog-comment .woocommerce input#cancel-comment-reply-link:not([type='checkbox']), .woocommerce .blog-comment input#cancel-comment-reply-link:not([type='checkbox']), .woocommerce input.is-danger:not([type='checkbox']), .woocommerce span.input.onsale,
   .textarea.is-danger,
   .blog-comment .textarea#cancel-comment-reply-link,
   .blog-comment .woocommerce textarea#cancel-comment-reply-link,
@@ -2252,7 +2174,7 @@ a.box:active {
   .woocommerce textarea.is-danger,
   .woocommerce span.textarea.onsale {
     border-color: #ff3860; }
-    .input.is-danger:focus, .blog-comment .input#cancel-comment-reply-link:focus, .blog-comment .woocommerce input#cancel-comment-reply-link:focus, .woocommerce .blog-comment input#cancel-comment-reply-link:focus, .woocommerce input.is-danger:focus, .woocommerce span.input.onsale:focus, .input.is-danger.is-focused, .blog-comment .input.is-focused#cancel-comment-reply-link, .blog-comment .woocommerce input.is-focused#cancel-comment-reply-link, .woocommerce .blog-comment input.is-focused#cancel-comment-reply-link, .woocommerce input.is-danger.is-focused, .woocommerce span.input.is-focused.onsale, .input.is-danger:active, .blog-comment .input#cancel-comment-reply-link:active, .blog-comment .woocommerce input#cancel-comment-reply-link:active, .woocommerce .blog-comment input#cancel-comment-reply-link:active, .woocommerce input.is-danger:active, .woocommerce span.input.onsale:active, .input.is-danger.is-active, .blog-comment .input.is-active#cancel-comment-reply-link, .blog-comment .woocommerce input.is-active#cancel-comment-reply-link, .woocommerce .blog-comment input.is-active#cancel-comment-reply-link, .woocommerce input.is-danger.is-active, .woocommerce span.input.is-active.onsale,
+    .input.is-danger:focus, .blog-comment .input#cancel-comment-reply-link:focus, .blog-comment .woocommerce input#cancel-comment-reply-link:focus:not([type='checkbox']), .woocommerce .blog-comment input#cancel-comment-reply-link:focus:not([type='checkbox']), .woocommerce input.is-danger:focus:not([type='checkbox']), .woocommerce span.input.onsale:focus, .input.is-danger.is-focused, .blog-comment .input.is-focused#cancel-comment-reply-link, .blog-comment .woocommerce input.is-focused#cancel-comment-reply-link:not([type='checkbox']), .woocommerce .blog-comment input.is-focused#cancel-comment-reply-link:not([type='checkbox']), .woocommerce input.is-danger.is-focused:not([type='checkbox']), .woocommerce span.input.is-focused.onsale, .input.is-danger:active, .blog-comment .input#cancel-comment-reply-link:active, .blog-comment .woocommerce input#cancel-comment-reply-link:active:not([type='checkbox']), .woocommerce .blog-comment input#cancel-comment-reply-link:active:not([type='checkbox']), .woocommerce input.is-danger:active:not([type='checkbox']), .woocommerce span.input.onsale:active, .input.is-danger.is-active, .blog-comment .input.is-active#cancel-comment-reply-link, .blog-comment .woocommerce input.is-active#cancel-comment-reply-link:not([type='checkbox']), .woocommerce .blog-comment input.is-active#cancel-comment-reply-link:not([type='checkbox']), .woocommerce input.is-danger.is-active:not([type='checkbox']), .woocommerce span.input.is-active.onsale,
     .textarea.is-danger:focus,
     .blog-comment .textarea#cancel-comment-reply-link:focus,
     .blog-comment .woocommerce textarea#cancel-comment-reply-link:focus,
@@ -2278,37 +2200,37 @@ a.box:active {
     .woocommerce textarea.is-danger.is-active,
     .woocommerce span.textarea.is-active.onsale {
       box-shadow: 0 0 0 0.125em rgba(255, 56, 96, 0.25); }
-  .input.is-small, .woocommerce input.is-small, .woocommerce span.input.onsale,
+  .input.is-small, .woocommerce input.is-small:not([type='checkbox']), .woocommerce span.input.onsale,
   .textarea.is-small,
   .woocommerce textarea.is-small,
   .woocommerce span.textarea.onsale {
     border-radius: 2px;
     font-size: 0.75rem; }
-  .input.is-medium, .woocommerce input.is-medium,
+  .input.is-medium, .woocommerce input.is-medium:not([type='checkbox']),
   .textarea.is-medium,
   .woocommerce textarea.is-medium {
     font-size: 1.25rem; }
-  .input.is-large, .woocommerce input.is-large,
+  .input.is-large, .woocommerce input.is-large:not([type='checkbox']),
   .textarea.is-large,
   .woocommerce textarea.is-large {
     font-size: 1.5rem; }
-  .input.is-fullwidth, .woocommerce input.is-fullwidth,
+  .input.is-fullwidth, .woocommerce input.is-fullwidth:not([type='checkbox']),
   .textarea.is-fullwidth,
   .woocommerce textarea.is-fullwidth {
     display: block;
     width: 100%; }
-  .input.is-inline, .woocommerce input.is-inline,
+  .input.is-inline, .woocommerce input.is-inline:not([type='checkbox']),
   .textarea.is-inline,
   .woocommerce textarea.is-inline {
     display: inline;
     width: auto; }
 
-.input.is-rounded, .woocommerce input.is-rounded {
+.input.is-rounded, .woocommerce input.is-rounded:not([type='checkbox']) {
   border-radius: 290486px;
   padding-left: 1em;
   padding-right: 1em; }
 
-.input.is-static, .woocommerce input.is-static {
+.input.is-static, .woocommerce input.is-static:not([type='checkbox']) {
   background-color: transparent;
   border-color: transparent;
   box-shadow: none;
@@ -2888,47 +2810,47 @@ a.box:active {
     margin-right: -1px; }
   .field.has-addons .control:not(:first-child):not(:last-child) .button, .field.has-addons .control:not(:first-child):not(:last-child) .blog-comment #cancel-comment-reply-link, .blog-comment .field.has-addons .control:not(:first-child):not(:last-child) #cancel-comment-reply-link, .field.has-addons .control:not(:first-child):not(:last-child) .woocommerce #respond input#submit, .woocommerce #respond .field.has-addons .control:not(:first-child):not(:last-child) input#submit,
   .field.has-addons .control:not(:first-child):not(:last-child) .input,
-  .field.has-addons .control:not(:first-child):not(:last-child) .woocommerce input,
-  .woocommerce .field.has-addons .control:not(:first-child):not(:last-child) input,
+  .field.has-addons .control:not(:first-child):not(:last-child) .woocommerce input:not([type='checkbox']),
+  .woocommerce .field.has-addons .control:not(:first-child):not(:last-child) input:not([type='checkbox']),
   .field.has-addons .control:not(:first-child):not(:last-child) .select select {
     border-radius: 0; }
   .field.has-addons .control:first-child .button, .field.has-addons .control:first-child .blog-comment #cancel-comment-reply-link, .blog-comment .field.has-addons .control:first-child #cancel-comment-reply-link, .field.has-addons .control:first-child .woocommerce #respond input#submit, .woocommerce #respond .field.has-addons .control:first-child input#submit,
   .field.has-addons .control:first-child .input,
-  .field.has-addons .control:first-child .woocommerce input,
-  .woocommerce .field.has-addons .control:first-child input,
+  .field.has-addons .control:first-child .woocommerce input:not([type='checkbox']),
+  .woocommerce .field.has-addons .control:first-child input:not([type='checkbox']),
   .field.has-addons .control:first-child .select select {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0; }
   .field.has-addons .control:last-child .button, .field.has-addons .control:last-child .blog-comment #cancel-comment-reply-link, .blog-comment .field.has-addons .control:last-child #cancel-comment-reply-link, .field.has-addons .control:last-child .woocommerce #respond input#submit, .woocommerce #respond .field.has-addons .control:last-child input#submit,
   .field.has-addons .control:last-child .input,
-  .field.has-addons .control:last-child .woocommerce input,
-  .woocommerce .field.has-addons .control:last-child input,
+  .field.has-addons .control:last-child .woocommerce input:not([type='checkbox']),
+  .woocommerce .field.has-addons .control:last-child input:not([type='checkbox']),
   .field.has-addons .control:last-child .select select {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0; }
   .field.has-addons .control .button:hover, .field.has-addons .control .blog-comment #cancel-comment-reply-link:hover, .blog-comment .field.has-addons .control #cancel-comment-reply-link:hover, .field.has-addons .control .woocommerce #respond input#submit:hover, .woocommerce #respond .field.has-addons .control input#submit:hover, .field.has-addons .control .button.is-hovered, .field.has-addons .control .blog-comment .is-hovered#cancel-comment-reply-link, .blog-comment .field.has-addons .control .is-hovered#cancel-comment-reply-link, .field.has-addons .control .woocommerce #respond input.is-hovered#submit, .woocommerce #respond .field.has-addons .control input.is-hovered#submit,
   .field.has-addons .control .input:hover,
-  .field.has-addons .control .woocommerce input:hover,
-  .woocommerce .field.has-addons .control input:hover,
+  .field.has-addons .control .woocommerce input:hover:not([type='checkbox']),
+  .woocommerce .field.has-addons .control input:hover:not([type='checkbox']),
   .field.has-addons .control .input.is-hovered,
-  .field.has-addons .control .woocommerce input.is-hovered,
-  .woocommerce .field.has-addons .control input.is-hovered,
+  .field.has-addons .control .woocommerce input.is-hovered:not([type='checkbox']),
+  .woocommerce .field.has-addons .control input.is-hovered:not([type='checkbox']),
   .field.has-addons .control .select select:hover,
   .field.has-addons .control .select select.is-hovered {
     z-index: 2; }
   .field.has-addons .control .button:focus, .field.has-addons .control .blog-comment #cancel-comment-reply-link:focus, .blog-comment .field.has-addons .control #cancel-comment-reply-link:focus, .field.has-addons .control .woocommerce #respond input#submit:focus, .woocommerce #respond .field.has-addons .control input#submit:focus, .field.has-addons .control .button.is-focused, .field.has-addons .control .blog-comment .is-focused#cancel-comment-reply-link, .blog-comment .field.has-addons .control .is-focused#cancel-comment-reply-link, .field.has-addons .control .woocommerce #respond input.is-focused#submit, .woocommerce #respond .field.has-addons .control input.is-focused#submit, .field.has-addons .control .button:active, .field.has-addons .control .blog-comment #cancel-comment-reply-link:active, .blog-comment .field.has-addons .control #cancel-comment-reply-link:active, .field.has-addons .control .woocommerce #respond input#submit:active, .woocommerce #respond .field.has-addons .control input#submit:active, .field.has-addons .control .button.is-active, .field.has-addons .control .blog-comment .is-active#cancel-comment-reply-link, .blog-comment .field.has-addons .control .is-active#cancel-comment-reply-link, .field.has-addons .control .woocommerce #respond input.is-active#submit, .woocommerce #respond .field.has-addons .control input.is-active#submit,
   .field.has-addons .control .input:focus,
-  .field.has-addons .control .woocommerce input:focus,
-  .woocommerce .field.has-addons .control input:focus,
+  .field.has-addons .control .woocommerce input:focus:not([type='checkbox']),
+  .woocommerce .field.has-addons .control input:focus:not([type='checkbox']),
   .field.has-addons .control .input.is-focused,
-  .field.has-addons .control .woocommerce input.is-focused,
-  .woocommerce .field.has-addons .control input.is-focused,
+  .field.has-addons .control .woocommerce input.is-focused:not([type='checkbox']),
+  .woocommerce .field.has-addons .control input.is-focused:not([type='checkbox']),
   .field.has-addons .control .input:active,
-  .field.has-addons .control .woocommerce input:active,
-  .woocommerce .field.has-addons .control input:active,
+  .field.has-addons .control .woocommerce input:active:not([type='checkbox']),
+  .woocommerce .field.has-addons .control input:active:not([type='checkbox']),
   .field.has-addons .control .input.is-active,
-  .field.has-addons .control .woocommerce input.is-active,
-  .woocommerce .field.has-addons .control input.is-active,
+  .field.has-addons .control .woocommerce input.is-active:not([type='checkbox']),
+  .woocommerce .field.has-addons .control input.is-active:not([type='checkbox']),
   .field.has-addons .control .select select:focus,
   .field.has-addons .control .select select.is-focused,
   .field.has-addons .control .select select:active,
@@ -2936,17 +2858,17 @@ a.box:active {
     z-index: 3; }
     .field.has-addons .control .button:focus:hover, .field.has-addons .control .blog-comment #cancel-comment-reply-link:focus:hover, .blog-comment .field.has-addons .control #cancel-comment-reply-link:focus:hover, .field.has-addons .control .woocommerce #respond input#submit:focus:hover, .woocommerce #respond .field.has-addons .control input#submit:focus:hover, .field.has-addons .control .button.is-focused:hover, .field.has-addons .control .blog-comment .is-focused#cancel-comment-reply-link:hover, .blog-comment .field.has-addons .control .is-focused#cancel-comment-reply-link:hover, .field.has-addons .control .woocommerce #respond input.is-focused#submit:hover, .woocommerce #respond .field.has-addons .control input.is-focused#submit:hover, .field.has-addons .control .button:active:hover, .field.has-addons .control .blog-comment #cancel-comment-reply-link:active:hover, .blog-comment .field.has-addons .control #cancel-comment-reply-link:active:hover, .field.has-addons .control .woocommerce #respond input#submit:active:hover, .woocommerce #respond .field.has-addons .control input#submit:active:hover, .field.has-addons .control .button.is-active:hover, .field.has-addons .control .blog-comment .is-active#cancel-comment-reply-link:hover, .blog-comment .field.has-addons .control .is-active#cancel-comment-reply-link:hover, .field.has-addons .control .woocommerce #respond input.is-active#submit:hover, .woocommerce #respond .field.has-addons .control input.is-active#submit:hover,
     .field.has-addons .control .input:focus:hover,
-    .field.has-addons .control .woocommerce input:focus:hover,
-    .woocommerce .field.has-addons .control input:focus:hover,
+    .field.has-addons .control .woocommerce input:focus:hover:not([type='checkbox']),
+    .woocommerce .field.has-addons .control input:focus:hover:not([type='checkbox']),
     .field.has-addons .control .input.is-focused:hover,
-    .field.has-addons .control .woocommerce input.is-focused:hover,
-    .woocommerce .field.has-addons .control input.is-focused:hover,
+    .field.has-addons .control .woocommerce input.is-focused:hover:not([type='checkbox']),
+    .woocommerce .field.has-addons .control input.is-focused:hover:not([type='checkbox']),
     .field.has-addons .control .input:active:hover,
-    .field.has-addons .control .woocommerce input:active:hover,
-    .woocommerce .field.has-addons .control input:active:hover,
+    .field.has-addons .control .woocommerce input:active:hover:not([type='checkbox']),
+    .woocommerce .field.has-addons .control input:active:hover:not([type='checkbox']),
     .field.has-addons .control .input.is-active:hover,
-    .field.has-addons .control .woocommerce input.is-active:hover,
-    .woocommerce .field.has-addons .control input.is-active:hover,
+    .field.has-addons .control .woocommerce input.is-active:hover:not([type='checkbox']),
+    .woocommerce .field.has-addons .control input.is-active:hover:not([type='checkbox']),
     .field.has-addons .control .select select:focus:hover,
     .field.has-addons .control .select select.is-focused:hover,
     .field.has-addons .control .select select:active:hover,
@@ -3046,40 +2968,40 @@ a.box:active {
     top: 0;
     width: 2.25em;
     z-index: 4; }
-  .control.has-icon .input:focus + .icon, .control.has-icon .woocommerce input:focus + .icon, .woocommerce .control.has-icon input:focus + .icon {
+  .control.has-icon .input:focus + .icon, .control.has-icon .woocommerce input:focus:not([type='checkbox']) + .icon, .woocommerce .control.has-icon input:focus:not([type='checkbox']) + .icon {
     color: #7a7a7a; }
-  .control.has-icon .input.is-small + .icon, .control.has-icon .woocommerce input.is-small + .icon, .woocommerce .control.has-icon input.is-small + .icon, .control.has-icon .woocommerce span.input.onsale + .icon, .woocommerce .control.has-icon span.input.onsale + .icon {
+  .control.has-icon .input.is-small + .icon, .control.has-icon .woocommerce input.is-small:not([type='checkbox']) + .icon, .woocommerce .control.has-icon input.is-small:not([type='checkbox']) + .icon, .control.has-icon .woocommerce span.input.onsale + .icon, .woocommerce .control.has-icon span.input.onsale + .icon {
     font-size: 0.75rem; }
-  .control.has-icon .input.is-medium + .icon, .control.has-icon .woocommerce input.is-medium + .icon, .woocommerce .control.has-icon input.is-medium + .icon {
+  .control.has-icon .input.is-medium + .icon, .control.has-icon .woocommerce input.is-medium:not([type='checkbox']) + .icon, .woocommerce .control.has-icon input.is-medium:not([type='checkbox']) + .icon {
     font-size: 1.25rem; }
-  .control.has-icon .input.is-large + .icon, .control.has-icon .woocommerce input.is-large + .icon, .woocommerce .control.has-icon input.is-large + .icon {
+  .control.has-icon .input.is-large + .icon, .control.has-icon .woocommerce input.is-large:not([type='checkbox']) + .icon, .woocommerce .control.has-icon input.is-large:not([type='checkbox']) + .icon {
     font-size: 1.5rem; }
   .control.has-icon:not(.has-icon-right) .icon {
     left: 0; }
-  .control.has-icon:not(.has-icon-right) .input, .control.has-icon:not(.has-icon-right) .woocommerce input, .woocommerce .control.has-icon:not(.has-icon-right) input {
+  .control.has-icon:not(.has-icon-right) .input, .control.has-icon:not(.has-icon-right) .woocommerce input:not([type='checkbox']), .woocommerce .control.has-icon:not(.has-icon-right) input:not([type='checkbox']) {
     padding-left: 2.25em; }
   .control.has-icon.has-icon-right .icon {
     right: 0; }
-  .control.has-icon.has-icon-right .input, .control.has-icon.has-icon-right .woocommerce input, .woocommerce .control.has-icon.has-icon-right input {
+  .control.has-icon.has-icon-right .input, .control.has-icon.has-icon-right .woocommerce input:not([type='checkbox']), .woocommerce .control.has-icon.has-icon-right input:not([type='checkbox']) {
     padding-right: 2.25em; }
-  .control.has-icons-left .input:focus ~ .icon, .control.has-icons-left .woocommerce input:focus ~ .icon, .woocommerce .control.has-icons-left input:focus ~ .icon,
-  .control.has-icons-left .select:focus ~ .icon, .control.has-icons-right .input:focus ~ .icon, .control.has-icons-right .woocommerce input:focus ~ .icon, .woocommerce .control.has-icons-right input:focus ~ .icon,
+  .control.has-icons-left .input:focus ~ .icon, .control.has-icons-left .woocommerce input:focus:not([type='checkbox']) ~ .icon, .woocommerce .control.has-icons-left input:focus:not([type='checkbox']) ~ .icon,
+  .control.has-icons-left .select:focus ~ .icon, .control.has-icons-right .input:focus ~ .icon, .control.has-icons-right .woocommerce input:focus:not([type='checkbox']) ~ .icon, .woocommerce .control.has-icons-right input:focus:not([type='checkbox']) ~ .icon,
   .control.has-icons-right .select:focus ~ .icon {
     color: #7a7a7a; }
-  .control.has-icons-left .input.is-small ~ .icon, .control.has-icons-left .woocommerce input.is-small ~ .icon, .woocommerce .control.has-icons-left input.is-small ~ .icon, .control.has-icons-left .woocommerce span.input.onsale ~ .icon, .woocommerce .control.has-icons-left span.input.onsale ~ .icon,
+  .control.has-icons-left .input.is-small ~ .icon, .control.has-icons-left .woocommerce input.is-small:not([type='checkbox']) ~ .icon, .woocommerce .control.has-icons-left input.is-small:not([type='checkbox']) ~ .icon, .control.has-icons-left .woocommerce span.input.onsale ~ .icon, .woocommerce .control.has-icons-left span.input.onsale ~ .icon,
   .control.has-icons-left .select.is-small ~ .icon,
   .control.has-icons-left .woocommerce span.select.onsale ~ .icon,
-  .woocommerce .control.has-icons-left span.select.onsale ~ .icon, .control.has-icons-right .input.is-small ~ .icon, .control.has-icons-right .woocommerce input.is-small ~ .icon, .woocommerce .control.has-icons-right input.is-small ~ .icon, .control.has-icons-right .woocommerce span.input.onsale ~ .icon, .woocommerce .control.has-icons-right span.input.onsale ~ .icon,
+  .woocommerce .control.has-icons-left span.select.onsale ~ .icon, .control.has-icons-right .input.is-small ~ .icon, .control.has-icons-right .woocommerce input.is-small:not([type='checkbox']) ~ .icon, .woocommerce .control.has-icons-right input.is-small:not([type='checkbox']) ~ .icon, .control.has-icons-right .woocommerce span.input.onsale ~ .icon, .woocommerce .control.has-icons-right span.input.onsale ~ .icon,
   .control.has-icons-right .select.is-small ~ .icon,
   .control.has-icons-right .woocommerce span.select.onsale ~ .icon,
   .woocommerce .control.has-icons-right span.select.onsale ~ .icon {
     font-size: 0.75rem; }
-  .control.has-icons-left .input.is-medium ~ .icon, .control.has-icons-left .woocommerce input.is-medium ~ .icon, .woocommerce .control.has-icons-left input.is-medium ~ .icon,
-  .control.has-icons-left .select.is-medium ~ .icon, .control.has-icons-right .input.is-medium ~ .icon, .control.has-icons-right .woocommerce input.is-medium ~ .icon, .woocommerce .control.has-icons-right input.is-medium ~ .icon,
+  .control.has-icons-left .input.is-medium ~ .icon, .control.has-icons-left .woocommerce input.is-medium:not([type='checkbox']) ~ .icon, .woocommerce .control.has-icons-left input.is-medium:not([type='checkbox']) ~ .icon,
+  .control.has-icons-left .select.is-medium ~ .icon, .control.has-icons-right .input.is-medium ~ .icon, .control.has-icons-right .woocommerce input.is-medium:not([type='checkbox']) ~ .icon, .woocommerce .control.has-icons-right input.is-medium:not([type='checkbox']) ~ .icon,
   .control.has-icons-right .select.is-medium ~ .icon {
     font-size: 1.25rem; }
-  .control.has-icons-left .input.is-large ~ .icon, .control.has-icons-left .woocommerce input.is-large ~ .icon, .woocommerce .control.has-icons-left input.is-large ~ .icon,
-  .control.has-icons-left .select.is-large ~ .icon, .control.has-icons-right .input.is-large ~ .icon, .control.has-icons-right .woocommerce input.is-large ~ .icon, .woocommerce .control.has-icons-right input.is-large ~ .icon,
+  .control.has-icons-left .input.is-large ~ .icon, .control.has-icons-left .woocommerce input.is-large:not([type='checkbox']) ~ .icon, .woocommerce .control.has-icons-left input.is-large:not([type='checkbox']) ~ .icon,
+  .control.has-icons-left .select.is-large ~ .icon, .control.has-icons-right .input.is-large ~ .icon, .control.has-icons-right .woocommerce input.is-large:not([type='checkbox']) ~ .icon, .woocommerce .control.has-icons-right input.is-large:not([type='checkbox']) ~ .icon,
   .control.has-icons-right .select.is-large ~ .icon {
     font-size: 1.5rem; }
   .control.has-icons-left .icon, .control.has-icons-right .icon {
@@ -3090,12 +3012,12 @@ a.box:active {
     top: 0;
     width: 2.25em;
     z-index: 4; }
-  .control.has-icons-left .input, .control.has-icons-left .woocommerce input, .woocommerce .control.has-icons-left input,
+  .control.has-icons-left .input, .control.has-icons-left .woocommerce input:not([type='checkbox']), .woocommerce .control.has-icons-left input:not([type='checkbox']),
   .control.has-icons-left .select select {
     padding-left: 2.25em; }
   .control.has-icons-left .icon.is-left {
     left: 0; }
-  .control.has-icons-right .input, .control.has-icons-right .woocommerce input, .woocommerce .control.has-icons-right input,
+  .control.has-icons-right .input, .control.has-icons-right .woocommerce input:not([type='checkbox']), .woocommerce .control.has-icons-right input:not([type='checkbox']),
   .control.has-icons-right .select select {
     padding-right: 2.25em; }
   .control.has-icons-right .icon.is-right {
@@ -7688,6 +7610,25 @@ nav.navbar .navbar-menu {
     position: relative;
     top: 18px; }
 
+.tickets .intro.section {
+  padding-top: 100px;
+  padding-bottom: 100px; }
+
+.tickets .intro__title {
+  font-family: "Knewave", cursive;
+  font-size: 28px;
+  color: #595656;
+  letter-spacing: 1px;
+  margin-bottom: 23px; }
+
+.tickets .intro__copy {
+  font-family: "Cabin", sans-serif;
+  font-size: 16px;
+  color: #595656;
+  letter-spacing: 0.44px;
+  line-height: 25px;
+  max-width: 348px; }
+
 .tickets .purchase__step {
   margin-bottom: 50px; }
   .tickets .purchase__step-label {
@@ -7696,7 +7637,72 @@ nav.navbar .navbar-menu {
     font-size: 18px;
     color: #5D5D5D;
     letter-spacing: 0.5px;
-    margin-bottom: 15px; }
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 15px; }
+  .tickets .purchase__step span.number {
+    font-family: Cabin-Regular;
+    font-size: 14px;
+    color: #fff;
+    letter-spacing: 0.5px;
+    text-align: center;
+    background: #2376B3;
+    padding: 17px 0;
+    border-radius: 50%; }
+
+.tickets .purchase__item {
+  margin-top: 15px; }
+  .tickets .purchase__item:not(:last-child) {
+    margin-right: 10px; }
+    @media screen and (min-width: 769px), print {
+      .tickets .purchase__item:not(:last-child) {
+        margin-right: 30px; } }
+  .tickets .purchase__item.button, .tickets .blog-comment .purchase__item#cancel-comment-reply-link, .blog-comment .tickets .purchase__item#cancel-comment-reply-link, .tickets .purchase__add-to-cart-btn, .woocommerce .tickets button.purchase__add-to-cart-btn, .tickets .woocommerce button.purchase__add-to-cart-btn, .tickets .woocommerce #respond input.purchase__item#submit, .woocommerce #respond .tickets input.purchase__item#submit {
+    font-size: 22px;
+    transition: 0.2s;
+    width: 100%;
+    max-width: 350px;
+    background-color: #989898;
+    height: 85px;
+    border-color: transparent;
+    border-bottom: solid 15px #8D8D8D;
+    font-family: "Cabin", sans-serif;
+    color: #fff;
+    letter-spacing: 0.86px; }
+    @media screen and (min-width: 769px), print {
+      .tickets .purchase__item.button, .tickets .blog-comment .purchase__item#cancel-comment-reply-link, .blog-comment .tickets .purchase__item#cancel-comment-reply-link, .tickets .purchase__add-to-cart-btn, .woocommerce .tickets button.purchase__add-to-cart-btn, .tickets .woocommerce button.purchase__add-to-cart-btn, .tickets .woocommerce #respond input.purchase__item#submit, .woocommerce #respond .tickets input.purchase__item#submit {
+        font-size: 32px; } }
+    @media screen and (min-width: 1024px) {
+      .tickets .purchase__item.button, .tickets .blog-comment .purchase__item#cancel-comment-reply-link, .blog-comment .tickets .purchase__item#cancel-comment-reply-link, .tickets .purchase__add-to-cart-btn, .woocommerce .tickets button.purchase__add-to-cart-btn, .tickets .woocommerce button.purchase__add-to-cart-btn, .tickets .woocommerce #respond input.purchase__item#submit, .woocommerce #respond .tickets input.purchase__item#submit {
+        max-width: calc(100% / 3 - 25px); } }
+    .tickets .purchase__item.button:hover, .tickets .blog-comment .purchase__item#cancel-comment-reply-link:hover, .blog-comment .tickets .purchase__item#cancel-comment-reply-link:hover, .tickets .purchase__add-to-cart-btn:hover, .tickets .woocommerce #respond input.purchase__item#submit:hover, .woocommerce #respond .tickets input.purchase__item#submit:hover, .tickets .purchase__item.button.selected, .tickets .blog-comment .purchase__item.selected#cancel-comment-reply-link, .blog-comment .tickets .purchase__item.selected#cancel-comment-reply-link, .tickets .selected.purchase__add-to-cart-btn, .tickets .woocommerce #respond input.purchase__item.selected#submit, .woocommerce #respond .tickets input.purchase__item.selected#submit {
+      background-color: #46B865;
+      border-bottom: solid 15px #3FAC5D; }
+    .tickets .purchase__item.button:hover:not(.selected), .tickets .blog-comment .purchase__item#cancel-comment-reply-link:hover:not(.selected), .blog-comment .tickets .purchase__item#cancel-comment-reply-link:hover:not(.selected), .tickets .purchase__add-to-cart-btn:hover:not(.selected), .tickets .woocommerce #respond input.purchase__item#submit:hover:not(.selected), .woocommerce #respond .tickets input.purchase__item#submit:hover:not(.selected) {
+      transform: scale(1.05); }
+    .tickets .purchase__item.button.sector, .tickets .blog-comment .purchase__item.sector#cancel-comment-reply-link, .blog-comment .tickets .purchase__item.sector#cancel-comment-reply-link, .tickets .sector.purchase__add-to-cart-btn, .tickets .woocommerce #respond input.purchase__item.sector#submit, .woocommerce #respond .tickets input.purchase__item.sector#submit {
+      max-width: calc(50% - 25px); }
+      @media screen and (min-width: 769px), print {
+        .tickets .purchase__item.button.sector, .tickets .blog-comment .purchase__item.sector#cancel-comment-reply-link, .blog-comment .tickets .purchase__item.sector#cancel-comment-reply-link, .tickets .sector.purchase__add-to-cart-btn, .tickets .woocommerce #respond input.purchase__item.sector#submit, .woocommerce #respond .tickets input.purchase__item.sector#submit {
+          max-width: 110px; } }
+  .tickets .purchase__item-total {
+    display: flex;
+    align-items: center; }
+    .tickets .purchase__item-total span {
+      font-size: 32px;
+      color: #595656;
+      letter-spacing: 0.86px;
+      text-align: center;
+      margin-right: 30px; }
+
+.tickets .purchase__add-to-cart-btn {
+  background-color: #2B9AE5;
+  border-bottom-color: #248BCF;
+  max-width: 281px; }
+  .tickets .purchase__add-to-cart-btn:hover {
+    background-color: #2B9AE5;
+    border-bottom-color: #248BCF; }
 
 footer.footer {
   background-color: #2376B3;
