@@ -7,8 +7,7 @@
                     <span class="number">1</span> Select the parade type
                 </div>
                 <ul class="purchase__items">
-                    <li class="purchase__item button" @click="nextStep(2, index)" 
-                        :class="{ selected: index === activeItem }" 
+                    <li class="purchase__item button" @click="nextStep(2, index)"
                         v-for="(parade, index) in paradeType" :key="index">{{ parade }}</li>
                 </ul>
             </div>
@@ -19,8 +18,8 @@
                         <span class="number">2</span> Select the date
                     </div>
                     <ul class="purchase__items">
-                        <li class="purchase__item button" @click="nextStep(3)">Friday (March 01)</li>
-                        <li class="purchase__item button" @click="nextStep(3)">Saturday (March 02)</li>
+                        <li class="purchase__item button" @click="nextStep(3, index)"
+                            v-for="(date, index) in dates" :key="index">{{ date.name }}</li>
                     </ul>
                 </div>
             </transition>
@@ -42,18 +41,10 @@
                     <div class="purchase__step-label">
                         <span class="number">4</span> Select the sector
                     </div>
-                    <div class="purchase__items">
-                        <div class="purchase__item button sector" @click="nextStep(5)">1</div>
-                        <div class="purchase__item button sector" @click="nextStep(5)">2</div>
-                        <div class="purchase__item button sector" @click="nextStep(5)">5</div>
-                        <div class="purchase__item button sector" @click="nextStep(5)">4</div>
-                        <div class="purchase__item button sector" @click="nextStep(5)">5</div>
-                        <div class="purchase__item button sector" @click="nextStep(5)">6</div>
-                        <div class="purchase__item button sector" @click="nextStep(5)">7</div>
-                        <div class="purchase__item button sector" @click="nextStep(5)">8</div>
-                        <div class="purchase__item button sector" @click="nextStep(5)">9</div>
-                        <div class="purchase__item button sector" @click="nextStep(5)">10</div>
-                    </div>
+                    <ul class="purchase__items">
+                        <li class="purchase__item button sector" 
+                            @click="nextStep(5)" v-for="(product, i) in products" :key="i">{{ product.name }}</li>
+                    </ul>
                 </div>
             </transition>
 
@@ -94,8 +85,25 @@
         data() {
             return {
                 currentStep: 1,
+                activeItem: -1,
                 paradeType: ['Preliminary Parades', 'Main Parades', 'Champions’ Parade'],
-                activeItem: -1
+                dates: [
+                    { name: 'Friday (March 01)'},
+                    { name: 'Saturday (March 02)'},
+                ],
+                products: [
+                    { name: '1', price: '1,00' },
+                    { name: '2', price: '1,00' },
+                    { name: '3', price: '1,00' },
+                    { name: '4', price: '1,00' },
+                    { name: '5', price: '1,00' },
+                    { name: '6', price: '1,00' },
+                    { name: '7', price: '1,00' },
+                    { name: '8', price: '1,00' },
+                    { name: '9', price: '1,00' },
+                    { name: '10', price: '1,00' },
+                    { name: '11', price: '1,00' },
+                ]
             }
         },
 
