@@ -7,8 +7,14 @@
                     <span class="number">1</span> Select the parade type
                 </div>
                 <ul class="purchase__items">
-                    <li class="purchase__item button" @click="nextStep(2, index)"
-                        v-for="(parade, index) in paradeType" :key="index">{{ parade }}</li>
+                    <label :for="`parade-${index}`" 
+                        class="purchase__item button" 
+                        v-for="(parade, index) in parades" :key="index" 
+                        @click="nextStep(2, index)">
+                        <input :id="`parade-${index}`" type="radio" 
+                            v-model="selected.parade" :value="parade.name" class="is-hidden">
+                        {{ parade.name }}
+                    </label>
                 </ul>
             </div>
 
@@ -18,8 +24,14 @@
                         <span class="number">2</span> Select the date
                     </div>
                     <ul class="purchase__items">
-                        <li class="purchase__item button" @click="nextStep(3, index)"
-                            v-for="(date, index) in dates" :key="index">{{ date.name }}</li>
+                        <label :for="`date-${index}`" 
+                            class="purchase__item button" 
+                            v-for="(date, index) in paradeDate" :key="index"
+                            @click="nextStep(3, index)">
+                            <input :id="`date-${index}`" type="radio" 
+                                v-model="selected.date" :value="date" class="is-hidden">
+                            {{ date }}
+                        </label>                        
                     </ul>
                 </div>
             </transition>
@@ -30,8 +42,10 @@
                         <span class="number">3</span> Select the seat type
                     </div>
                     <div class="purchase__items">
-                        <div class="purchase__item button" @click="nextStep(4)">Grandstand tickets</div>
-                        <div class="purchase__item button" @click="nextStep(4)">Open front box seats</div>
+                        <input class="purchase__item button" value="Grandstand tickets"
+                            @click="nextStep(4)" v-model="selected.seat">
+                        <input class="purchase__item button" value="Open front box seats"
+                            @click="nextStep(4)"  v-model="selected.seat">
                     </div>
                 </div>
             </transition>
@@ -86,10 +100,30 @@
             return {
                 currentStep: 1,
                 activeItem: -1,
-                paradeType: ['Preliminary Parades', 'Main Parades', 'Champions’ Parade'],
-                dates: [
-                    { name: 'Friday (March 01)'},
-                    { name: 'Saturday (March 02)'},
+                itemSelected: '',
+                selected: {
+                    parade: String,
+                    date: String,
+                    seat: String,
+
+
+                },
+                parades: [
+                    {
+                        id: 'parade-1',
+                        name: 'Preliminary Parades',
+                        dates: ['Friday (March 01)', 'Saturday (March 02)']
+                    },
+                    {
+                        id: 'parade-2',
+                        name: 'Main Parades',
+                        dates: ['Sunday (March 03)', 'Monday (March 04)']
+                    },
+                    {
+                        id: 'parade-3',
+                        name: 'Champions’ Parade',
+                        dates: ['Sábado (09 de Março)']
+                    }                    
                 ],
                 products: [
                     { name: '1', price: '1,00' },
@@ -108,15 +142,36 @@
         },
 
         computed: {
-            
+            paradeDate() {
+                const dates = this.parades.filter( parade => {
+                    return parade.name == this.selected.parade
+                })
+                
+                const resultMap = dates.map(a => a.dates);
+
+                return resultMap[0]
+            }
         },
 
         methods: {
             nextStep(val, idx) {
                 this.currentStep = val
-                let selected = event.target
+                const selected = event.target
+
+                const prevStep = val -1
+                console.log("prevStep: " + prevStep)
+                
+                const divParent = document.querySelector(".step-" + prevStep)
+                const purchaseItem = divParent.querySelectorAll(".purchase__item")
+
+                purchaseItem.forEach(item => {
+                    item.classList.remove('selected')
+                })
+
                 selected.classList.add('selected')
-                this.activeItem = idx
+
+                console.log(this.currentStep)
+
             },
 
             isStep(val) {
@@ -125,7 +180,7 @@
         },
 
         mounted() {
-            console.log(this.currentStep);
+            console.log('current step: ' + this.currentStep);
         }
         
     }
