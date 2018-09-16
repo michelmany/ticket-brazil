@@ -1,8 +1,5 @@
-
 import Vue from 'vue';
 import Slick from 'vue-slick';
-
-
 import Example from './components/Example';
 import Purchase from './components/Purchase';
 

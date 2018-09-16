@@ -57,7 +57,7 @@
                     margin-right: 30px
 
             &.button
-                font-size: 22px
+                font-size: 20px
                 transition: 0.2s
                 width: 100%
                 max-width: 350px
@@ -86,10 +86,12 @@
                         transform: scale(1.05)
 
                 &.sector
-                    max-width: calc(50% - 25px)
+                    display: block
+                    max-width: calc(50% - 10px)
+                    height: 105px
 
                     +tablet
-                        max-width: 110px
+                        max-width: 195px
 
             &-total
                 display: flex
@@ -101,6 +103,29 @@
                     letter-spacing: 0.86px
                     text-align: center
                     margin-right: 30px
+
+            &-price
+                display: block
+                color: #fff
+                font-size: 14px
+                position: relative
+                top: -3px
+
+            &-quantity
+                display: flex
+                align-items: center                
+                span
+                    font-size: 24px
+                    color: $gray-dark
+                    margin-right: 10px
+                    margin-left: 10px
+
+                .button
+                    color: #fff
+                    background-color: $gray-light
+                    border-color: transparent
+                    font-size: 18px
+                    font-weight: bold
 
         &__add-to-cart-btn
             @extend .purchase__item.button

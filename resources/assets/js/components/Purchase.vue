@@ -6,16 +6,15 @@
                 <div class="purchase__step-label">
                     <span class="number">1</span> Select the parade type
                 </div>
-                <ul class="purchase__items">
-                    <label :for="`parade-${index}`" 
-                        class="purchase__item button" 
-                        v-for="(parade, index) in parades" :key="index" 
-                        @click="nextStep(2, index)">
-                        <input :id="`parade-${index}`" type="radio" 
-                            v-model="selected.parade" :value="parade.name" class="is-hidden">
+                <div class="purchase__items">
+                    <label :for="`parade-${index}`" class="purchase__item button" 
+                        v-for="(parade, index) in parades" :key="index" @click="nextStep(2, index)">
+                        <input :id="`parade-${index}`" type="radio" v-model="selected.parade" :value="parade.name" class="is-hidden">
                         {{ parade.name }}
                     </label>
-                </ul>
+                </div>
+
+                <div v-for="(product, index) in products" :key="index">{{ product.categories }}</div>
             </div>
 
             <transition name="fade">
@@ -23,16 +22,13 @@
                     <div class="purchase__step-label">
                         <span class="number">2</span> Select the date
                     </div>
-                    <ul class="purchase__items">
-                        <label :for="`date-${index}`" 
-                            class="purchase__item button" 
-                            v-for="(date, index) in paradeDate" :key="index"
-                            @click="nextStep(3, index)">
-                            <input :id="`date-${index}`" type="radio" 
-                                v-model="selected.date" :value="date" class="is-hidden">
-                            {{ date }}
+                    <div class="purchase__items">
+                        <label :for="`date-${index}`" class="purchase__item button" 
+                            v-for="(date, index) in setData('dates')" :key="index" @click="nextStep(3, index)">
+                            <input :id="`date-${index}`" type="radio" v-model="selected.date" :value="date" class="is-hidden">
+                            {{ date.name }}
                         </label>                        
-                    </ul>
+                    </div>
                 </div>
             </transition>
 
@@ -42,10 +38,11 @@
                         <span class="number">3</span> Select the seat type
                     </div>
                     <div class="purchase__items">
-                        <input class="purchase__item button" value="Grandstand tickets"
-                            @click="nextStep(4)" v-model="selected.seat">
-                        <input class="purchase__item button" value="Open front box seats"
-                            @click="nextStep(4)"  v-model="selected.seat">
+                        <label :for="`seat-${index}`" class="purchase__item button" 
+                            v-for="(seat, index) in setData('seats')" :key="index" @click="nextStep(4, index)">
+                            <input :id="`seat-${index}`" type="radio" v-model="selected.seat" :value="seat" class="is-hidden">
+                            {{ seat.name }}
+                        </label> 
                     </div>
                 </div>
             </transition>
@@ -55,10 +52,18 @@
                     <div class="purchase__step-label">
                         <span class="number">4</span> Select the sector
                     </div>
-                    <ul class="purchase__items">
-                        <li class="purchase__item button sector" 
-                            @click="nextStep(5)" v-for="(product, i) in products" :key="i">{{ product.name }}</li>
-                    </ul>
+                    <div class="purchase__items">
+                        <label :for="`sector-${index}`" class="purchase__item button sector" 
+                            v-for="(ticket, index) in productsFilter" :key="index" @click="nextStep(5, index)">
+                            <input :id="`sector-${index}`" type="radio" v-model="selected.sector" :value="ticket.name" class="is-hidden">
+                            {{ ticket.name }} <br>
+                            <span class="purchase__item-price">$ {{ ticket.price }}</span>
+                        </label>                     
+                        <!-- <li class="purchase__item button sector" @click="nextStep(5)" 
+                            v-for="(ticket, i) in productsFilter" :key="i">{{ ticket.name }} <br>
+                            <span class="purchase__item-price">$ {{ ticket.price }}</span>
+                        </li> -->
+                    </div>
                 </div>
             </transition>
 
@@ -69,7 +74,9 @@
                     </div>
                     <div class="purchase__items">
                         <div class="purchase__item-quantity">
-                            <button class="button">-</button> 3 <button class="button">+</button>
+                            <button class="button" @click="decrease()">-</button>
+                            <span>{{ quantity }}</span>
+                            <button class="button" @click="increase()">+</button>
                         </div>
                     </div>
                 </div>
@@ -81,7 +88,7 @@
                         <span class="number">6</span> Add to cart
                     </div>
                     <div class="purchase__item-total">
-                        <span>3x $18.40</span>
+                        <span>{{ quantity }}x $18.40</span>
 
                         <button class="purchase__add-to-cart-btn button">
                             Add to cart
@@ -96,92 +103,124 @@
 
 <script>
     export default {
+        props: ['products'],
         data() {
             return {
                 currentStep: 1,
-                activeItem: -1,
-                itemSelected: '',
+                quantity: 1,
                 selected: {
                     parade: String,
-                    date: String,
-                    seat: String,
-
-
+                    date: Object,
+                    seat: Object,
+                    sector: String,
+                    quantity: Number
                 },
+                productsList: Array,
                 parades: [
                     {
-                        id: 'parade-1',
                         name: 'Preliminary Parades',
-                        dates: ['Friday (March 01)', 'Saturday (March 02)']
+                        dates: [
+                            { name: 'Friday (March 01)', slug: 'friday-march-01'},
+                            { name: 'Saturday (March 02)', slug: 'saturday-march-02'}
+                        ],
+                        seats: [
+                            { name: 'Grandstand tickets', slug: 'grandstand-tickets' },
+                            { name: 'Open Front Box seats', slug: 'open-front-box-seats' }
+                        ]
                     },
                     {
-                        id: 'parade-2',
                         name: 'Main Parades',
-                        dates: ['Sunday (March 03)', 'Monday (March 04)']
+                        dates: [
+                            { name: 'Sunday (March 03)', slug: 'sunday-march-03'},
+                            { name: 'Monday (March 04)', slug: 'monday-march-04'}
+                        ],
+                        seats: [
+                            { name: 'Grandstand tickets', slug: 'grandstand-tickets' },
+                            { name: 'Open Front Box seats', slug: 'open-front-box-seats' },
+                            { name: 'Private Chairs', slug: 'private-chairs' }
+                        ]
                     },
                     {
-                        id: 'parade-3',
                         name: 'Champions’ Parade',
-                        dates: ['Sábado (09 de Março)']
+                        dates: [
+                            { name: 'Saturdar (March 09)', slug: 'saturday-march-09'},
+                        ],
+                        seats: [
+                            { name: 'Grandstand tickets', slug: 'grandstand-tickets' },
+                            { name: 'Open Front Box seats', slug: 'open-front-box-seats' },
+                            { name: 'Private Chairs', slug: 'private-chairs' }
+                        ]
                     }                    
                 ],
-                products: [
-                    { name: '1', price: '1,00' },
-                    { name: '2', price: '1,00' },
-                    { name: '3', price: '1,00' },
-                    { name: '4', price: '1,00' },
-                    { name: '5', price: '1,00' },
-                    { name: '6', price: '1,00' },
-                    { name: '7', price: '1,00' },
-                    { name: '8', price: '1,00' },
-                    { name: '9', price: '1,00' },
-                    { name: '10', price: '1,00' },
-                    { name: '11', price: '1,00' },
-                ]
             }
         },
 
         computed: {
-            paradeDate() {
-                const dates = this.parades.filter( parade => {
-                    return parade.name == this.selected.parade
+            productsFilter() {
+                const filteredProducts = this.productsList.filter(el => {
+                    return el.acf.date.slug == this.selected.date.slug
+                        && el.acf.seat_type.slug == this.selected.seat.slug
                 })
-                
-                const resultMap = dates.map(a => a.dates);
 
-                return resultMap[0]
+                return filteredProducts
+            },
+            setQuantity() {
+                return this.selected.quantity = this.quantity
             }
         },
 
         methods: {
-            nextStep(val, idx) {
-                this.currentStep = val
-                const selected = event.target
+            setData(data) {
+                const filteredParade = this.parades.filter(parade => {
+                    return parade.name == this.selected.parade
+                })
+                const filtered = filteredParade.map(a => a[data]);
+                return filtered[0]                
+            },
 
-                const prevStep = val -1
-                console.log("prevStep: " + prevStep)
-                
+            nextStep(step, idx) {
+                this.currentStep = step
+                const selected = event.target.parentElement
+                const prevStep = this.currentStep - 1
                 const divParent = document.querySelector(".step-" + prevStep)
                 const purchaseItem = divParent.querySelectorAll(".purchase__item")
 
                 purchaseItem.forEach(item => {
                     item.classList.remove('selected')
-                })
+                })                
 
                 selected.classList.add('selected')
+                this.clearNextStep(step)
+            },
 
-                console.log(this.currentStep)
+            clearNextStep(step) { // clear next step when call the methods
+                const divParentNextStep = document.querySelector(".step-" + step)
+                const purchaseItemNextSep = divParentNextStep.querySelectorAll(".purchase__item")
 
+                purchaseItemNextSep.forEach(item => {
+                    item.classList.remove('selected')
+                })
             },
 
             isStep(val) {
                 return this.currentStep >= val
-            }
+            },
+
+            increase() {
+                return this.quantity += 1
+            },
+
+            decrease() {
+                if (this.quantity > 1) {
+                    return this.quantity -= 1
+                }
+            }            
+
         },
 
-        mounted() {
-            console.log('current step: ' + this.currentStep);
-        }
+        created() {
+            this.productsList = JSON.parse(this.products)
+        },
         
     }
 </script>

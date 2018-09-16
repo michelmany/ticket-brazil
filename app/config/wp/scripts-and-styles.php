@@ -1,5 +1,9 @@
 <?php
 
+use Automattic\WooCommerce\Client;
+
+
+
 /**
  * Register scripts and styles and enqueue them
  */

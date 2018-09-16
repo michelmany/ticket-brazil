@@ -7659,7 +7659,7 @@ nav.navbar .navbar-menu {
       .tickets .purchase__item:not(:last-child) {
         margin-right: 30px; } }
   .tickets .purchase__item.button, .tickets .blog-comment .purchase__item#cancel-comment-reply-link, .blog-comment .tickets .purchase__item#cancel-comment-reply-link, .tickets .purchase__add-to-cart-btn, .woocommerce .tickets button.purchase__add-to-cart-btn, .tickets .woocommerce button.purchase__add-to-cart-btn, .tickets .woocommerce #respond input.purchase__item#submit, .woocommerce #respond .tickets input.purchase__item#submit {
-    font-size: 22px;
+    font-size: 20px;
     transition: 0.2s;
     width: 100%;
     max-width: 350px;
@@ -7682,10 +7682,12 @@ nav.navbar .navbar-menu {
     .tickets .purchase__item.button:hover:not(.selected), .tickets .blog-comment .purchase__item#cancel-comment-reply-link:hover:not(.selected), .blog-comment .tickets .purchase__item#cancel-comment-reply-link:hover:not(.selected), .tickets .purchase__add-to-cart-btn:hover:not(.selected), .tickets .woocommerce #respond input.purchase__item#submit:hover:not(.selected), .woocommerce #respond .tickets input.purchase__item#submit:hover:not(.selected) {
       transform: scale(1.05); }
     .tickets .purchase__item.button.sector, .tickets .blog-comment .purchase__item.sector#cancel-comment-reply-link, .blog-comment .tickets .purchase__item.sector#cancel-comment-reply-link, .tickets .sector.purchase__add-to-cart-btn, .tickets .woocommerce #respond input.purchase__item.sector#submit, .woocommerce #respond .tickets input.purchase__item.sector#submit {
-      max-width: calc(50% - 25px); }
+      display: block;
+      max-width: calc(50% - 10px);
+      height: 105px; }
       @media screen and (min-width: 769px), print {
         .tickets .purchase__item.button.sector, .tickets .blog-comment .purchase__item.sector#cancel-comment-reply-link, .blog-comment .tickets .purchase__item.sector#cancel-comment-reply-link, .tickets .sector.purchase__add-to-cart-btn, .tickets .woocommerce #respond input.purchase__item.sector#submit, .woocommerce #respond .tickets input.purchase__item.sector#submit {
-          max-width: 110px; } }
+          max-width: 195px; } }
   .tickets .purchase__item-total {
     display: flex;
     align-items: center; }
@@ -7695,6 +7697,26 @@ nav.navbar .navbar-menu {
       letter-spacing: 0.86px;
       text-align: center;
       margin-right: 30px; }
+  .tickets .purchase__item-price {
+    display: block;
+    color: #fff;
+    font-size: 14px;
+    position: relative;
+    top: -3px; }
+  .tickets .purchase__item-quantity {
+    display: flex;
+    align-items: center; }
+    .tickets .purchase__item-quantity span {
+      font-size: 24px;
+      color: #595656;
+      margin-right: 10px;
+      margin-left: 10px; }
+    .tickets .purchase__item-quantity .button, .tickets .purchase__item-quantity .blog-comment #cancel-comment-reply-link, .blog-comment .tickets .purchase__item-quantity #cancel-comment-reply-link, .tickets .purchase__item-quantity .woocommerce #respond input#submit, .woocommerce #respond .tickets .purchase__item-quantity input#submit {
+      color: #fff;
+      background-color: #989898;
+      border-color: transparent;
+      font-size: 18px;
+      font-weight: bold; }
 
 .tickets .purchase__add-to-cart-btn {
   background-color: #2B9AE5;

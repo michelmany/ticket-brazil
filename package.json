@@ -12,6 +12,7 @@
   "author": "Toni Suomalainen",
   "license": "MIT",
   "devDependencies": {
+    "axios": "^0.18.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.5",
     "babel-loader": "^7.1.4",
@@ -46,6 +47,7 @@
     "bulma": "0.6.2",
     "i": "^0.3.6",
     "jquery": "^3.3.1",
-    "vue": "^2.5.16"
+    "vue": "^2.5.16",
+    "woocommerce-api": "^1.4.2"
   }
 }

@@ -10,7 +10,9 @@
             </div>
         </div>
 
-        <purchase></purchase>
+        {% set current_lang = function('pll_current_language', 'slug') %}
+
+        <purchase products="{{ products|json_encode|e('html_attr') }}" current-lang="{{ current_lang }}"></purchase>
 
     </div>
 {% endblock %}
