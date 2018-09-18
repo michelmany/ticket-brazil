@@ -38,7 +38,7 @@ function create_tour_cpt() {
 		'description' => __( 'Tours', 'base-camp' ),
 		'labels' => $labels,
 		'menu_icon' => 'dashicons-location-alt',
-		'supports' => array('title', 'editor', 'thumbnail', 'revisions', 'trackbacks', 'page-attributes', ),
+		'supports' => array('title', 'editor', 'thumbnail', 'revisions', 'trackbacks', 'page-attributes'),
 		'taxonomies' => array(),
 		'public' => true,
 		'show_ui' => true,
