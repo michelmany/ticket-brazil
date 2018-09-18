@@ -50,13 +50,26 @@ new Vue({
                     }
                 ]                
             },
-        };    
+            slickOptionsTour: {
+              dots: true,
+              arrows: false,
+              fade: false,
+              autoplay: true,
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              infinite: true,
+              appendDots: '.slick__dots',
+              focusOnSelect: false,     
+              swipeToSlide: false,
+              touchThreshold: 50,               
+            }
+        }    
     }
-});
+})
 
 // Hide Page Loader when DOM and images are ready
-$(window).on('load', () => $('.pageloader').removeClass('is-active'));
+$(window).on('load', () => $('.pageloader').removeClass('is-active'))
 
 // Toggle mobile menu
 $('.navbar-burger').on('click', () =>
-$('.navbar-burger, .navbar-menu').toggleClass('is-active'));
+$('.navbar-burger, .navbar-menu').toggleClass('is-active'))

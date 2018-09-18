@@ -7806,6 +7806,18 @@ body {
   color: #595656;
   letter-spacing: 0.86px; }
 
+.content h2, .content h3 {
+  text-transform: uppercase;
+  letter-spacing: 1px; }
+
+.content h2 {
+  color: #2376B3;
+  font-weight: 700; }
+
+.single-tour__content .slick__dots {
+  text-align: center;
+  margin-left: 0; }
+
 .woocommerce .products {
   clear: both; }
 

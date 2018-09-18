@@ -1,0 +1,11 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+    <section class="section-tours section" id="post-{{ post.ID }}">
+        <div class="container">
+            {% include 'partials/tours-carousel.twig' %}
+        </div>
+    </section>
+
+{% endblock %}

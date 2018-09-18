@@ -1,0 +1,30 @@
+
+<div class="section-tours__cards">
+    
+    <slick ref="slick" :options="slickOptions">
+
+    {% for tour in tours %}
+
+        {% set tour_featured_image = TimberImage(tour.thumbnail) %}
+            
+        <div class="column">
+            <a href="{{ tour.link }}">
+                <div class="section-tours__card">
+                    <div class="section-tours__header" 
+                        style="background-image: url('{{ tour_featured_image.src|resize(640)}}')">
+                        <div class="section-tours__card-title">{{ tour.title }}</div>
+                    </div>
+                    <div class="section-tours__footer">
+                        <div class="section-tours__card-copy">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
+                        <a href="{{ tour.link }}" class=" section-tours__card-cta">Read More</a>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+    {% endfor %}
+  
+    </slick> 
+
+</div>
+<div class="slick__dots"></div>

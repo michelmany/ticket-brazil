@@ -1,0 +1,37 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+    <section class="section">
+        <div class="container">
+
+            <div class="columns is-desktop">
+                <div class="column is-three-fifths-desktop">
+                    <article class="single-tour__content content">
+
+                        {% if tour_gallery %}
+                            <slick ref="slick" :options="slickOptionsTour">
+
+                                {% for image in tour_gallery %}
+                                    <img src="{{ image.url }}" alt="{{ image.alt}}">
+                                {% endfor %}
+                        
+                            </slick>      
+                            <div class="slick__dots"></div>
+                        {% endif %}
+                        
+                        <h2 class="">{{ post.full_title}}</h2>
+                        {{ post.content }}                
+                    </article>
+                </div>
+                <div class="column">
+                    <div class="single-tour__sidebar has-text-centered">
+                        {{ post.book_iframe_code }}
+                    </div>
+                </div>
+            </div>            
+            
+        </div>
+    </section>
+
+{% endblock %}
