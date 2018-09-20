@@ -1,0 +1,39 @@
+
+.wpcf7-form
+    > p
+        @extend .field
+
+    label
+        @extend .label
+
+    .wpcf7-form-control-wrap
+        @extend .control
+    
+    input
+        &:not([type="submit"])
+            @extend .input
+
+        &.wpcf7-submit
+            @extend .button
+            @extend .is-link
+            @extend .is-rounded
+            font-family: $font-text
+            letter-spacing: 1.75px
+            text-align: center
+            padding: 0 25px
+            text-transform: uppercase
+            font-weight: 700
+            font-size: 14px
+
+    textarea
+        @extend .textarea
+        
+    span.wpcf7-not-valid-tip
+        color: #f00
+        font-size: 13px
+        margin-top: 10px
+
+    div.wpcf7-validation-errors, div.wpcf7-acceptance-missing
+        border: 2px solid $yellow
+        background: $yellow
+        color: $gray-dark
