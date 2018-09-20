@@ -55,7 +55,7 @@
                     <div class="purchase__items">
                         <label :for="`sector-${index}`" class="purchase__item button sector" 
                             v-for="(ticket, index) in productsFilter" :key="index" @click="nextStep(5, index)">
-                            <input :id="`sector-${index}`" type="radio" v-model="selected.sector" :value="ticket.name" class="is-hidden">
+                            <input :id="`sector-${index}`" type="radio" v-model="selected.product" :value="ticket" class="is-hidden">
                             {{ ticket.name }} <br>
                             <span class="purchase__item-price">$ {{ ticket.price }}</span>
                         </label>                     
@@ -88,11 +88,12 @@
                         <span class="number">6</span> Add to cart
                     </div>
                     <div class="purchase__item-total">
-                        <span>{{ quantity }}x $18.40</span>
+                        <span>{{ quantity }}x ${{ selected.product.price }}</span>
 
-                        <button class="purchase__add-to-cart-btn button">
+                        <a class="purchase__add-to-cart-btn button" 
+                            :href="`?add-to-cart=${selected.product.id}&quantity=${ quantity }`">
                             Add to cart
-                        </button>
+                        </a>
                     </div>
                 </div>             
             </transition>
@@ -109,10 +110,10 @@
                 currentStep: 1,
                 quantity: 1,
                 selected: {
+                    product: Object,
                     parade: String,
                     date: Object,
                     seat: Object,
-                    sector: String,
                     quantity: Number
                 },
                 productsList: Array,
