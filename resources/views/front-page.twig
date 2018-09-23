@@ -77,14 +77,18 @@
                         {% set post_thumb = TimberImage(post.thumbnail) %}
 
                         <div class="latest-articles__item">
-                            <div class="latest-articles__item-image" style="background-image: url('{{ post_thumb.src|resize(600)}}')"></div>
+                            <a href="{{ post.link }}">
+                                <div class="latest-articles__item-image" style="background-image: url('{{ post_thumb.src|resize(600)}}')"></div>
+                            </a>
                             <div class="latest-articles__item-content">
-                                <div class="latest-articles__item-title">{{ post.title }}</div>
+                                <div class="latest-articles__item-title">
+                                        <a href="{{ post.link }}">
+                                            {{ post.title }}</a></div>
 
                                 <div class="latest-articles__item-copy">
                                     {{ post.preview.length(25).force }}
                                 </div>
-                            
+                                
                             </div>
                         </div>
                     {% endfor %}
