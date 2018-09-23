@@ -3,7 +3,6 @@
 use Basecamp\Models\Post;
 
 $context               = Timber::get_context();
-
 $articles_args = array(
     'post_type' => 'post',
     'posts_per_page' => 3,
@@ -11,11 +10,8 @@ $articles_args = array(
         'date' => 'DESC'
     )
 );
-
 $context['posts']      = new Timber\PostQuery($articles_args);
-
 $context['is_front_page'] = true;
-
 $args = array(
     'post_type' => 'tour',
     'posts_per_page' => -1,
@@ -25,5 +21,6 @@ $args = array(
 );
 
 $context['tours'] = Timber::get_posts( $args );
+$context['acf'] = get_fields();
 
 Timber::render('front-page.twig', $context);

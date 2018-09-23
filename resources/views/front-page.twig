@@ -24,25 +24,25 @@
 
 <section class="featured-boxes section">
     <div class="container wrapper">
-        <div class="featured-boxes__headline has-text-centered">Rio Carnival 2019</div>
-        
+        <div class="featured-boxes__headline has-text-centered">{{ acf.parade_section_title }}</div>
+
         <div class="featured-boxes__items columns">
             <div class="column">
-                <div class="featured-boxes__item" style="background-image: url('{{ theme.link }}/resources/assets/images/placeholder-carnival-01.png')">
-                    <div class="featured-boxes__item-title featured-boxes__item-title--one">Grupo Série A</div>
-                    <a href="#" class="featured-boxes__item-link"></a>
+                <div class="featured-boxes__item" style="background-image: url('{{ acf.parades[0].parade_background_image }}')">
+                    <div class="featured-boxes__item-title featured-boxes__item-title--one">{{ acf.parades[0].parade_title }}</div>
+                    <a href="{{ acf.parades[0].parade_link }}" class="featured-boxes__item-link"></a>
                 </div> 
             </div>
             <div class="column">
-                <div class="featured-boxes__item" style="background-image: url('{{ theme.link }}/resources/assets/images/placeholder-carnival-02.png')">
-                    <div class="featured-boxes__item-title featured-boxes__item-title--two">Grupo Especial</div>
-                    <a href="#" class="featured-boxes__item-link"></a>
+                <div class="featured-boxes__item" style="background-image: url('{{ acf.parades[1].parade_background_image }}')">
+                    <div class="featured-boxes__item-title featured-boxes__item-title--two">{{ acf.parades[1].parade_title }}</div>
+                    <a href="{{ acf.parades[1].parade_link }}" class="featured-boxes__item-link"></a>
                 </div>
             </div>
             <div class="column">
-                <div class="featured-boxes__item" style="background-image: url('{{ theme.link }}/resources/assets/images/placeholder-carnival-03.png')">
-                    <div class="featured-boxes__item-title featured-boxes__item-title--three">Desfile das Campeães</div>
-                    <a href="#" class="featured-boxes__item-link"></a>
+                <div class="featured-boxes__item" style="background-image: url('{{ acf.parades[2].parade_background_image }}')">
+                    <div class="featured-boxes__item-title featured-boxes__item-title--three">{{ acf.parades[2].parade_title }}</div>
+                    <a href="{{ acf.parades[2].parade_link }}" class="featured-boxes__item-link"></a>
                 </div> 
             </div>
         </div>
@@ -51,7 +51,7 @@
 
 <section class="section-tours section">
     <div class="container">
-        <div class="section-tours__headline has-text-centered">Rio de Janeiro Tours</div>
+        <div class="section-tours__headline has-text-centered">{{ acf.tours_section_title }}</div>
         
         {% include 'partials/tours-carousel.twig' %}
     </div>
@@ -62,14 +62,14 @@
         <div class="columns">
             
             <div class="column">
-                <h3 class="section-title">About Lorem Ipsum</h3>
-                <p class="section-copy">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                <a href="#" class="button is-info is-rounded">Read More</a>
+                <h3 class="section-title">{{ acf.about_section_title }}</h3>
+                <p class="section-copy">{{ acf.about_text }}</p>
+                <a href="{{ acf.read_more_link }}" class="button is-info is-rounded">{{ acf.read_more_btn_label }}</a>
             </div>
             
             <div class="latest-articles column">
-                <h3 class="section-title">Latest Articles</h3>
-                <a href="/blog" class="latest-articles__see-all">See all articles</a>
+                <h3 class="section-title">{{ acf.latest_articles_section_title }}</h3>
+                <a href="{{ acf.see_all_page_link }}" class="latest-articles__see-all">{{ acf.see_all_text }}</a>
 
                 
                 <div class="latest-articles__items">
