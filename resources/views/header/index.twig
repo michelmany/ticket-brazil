@@ -23,7 +23,11 @@
       <section class="hero is-primary is-bold has-text-right">
         <div class="hero__body">
           <div class="container">
-            <h1 class="hero__body-title">{{ post.title }}</h1>
+            {% if function('is_single') %}
+              <h1 class="hero__body-title">Blog</h1>
+            {% else %}
+              <h1 class="hero__body-title">{{ post.title }}</h1>
+            {% endif %}
           </div>
         </div>
       </section>

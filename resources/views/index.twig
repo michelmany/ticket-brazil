@@ -1,14 +1,17 @@
 {% extends "base.twig" %}
 
 {% block content %}
-  {% for post in posts %}
-    {% include 'components/article.twig' %}
-    <hr />
-  {% endfor %}
+    <section class="blog section">
+        <div class="container">
+            <div class="columns">
+                {% for post in posts %}
+                    {% include 'components/article.twig' %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
 
-
-  {% if posts.pagination.pages %}
-    {% include 'components/pagination.twig' %}
-  {% endif %}
-
+    {% if posts.pagination.pages %}
+        {% include 'components/pagination.twig' %}
+    {% endif %}
 {% endblock %}

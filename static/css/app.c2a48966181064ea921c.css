@@ -3538,7 +3538,7 @@ a.box:active {
     position: absolute;
     right: 0.5rem;
     top: 0.5rem; }
-  .notification .title,
+  .notification .title, .notification .blog__item-title, .notification .single .main-article__title, .single .notification .main-article__title,
   .notification .subtitle,
   .notification .content {
     color: currentColor; }
@@ -3910,54 +3910,56 @@ a.box:active {
 a.tag:hover {
   text-decoration: underline; }
 
-.title,
+.title, .blog__item-title, .single .main-article__title,
 .subtitle {
   word-break: break-word; }
-  .title:not(:last-child),
+  .title:not(:last-child), .blog__item-title:not(:last-child), .single .main-article__title:not(:last-child),
   .subtitle:not(:last-child) {
     margin-bottom: 1.5rem; }
-  .title em,
+  .title em, .blog__item-title em, .single .main-article__title em,
   .title span,
+  .blog__item-title span,
+  .single .main-article__title span,
   .subtitle em,
   .subtitle span {
     font-weight: inherit; }
-  .title sub,
+  .title sub, .blog__item-title sub, .single .main-article__title sub,
   .subtitle sub {
     font-size: 0.75em; }
-  .title sup,
+  .title sup, .blog__item-title sup, .single .main-article__title sup,
   .subtitle sup {
     font-size: 0.75em; }
-  .title .tag, .title .woocommerce span.onsale, .woocommerce .title span.onsale,
+  .title .tag, .blog__item-title .tag, .single .main-article__title .tag, .title .woocommerce span.onsale, .woocommerce .title span.onsale, .blog__item-title .woocommerce span.onsale, .woocommerce .blog__item-title span.onsale, .single .main-article__title .woocommerce span.onsale, .woocommerce .single .main-article__title span.onsale,
   .subtitle .tag,
   .subtitle .woocommerce span.onsale,
   .woocommerce .subtitle span.onsale {
     vertical-align: middle; }
 
-.title {
+.title, .blog__item-title, .single .main-article__title {
   color: #363636;
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.125; }
-  .title strong {
+  .title strong, .blog__item-title strong, .single .main-article__title strong {
     color: inherit;
     font-weight: inherit; }
-  .title + .highlight {
+  .title + .highlight, .blog__item-title + .highlight, .single .main-article__title + .highlight {
     margin-top: -0.75rem; }
-  .title:not(.is-spaced) + .subtitle {
+  .title:not(.is-spaced) + .subtitle, .blog__item-title:not(.is-spaced) + .subtitle, .single .main-article__title:not(.is-spaced) + .subtitle {
     margin-top: -1.5rem; }
-  .title.is-1 {
+  .title.is-1, .is-1.blog__item-title, .single .is-1.main-article__title {
     font-size: 3rem; }
-  .title.is-2 {
+  .title.is-2, .is-2.blog__item-title, .single .is-2.main-article__title {
     font-size: 2.5rem; }
-  .title.is-3 {
+  .title.is-3, .is-3.blog__item-title, .single .is-3.main-article__title {
     font-size: 2rem; }
-  .title.is-4 {
+  .title.is-4, .is-4.blog__item-title, .single .is-4.main-article__title {
     font-size: 1.5rem; }
-  .title.is-5 {
+  .title.is-5, .is-5.blog__item-title, .single .is-5.main-article__title {
     font-size: 1.25rem; }
-  .title.is-6 {
+  .title.is-6, .is-6.blog__item-title, .single .is-6.main-article__title {
     font-size: 1rem; }
-  .title.is-7 {
+  .title.is-7, .is-7.blog__item-title, .single .is-7.main-article__title {
     font-size: 0.75rem; }
 
 .subtitle {
@@ -3968,7 +3970,7 @@ a.tag:hover {
   .subtitle strong {
     color: #363636;
     font-weight: 600; }
-  .subtitle:not(.is-spaced) + .title {
+  .subtitle:not(.is-spaced) + .title, .subtitle:not(.is-spaced) + .blog__item-title, .single .subtitle:not(.is-spaced) + .main-article__title {
     margin-top: -1.5rem; }
   .subtitle.is-1 {
     font-size: 3rem; }
@@ -4308,7 +4310,7 @@ a.dropdown-item {
   flex-grow: 0;
   flex-shrink: 0;
   justify-content: center; }
-  .level-item .title,
+  .level-item .title, .level-item .blog__item-title, .level-item .single .main-article__title, .single .level-item .main-article__title,
   .level-item .subtitle {
     margin-bottom: 0; }
   @media screen and (max-width: 768px) {
@@ -6891,7 +6893,7 @@ label.panel-block {
     .hero.is-white a:not(.button):not(.dropdown-item):not(.tag),
     .hero.is-white strong {
       color: inherit; }
-    .hero.is-white .title {
+    .hero.is-white .title, .hero.is-white .blog__item-title, .hero.is-white .single .main-article__title, .single .hero.is-white .main-article__title {
       color: #0a0a0a; }
     .hero.is-white .subtitle {
       color: rgba(10, 10, 10, 0.9); }
@@ -6935,7 +6937,7 @@ label.panel-block {
     .hero.is-black a:not(.button):not(.dropdown-item):not(.tag),
     .hero.is-black strong {
       color: inherit; }
-    .hero.is-black .title {
+    .hero.is-black .title, .hero.is-black .blog__item-title, .hero.is-black .single .main-article__title, .single .hero.is-black .main-article__title {
       color: white; }
     .hero.is-black .subtitle {
       color: rgba(255, 255, 255, 0.9); }
@@ -6979,7 +6981,7 @@ label.panel-block {
     .hero.is-light a:not(.button):not(.dropdown-item):not(.tag),
     .hero.is-light strong {
       color: inherit; }
-    .hero.is-light .title {
+    .hero.is-light .title, .hero.is-light .blog__item-title, .hero.is-light .single .main-article__title, .single .hero.is-light .main-article__title {
       color: #363636; }
     .hero.is-light .subtitle {
       color: rgba(54, 54, 54, 0.9); }
@@ -7023,7 +7025,7 @@ label.panel-block {
     .hero.is-dark a:not(.button):not(.dropdown-item):not(.tag),
     .hero.is-dark strong {
       color: inherit; }
-    .hero.is-dark .title {
+    .hero.is-dark .title, .hero.is-dark .blog__item-title, .hero.is-dark .single .main-article__title, .single .hero.is-dark .main-article__title {
       color: whitesmoke; }
     .hero.is-dark .subtitle {
       color: rgba(245, 245, 245, 0.9); }
@@ -7081,7 +7083,7 @@ label.panel-block {
     .woocommerce .wpcf7-form input.hero.alt.wpcf7-submit strong,
     .wpcf7-form .woocommerce input.hero.alt.wpcf7-submit strong {
       color: inherit; }
-    .hero.is-primary .title, .woocommerce #respond input.hero#submit .title, .woocommerce .blog-comment button.hero.alt#cancel-comment-reply-link .title, .blog-comment .woocommerce button.hero.alt#cancel-comment-reply-link .title, .woocommerce button.hero.alt.button .title, .woocommerce a.hero.button.alt .title, .woocommerce .blog-comment a.hero.alt#cancel-comment-reply-link .title, .blog-comment .woocommerce a.hero.alt#cancel-comment-reply-link .title, .woocommerce input.hero.button.alt .title, .woocommerce .blog-comment input.hero.alt#cancel-comment-reply-link .title, .blog-comment .woocommerce input.hero.alt#cancel-comment-reply-link .title, .woocommerce .wpcf7-form input.hero.alt.wpcf7-submit .title, .wpcf7-form .woocommerce input.hero.alt.wpcf7-submit .title {
+    .hero.is-primary .title, .woocommerce #respond input.hero#submit .title, .woocommerce .blog-comment button.hero.alt#cancel-comment-reply-link .title, .blog-comment .woocommerce button.hero.alt#cancel-comment-reply-link .title, .woocommerce button.hero.alt.button .title, .woocommerce a.hero.button.alt .title, .woocommerce .blog-comment a.hero.alt#cancel-comment-reply-link .title, .blog-comment .woocommerce a.hero.alt#cancel-comment-reply-link .title, .woocommerce input.hero.button.alt .title, .woocommerce .blog-comment input.hero.alt#cancel-comment-reply-link .title, .blog-comment .woocommerce input.hero.alt#cancel-comment-reply-link .title, .woocommerce .wpcf7-form input.hero.alt.wpcf7-submit .title, .wpcf7-form .woocommerce input.hero.alt.wpcf7-submit .title, .hero.is-primary .blog__item-title, .woocommerce #respond input.hero#submit .blog__item-title, .woocommerce .blog-comment button.hero.alt#cancel-comment-reply-link .blog__item-title, .blog-comment .woocommerce button.hero.alt#cancel-comment-reply-link .blog__item-title, .woocommerce button.hero.alt.button .blog__item-title, .woocommerce a.hero.button.alt .blog__item-title, .woocommerce .blog-comment a.hero.alt#cancel-comment-reply-link .blog__item-title, .blog-comment .woocommerce a.hero.alt#cancel-comment-reply-link .blog__item-title, .woocommerce input.hero.button.alt .blog__item-title, .woocommerce .blog-comment input.hero.alt#cancel-comment-reply-link .blog__item-title, .blog-comment .woocommerce input.hero.alt#cancel-comment-reply-link .blog__item-title, .woocommerce .wpcf7-form input.hero.alt.wpcf7-submit .blog__item-title, .wpcf7-form .woocommerce input.hero.alt.wpcf7-submit .blog__item-title, .hero.is-primary .single .main-article__title, .single .hero.is-primary .main-article__title, .woocommerce #respond input.hero#submit .single .main-article__title, .single .woocommerce #respond input.hero#submit .main-article__title, .woocommerce .blog-comment button.hero.alt#cancel-comment-reply-link .single .main-article__title, .single .woocommerce .blog-comment button.hero.alt#cancel-comment-reply-link .main-article__title, .blog-comment .woocommerce button.hero.alt#cancel-comment-reply-link .single .main-article__title, .single .blog-comment .woocommerce button.hero.alt#cancel-comment-reply-link .main-article__title, .woocommerce button.hero.alt.button .single .main-article__title, .single .woocommerce button.hero.alt.button .main-article__title, .woocommerce a.hero.button.alt .single .main-article__title, .single .woocommerce a.hero.button.alt .main-article__title, .woocommerce .blog-comment a.hero.alt#cancel-comment-reply-link .single .main-article__title, .single .woocommerce .blog-comment a.hero.alt#cancel-comment-reply-link .main-article__title, .blog-comment .woocommerce a.hero.alt#cancel-comment-reply-link .single .main-article__title, .single .blog-comment .woocommerce a.hero.alt#cancel-comment-reply-link .main-article__title, .woocommerce input.hero.button.alt .single .main-article__title, .single .woocommerce input.hero.button.alt .main-article__title, .woocommerce .blog-comment input.hero.alt#cancel-comment-reply-link .single .main-article__title, .single .woocommerce .blog-comment input.hero.alt#cancel-comment-reply-link .main-article__title, .blog-comment .woocommerce input.hero.alt#cancel-comment-reply-link .single .main-article__title, .single .blog-comment .woocommerce input.hero.alt#cancel-comment-reply-link .main-article__title, .woocommerce .wpcf7-form input.hero.alt.wpcf7-submit .single .main-article__title, .single .woocommerce .wpcf7-form input.hero.alt.wpcf7-submit .main-article__title, .wpcf7-form .woocommerce input.hero.alt.wpcf7-submit .single .main-article__title, .single .wpcf7-form .woocommerce input.hero.alt.wpcf7-submit .main-article__title {
       color: #fff; }
     .hero.is-primary .subtitle, .woocommerce #respond input.hero#submit .subtitle, .woocommerce .blog-comment button.hero.alt#cancel-comment-reply-link .subtitle, .blog-comment .woocommerce button.hero.alt#cancel-comment-reply-link .subtitle, .woocommerce button.hero.alt.button .subtitle, .woocommerce a.hero.button.alt .subtitle, .woocommerce .blog-comment a.hero.alt#cancel-comment-reply-link .subtitle, .blog-comment .woocommerce a.hero.alt#cancel-comment-reply-link .subtitle, .woocommerce input.hero.button.alt .subtitle, .woocommerce .blog-comment input.hero.alt#cancel-comment-reply-link .subtitle, .blog-comment .woocommerce input.hero.alt#cancel-comment-reply-link .subtitle, .woocommerce .wpcf7-form input.hero.alt.wpcf7-submit .subtitle, .wpcf7-form .woocommerce input.hero.alt.wpcf7-submit .subtitle {
       color: rgba(255, 255, 255, 0.9); }
@@ -7176,7 +7178,7 @@ label.panel-block {
     .hero.is-link strong,
     .wpcf7-form input.hero.wpcf7-submit strong {
       color: inherit; }
-    .hero.is-link .title, .wpcf7-form input.hero.wpcf7-submit .title {
+    .hero.is-link .title, .wpcf7-form input.hero.wpcf7-submit .title, .hero.is-link .blog__item-title, .wpcf7-form input.hero.wpcf7-submit .blog__item-title, .hero.is-link .single .main-article__title, .single .hero.is-link .main-article__title, .wpcf7-form input.hero.wpcf7-submit .single .main-article__title, .single .wpcf7-form input.hero.wpcf7-submit .main-article__title {
       color: #fff; }
     .hero.is-link .subtitle, .wpcf7-form input.hero.wpcf7-submit .subtitle {
       color: rgba(255, 255, 255, 0.9); }
@@ -7224,7 +7226,7 @@ label.panel-block {
     .hero.is-info a:not(.button):not(.dropdown-item):not(.tag),
     .hero.is-info strong {
       color: inherit; }
-    .hero.is-info .title {
+    .hero.is-info .title, .hero.is-info .blog__item-title, .hero.is-info .single .main-article__title, .single .hero.is-info .main-article__title {
       color: #fff; }
     .hero.is-info .subtitle {
       color: rgba(255, 255, 255, 0.9); }
@@ -7268,7 +7270,7 @@ label.panel-block {
     .hero.is-success a:not(.button):not(.dropdown-item):not(.tag),
     .hero.is-success strong {
       color: inherit; }
-    .hero.is-success .title {
+    .hero.is-success .title, .hero.is-success .blog__item-title, .hero.is-success .single .main-article__title, .single .hero.is-success .main-article__title {
       color: #fff; }
     .hero.is-success .subtitle {
       color: rgba(255, 255, 255, 0.9); }
@@ -7312,7 +7314,7 @@ label.panel-block {
     .hero.is-warning a:not(.button):not(.dropdown-item):not(.tag),
     .hero.is-warning strong {
       color: inherit; }
-    .hero.is-warning .title {
+    .hero.is-warning .title, .hero.is-warning .blog__item-title, .hero.is-warning .single .main-article__title, .single .hero.is-warning .main-article__title {
       color: rgba(0, 0, 0, 0.7); }
     .hero.is-warning .subtitle {
       color: rgba(0, 0, 0, 0.9); }
@@ -7358,7 +7360,7 @@ label.panel-block {
     .blog-comment .hero#cancel-comment-reply-link strong,
     .woocommerce span.hero.onsale strong {
       color: inherit; }
-    .hero.is-danger .title, .blog-comment .hero#cancel-comment-reply-link .title, .woocommerce span.hero.onsale .title {
+    .hero.is-danger .title, .blog-comment .hero#cancel-comment-reply-link .title, .woocommerce span.hero.onsale .title, .hero.is-danger .blog__item-title, .blog-comment .hero#cancel-comment-reply-link .blog__item-title, .woocommerce span.hero.onsale .blog__item-title, .hero.is-danger .single .main-article__title, .single .hero.is-danger .main-article__title, .blog-comment .hero#cancel-comment-reply-link .single .main-article__title, .single .blog-comment .hero#cancel-comment-reply-link .main-article__title, .woocommerce span.hero.onsale .single .main-article__title, .single .woocommerce span.hero.onsale .main-article__title {
       color: #fff; }
     .hero.is-danger .subtitle, .blog-comment .hero#cancel-comment-reply-link .subtitle, .woocommerce span.hero.onsale .subtitle {
       color: rgba(255, 255, 255, 0.9); }
@@ -8053,14 +8055,15 @@ nav.navbar .navbar-menu {
   text-decoration: underline; }
 
 .latest-articles__item {
-  max-width: 436px;
+  max-width: 584px;
   padding-top: 18px;
   padding-bottom: 18px; }
   @media screen and (min-width: 769px), print {
     .latest-articles__item {
-      display: flex; } }
+      display: flex;
+      align-items: center; } }
   .latest-articles__item-image {
-    background-color: #E5E5E5;
+    background: #595656 center/cover no-repeat;
     min-width: 150px;
     height: 150px;
     max-height: 150px;
@@ -8215,6 +8218,20 @@ nav.navbar .navbar-menu {
     background-color: #2B9AE5;
     border-bottom-color: #248BCF; }
 
+.blog__item-thumbnail {
+  background: #595656 center/cover no-repeat;
+  min-height: 190px;
+  margin-bottom: 25px; }
+
+.blog__item-title {
+  margin-bottom: 8px !important; }
+  @media screen and (max-width: 768px) {
+    .blog__item-title {
+      font-size: 28px; } }
+
+.blog__item-meta {
+  margin-bottom: 25px; }
+
 footer.footer {
   background-color: #2376B3;
   background-image: url(/wp-content/themes/ticket-brazil/static/images/texture-blue-carnival.jpg);
@@ -8235,6 +8252,13 @@ footer.footer {
 
 .single .main-article {
   position: relative; }
+  @media screen and (max-width: 768px) {
+    .single .main-article__title {
+      font-size: 1.5rem;
+      margin-bottom: 10px; } }
+  @media screen and (min-width: 769px), print {
+    .single .main-article__title {
+      font-size: 3rem; } }
 
 .single .edit-post-link {
   margin-top: -1rem;
@@ -8306,6 +8330,9 @@ body {
 .single-tour__content .slick__dots {
   text-align: center;
   margin-left: 0; }
+
+.is-background-cover {
+  background: #595656 center/cover no-repeat; }
 
 .woocommerce .products {
   clear: both; }

@@ -3,7 +3,16 @@
 use Basecamp\Models\Post;
 
 $context               = Timber::get_context();
-$context['posts']      = new Timber\PostQuery();
+
+$articles_args = array(
+    'post_type' => 'post',
+    'posts_per_page' => 3,
+    'orderby' => array(
+        'date' => 'DESC'
+    )
+);
+
+$context['posts']      = new Timber\PostQuery($articles_args);
 
 $context['is_front_page'] = true;
 

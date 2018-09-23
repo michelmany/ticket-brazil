@@ -69,33 +69,26 @@
             
             <div class="latest-articles column">
                 <h3 class="section-title">Latest Articles</h3>
-                <a href="#" class="latest-articles__see-all">See all articles</a>
+                <a href="/blog" class="latest-articles__see-all">See all articles</a>
+
                 
                 <div class="latest-articles__items">
-                    <div class="latest-articles__item">
-                        <div class="latest-articles__item-image"></div>
-                        <div class="latest-articles__item-content">
-                            <div class="latest-articles__item-title">Lorem Ipsum Article Title here two lines</div>
-                            <div class="latest-articles__item-copy">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</div>
-                            <a href="#" class="latest-articles__item-button">Read More</a>
+                    {% for post in posts %}
+                        {% set post_thumb = TimberImage(post.thumbnail) %}
+
+                        <div class="latest-articles__item">
+                            <div class="latest-articles__item-image" style="background-image: url('{{ post_thumb.src|resize(600)}}')"></div>
+                            <div class="latest-articles__item-content">
+                                <div class="latest-articles__item-title">{{ post.title }}</div>
+
+                                <div class="latest-articles__item-copy">
+                                    {{ post.preview.length(25).force }}
+                                </div>
+                            
+                            </div>
                         </div>
-                    </div>
-                    <div class="latest-articles__item">
-                        <div class="latest-articles__item-image"></div>
-                        <div class="latest-articles__item-content">
-                            <div class="latest-articles__item-title">Lorem Ipsum Blog Title here which is a little longer test</div>
-                            <div class="latest-articles__item-copy">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</div>
-                            <a href="#" class="latest-articles__item-button">Read More</a>
-                        </div>
-                    </div>
-                    <div class="latest-articles__item">
-                        <div class="latest-articles__item-image"></div>
-                        <div class="latest-articles__item-content">
-                            <div class="latest-articles__item-title">Lorem Ipsum</div>
-                            <div class="latest-articles__item-copy">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</div>
-                            <a href="#" class="latest-articles__item-button">Read More</a>
-                        </div>
-                    </div>
+                    {% endfor %}
+                   
                 </div>
             </div>
             

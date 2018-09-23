@@ -2,39 +2,43 @@
 
 {% block content %}
 
-  <article class="main-article">
-    <h1 class="title is-2">{{ post.title }}</h1>
-    <h5 class="subtitle is-5">
-      <time class="timestamp">
-        <small>{{ post.date }} {{ post.time }}</small>
-      </time>
-    </h5>
-    {% if post.can_edit %}
-      <div class="edit-post-link"><a href="{{ post.get_edit_url }}">
-          <i class="fa fa-pencil" aria-hidden="true"></i> <span>{{ messages.single.edit }}</span></a>
+<article class="main-article section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-three-quarters-desktop">
+        {% set post_thumb = TimberImage(post.thumbnail) %}
+        <h1 class="main-article__title">{{ post.title }}</h1>
+        <h5 class="subtitle is-5">
+          <time class="timestamp">
+            <small>{{ post.date }}</small>
+          </time>
+        </h5>
+        <div class="is-background-cover" style="height: 450px; margin-bottom:24px; background-image: url('{{ post_thumb.src|resize(1320)}}')"></div>
+        <p>
+          {{ post.content }}
+        </p>
       </div>
-    {% endif %}
-    <p>
-      {{ post.content }}
-    </p>
-
-  </article>
-
-  {# Social media share buttons #}
-  {% include 'components/social-media.twig' %}
-
-  <section class="comment-box">
-    <div class="comments">
-      {% if post.comments is not empty %}
-        <h3 class="title is-3">{{ messages.single.comments }}</h3>
-        {% for comment in post.comments %}
-          {% include "comment.twig" %}
-        {% endfor %}
-      {% endif %}
     </div>
+  </div>
+</article>
 
-    {% if post.comment_status == "open" %}
-      {% include "comment-form.twig" %}
+{# Social media share buttons #}
+{% include 'components/social-media.twig' %}
+
+<section class="comment-box section">
+  <div class="container">
+  <div class="comments">
+    {% if post.comments is not empty %}
+      <h3 class="title is-3">{{ messages.single.comments }}</h3>
+      {% for comment in post.comments %}
+        {% include "comment.twig" %}
+      {% endfor %}
     {% endif %}
-  </section>
+  </div>
+  
+  {% if post.comment_status == "open" %}
+    {% include "comment-form.twig" %}
+  {% endif %}
+  </div>
+</section>
 {% endblock %}

@@ -1,29 +1,26 @@
-<article class="base-camp-article post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+<div class="blog__item column is-half-tablet is-one-quarter-desktop" id="post-{{ post.ID }}">
 
-  <header>
-    <h2 class="title is-h2">
-      <a href="{{ post.link }}">{{ post.title }}</a>
+    {% set post_thumb = TimberImage(post.thumbnail) %}
+    
+    <a href="{{ post.link }}">
+        <div class="blog__item-thumbnail" 
+            style="background-image: url('{{ post_thumb.src|resize(1320)}}')"></div>
+    </a>
+
+    <h2 class="blog__item-title">
+        <a href="{{ post.link }}">{{ post.title }}</a>
     </h2>
-    <div class="article-meta">
-      <time class="timestamp"><i class="fa fa-calendar" aria-hidden="true"></i> <span>{{ post.date }}</span></time>
-      <div>
-        <a href="{{ post.author.link }}"><i class="fa fa-user" aria-hidden="true"></i> <span>{{ post.author }}</span></a>
-      </div>
-      {% if post.can_edit %}
-        <div><a href="{{ post.get_edit_url }}"><i class="fa fa-pencil" aria-hidden="true"></i> <span>{{ messages.article.edit }}</span></a></div>
-      {% endif %}
+
+    <div class="blog__item-meta article-meta">
+        <time class="timestamp"><i class="fa fa-calendar" aria-hidden="true"></i> <span>{{ post.date }}</span></time>
     </div>
-  </header>
-
-  <p class="content">{{ post.content }}</p>
-
-  {# Tags #}
-  <footer>
+    
+    <p class="content">{{ post.preview.length(30).force }}</p>
+    
     <ul class="article-tags">
-      {% for tag in post.tags %}
+        {% for tag in post.tags %}
         <li><a href="{{ tag.link }}" class="button is-danger is-outlined is-small">{{ tag.name }}</a></li>
-      {% endfor %}
-    </ul>
-  </footer>
+        {% endfor %}
+    </ul>   
 
-</article>
+</div>

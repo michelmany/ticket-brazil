@@ -1,6 +1,15 @@
 .single
   .main-article
     position: relative
+    
+    &__title
+      @extend .title
+      +mobile
+        font-size: 1.5rem
+        margin-bottom: 10px
+      
+      +tablet
+        font-size: 3rem
 
   .edit-post-link
     margin-top: -1rem
