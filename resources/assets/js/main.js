@@ -50,6 +50,21 @@ new Vue({
                     }
                 ]                
             },
+            sliderHomeOptions: {
+              dots: false,
+              arrows: true,
+              fade: false,
+              autoplay: true,
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              infinite: false,
+              appendArrows: '.hero-home__controls',
+              focusOnSelect: false,     
+              swipeToSlide: false,
+              touchThreshold: 50,     
+              nextArrow: '<button class="prev"></button>',
+              prevArrow: '<button class="next"></button>',  
+            },            
             slickOptionsTour: {
               dots: true,
               arrows: false,

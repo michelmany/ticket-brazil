@@ -2,22 +2,40 @@
 
 {% block content %}
 
-<section class="hero-home section" style="background-image: url('{{ theme.link }}/resources/assets/images/placeholder-hero-01.jpg')">
-    
-    
-    <div class="hero-home__item">
-        <div class="container">
-            <div class="hero-home__content">
-                <div class="hero-home__title has-text-yellow">Rio Carnival</div>
-                <div class="hero-home__title has-text-white">Tickets 2019</div>
-                <div class="hero-home__cta button is-rounded is-pulled-right">
-                    <i class="icon-cart is-white"></i> Buy Tickets
+<section class="hero-home">
+
+    <slick ref="slick" :options="sliderHomeOptions">
+
+        <div class="hero-home__item" style="background-image: url('{{ theme.link }}/resources/assets/images/placeholder-hero-01.jpg')">
+            <div class="container">
+                <div class="hero-home__content">
+                    <div class="hero-home__title has-text-yellow">Rio Carnival</div>
+                    <div class="hero-home__title has-text-white">Tickets 2019</div>
+                    <div class="hero-home__cta button is-rounded is-pulled-right">
+                        <i class="icon-cart is-white"></i> Buy Tickets
+                    </div>
                 </div>
             </div>
-            <div class="hero-home__controls"></div>
         </div>
-    </div>
+
+        <div class="hero-home__item" style="background-image: url('{{ theme.link }}/resources/assets/images/placeholder-hero-01.jpg')">
+            <div class="container">
+                <div class="hero-home__content">
+                    <div class="hero-home__title has-text-yellow">Full Day</div>
+                    <div class="hero-home__title has-text-white">Tour in Rio</div>
+                    <div class="hero-home__cta button is-rounded is-pulled-right">
+                        <i class="icon-cart is-white"></i> Learn More
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </slick> 
     
+    <div class="container">
+        <div class="hero-home__controls"></div>
+    </div>
+
     <img src="{{ theme.link }}/resources/assets/images/hero-curve.svg" class="hero-home__curve">
     
 </section>
@@ -70,7 +88,6 @@
             <div class="latest-articles column">
                 <h3 class="section-title">{{ acf.latest_articles_section_title }}</h3>
                 <a href="{{ acf.see_all_page_link }}" class="latest-articles__see-all">{{ acf.see_all_text }}</a>
-
                 
                 <div class="latest-articles__items">
                     {% for post in posts %}

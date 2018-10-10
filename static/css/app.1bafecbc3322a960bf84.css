@@ -7809,10 +7809,7 @@ nav.navbar .navbar-menu {
   color: #595656; }
 
 .hero-home {
-  background: #2376B3 center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  height: 275px;
+  height: 282px;
   position: relative;
   overflow: hidden; }
   @media screen and (min-width: 769px), print {
@@ -7829,7 +7826,23 @@ nav.navbar .navbar-menu {
     .hero-home {
       height: 720px; } }
   .hero-home__item {
+    height: 275px;
+    display: inline-flex !important;
+    align-items: center;
+    background: #2376B3 center/cover no-repeat;
     width: 100%; }
+    @media screen and (min-width: 769px), print {
+      .hero-home__item {
+        height: 388px; } }
+    @media screen and (min-width: 1024px) {
+      .hero-home__item {
+        height: 538px; } }
+    @media screen and (min-width: 1408px) {
+      .hero-home__item {
+        height: 620px; } }
+    @media screen and (min-width: 2000px) {
+      .hero-home__item {
+        height: 720px; } }
   .hero-home__title {
     font-family: "Knewave", cursive;
     color: #FED040;
@@ -7859,6 +7872,9 @@ nav.navbar .navbar-menu {
     letter-spacing: 3px;
     text-align: right;
     text-transform: uppercase; }
+    @media screen and (max-width: 768px) {
+      .hero-home__cta {
+        font-size: 12px; } }
     .hero-home__cta:hover {
       background-color: #E12C7D;
       border-color: #E12C7D;
@@ -7868,6 +7884,12 @@ nav.navbar .navbar-menu {
       padding-bottom: 22px;
       padding-left: 22px;
       padding-right: 28px; }
+      @media screen and (max-width: 768px) {
+        .hero-home__cta.button, .blog-comment .hero-home__cta#cancel-comment-reply-link, .wpcf7-form input.hero-home__cta.wpcf7-submit, .woocommerce button.hero-home__cta.button, .woocommerce #respond input.hero-home__cta#submit {
+          padding-top: 15px;
+          padding-bottom: 15px;
+          padding-left: 15px;
+          padding-right: 16px; } }
     .hero-home__cta .icon-cart {
       margin-right: 20px; }
   .hero-home__curve {
@@ -7887,6 +7909,77 @@ nav.navbar .navbar-menu {
     @media screen and (min-width: 1408px) {
       .hero-home__curve {
         bottom: -64px; } }
+  .hero-home__controls {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 42px;
+    left: 0;
+    z-index: 999;
+    text-align: center;
+    max-width: 250px;
+    margin-left: auto;
+    margin-right: auto; }
+    @media screen and (min-width: 769px), print {
+      .hero-home__controls {
+        bottom: 56px; } }
+    @media screen and (min-width: 1024px) {
+      .hero-home__controls {
+        bottom: 80px; } }
+    @media screen and (min-width: 1408px) {
+      .hero-home__controls {
+        bottom: 80px; } }
+    @media screen and (min-width: 2000px) {
+      .hero-home__controls {
+        bottom: 95px; } }
+    .hero-home__controls .slick-arrow {
+      cursor: pointer;
+      line-height: 0;
+      margin: 10px;
+      background-color: #FED040;
+      border: 0;
+      border-radius: 0;
+      transition: 0.2s;
+      width: 50px;
+      height: 40px; }
+      @media screen and (min-width: 769px), print {
+        .hero-home__controls .slick-arrow {
+          width: 62px;
+          height: 40px; } }
+      @media screen and (min-width: 1024px) {
+        .hero-home__controls .slick-arrow {
+          width: 70px;
+          height: 70px; } }
+      .hero-home__controls .slick-arrow:focus {
+        border: 0;
+        outline: none; }
+      .hero-home__controls .slick-arrow:after {
+        position: absolute;
+        content: "";
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 58px;
+        height: 24px; }
+        @media screen and (min-width: 1024px) {
+          .hero-home__controls .slick-arrow:after {
+            width: 50px;
+            height: 50px; } }
+      .hero-home__controls .slick-arrow.slick-disabled {
+        background-color: #ffefbe;
+        transition: 0.2s; }
+      .hero-home__controls .slick-arrow.next {
+        position: relative; }
+        .hero-home__controls .slick-arrow.next:after {
+          background-image: url(/wp-content/themes/ticket-brazil/static/images/arrow-prev-white.png);
+          top: 9px;
+          left: 0; }
+      .hero-home__controls .slick-arrow.prev {
+        position: relative; }
+        .hero-home__controls .slick-arrow.prev:after {
+          background-image: url(/wp-content/themes/ticket-brazil/static/images/arrow-next-white.png);
+          top: 9px;
+          right: 0; }
 
 .featured-boxes.section {
   padding-top: 56px;
