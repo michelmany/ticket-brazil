@@ -8194,7 +8194,17 @@ nav.navbar .navbar-menu {
     letter-spacing: 1.71px;
     text-align: right;
     position: relative;
-    top: 18px; }
+    top: 18px;
+    padding-right: 30px;
+    padding-left: 30px; }
+    @media screen and (max-width: 768px) {
+      .hero__body-title {
+        font-size: 28px;
+        line-height: 32px; } }
+    @media screen and (min-width: 1024px) {
+      .hero__body-title {
+        padding-left: 0;
+        padding-right: 0; } }
 
 .tickets .intro.section {
   padding-top: 100px;
