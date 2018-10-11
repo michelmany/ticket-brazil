@@ -85,6 +85,8 @@ function add_to_context($data)
     // Extend TimberSite object
     $data['site'] = new BaseCampSite();
 
+    $data['options'] = get_fields('options');
+
     return $data;
 }
 
