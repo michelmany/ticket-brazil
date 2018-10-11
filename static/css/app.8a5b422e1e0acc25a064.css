@@ -7875,10 +7875,10 @@ nav.navbar .navbar-menu {
     @media screen and (max-width: 768px) {
       .hero-home__cta {
         font-size: 12px; } }
-    .hero-home__cta:hover {
+    .hero-home__cta:hover, .hero-home__cta:focus, .hero-home__cta:active {
       background-color: #E12C7D;
       border-color: #E12C7D;
-      color: white; }
+      color: white !important; }
     .hero-home__cta.button, .blog-comment .hero-home__cta#cancel-comment-reply-link, .wpcf7-form input.hero-home__cta.wpcf7-submit, .woocommerce button.hero-home__cta.button, .woocommerce #respond input.hero-home__cta#submit {
       padding-top: 22px;
       padding-bottom: 22px;
