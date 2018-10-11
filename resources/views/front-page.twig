@@ -15,9 +15,11 @@
                 <div class="hero-home__content">
                     <div class="hero-home__title has-text-yellow">{{ hero.hero_title_first_line }}</div>
                     <div class="hero-home__title has-text-white">{{ hero.hero_title_second_line }}</div>
-                    <a href="{{ hero.button_page_link }}" class="hero-home__cta button is-rounded is-pulled-right" {{ button_style }}>
-                        <i class="icon-cart is-white"></i> {{ hero.button_label }}
-                    </a>
+                    {% if hero.button_label is not empty %}
+                        <a href="{{ hero.button_page_link }}" class="hero-home__cta button is-rounded is-pulled-right" {{ button_style }}>
+                            <i class="icon-cart is-white"></i> {{ hero.button_label }}
+                        </a>
+                    {% endif %}
                 </div>
             </div>
         </div>
