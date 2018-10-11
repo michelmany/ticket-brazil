@@ -1,14 +1,32 @@
-<footer class="footer">
-  <div class="container">
-    <div class="content has-text-centered">
-      <p>Footer</p>
-    </div>
-  </div>
-</footer>
+    
+    <footer class="footer">
+        <div class="container">
 
-</div> {# end <div id="app"> #}
+            <div class="columns">
+                <div class="column is-two-fifths">
+                    <img src="{{ theme.link }}/resources/assets/images/logo.png" alt="Ticket Brazil logo" class="footer__site-logo">
+                    {{ options.column_one_text }}
+                    <img src="{{ options.logo_embratur }}" alt="Logo Embratur" class="footer__logos">
+                </div>
+
+                <div class="column">
+                    <h2 class="footer__widget-title">{{ options.column_two_title }}</h2>
+                    {% include 'components/navbar/_navbar-end.twig' %}
+                </div>
+                
+                {% if options.column_three_title is not empty %}
+                <div class="column">
+                    <h2 class="footer__widget-title">{{ options.column_three_title }}</h2>
+                    {{ options.column_three_text }}
+                </div>
+                {% endif %}
+            </div>    
+
+        </div>
+    </footer>
+
+    </div> {# end <div id="app"> #}
 
 {{ function('wp_footer') }}
 </body>
 </html>
-

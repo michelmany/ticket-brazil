@@ -22,5 +22,6 @@ $args = array(
 
 $context['tours'] = Timber::get_posts( $args );
 $context['acf'] = get_fields();
+$context['options'] = get_fields('options');
 
 Timber::render('front-page.twig', $context);

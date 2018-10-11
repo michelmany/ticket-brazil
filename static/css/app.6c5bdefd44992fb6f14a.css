@@ -8325,17 +8325,39 @@ nav.navbar .navbar-menu {
 .blog__item-meta {
   margin-bottom: 25px; }
 
-footer.footer {
+.footer {
   background-color: #2376B3;
   background-image: url(/wp-content/themes/ticket-brazil/static/images/texture-blue-carnival.jpg);
   background-repeat: repeat;
   background-size: 544px 388px;
   min-height: 325px;
   color: white; }
-  footer.footer a {
+  .footer p {
+    margin-bottom: 15px; }
+  .footer a {
     color: white; }
-    footer.footer a:hover {
-      color: #FED040; }
+  .footer__site-logo {
+    width: 225px;
+    margin-bottom: 20px;
+    max-width: 100%; }
+  .footer__logos {
+    width: 225px;
+    margin-top: 15px;
+    max-width: 100%; }
+  .footer__widget-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2.8px;
+    margin-bottom: 25px;
+    margin-top: 35px;
+    border-bottom: 2px solid #ffffff;
+    width: 80%; }
+  .footer .navbar-end {
+    flex-flow: column; }
+    .footer .navbar-end .navbar-item {
+      width: 80%; }
 
 .required {
   color: #ff3860; }

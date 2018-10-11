@@ -1,16 +1,46 @@
-footer.footer
-  background-color: $bc-primary
-  background-image: url($images + '/texture-blue-carnival.jpg')
-  background-repeat: repeat
-  background-size: 544px 388px
-  min-height: 325px
-  color: $white
 
-  a
+.footer
+    background-color: $bc-primary
+    background-image: url($images + '/texture-blue-carnival.jpg')
+    background-repeat: repeat
+    background-size: 544px 388px
+    min-height: 325px
     color: $white
 
-    &:hover
-      color: $yellow
+    p
+        margin-bottom: 15px
+
+    a
+        color: $white
+
+    &__site-logo
+        width: 225px
+        margin-bottom: 20px
+        max-width: 100%
+
+    &__logos
+        width: 225px
+        margin-top: 15px
+        max-width: 100%
+
+    &__widget
+
+        &-title
+            font-size: 18px
+            font-weight: bold
+            color: #ffffff
+            text-transform: uppercase
+            letter-spacing: 2.8px
+            margin-bottom: 25px
+            margin-top: 35px
+            border-bottom: 2px solid #ffffff
+            width: 80%
+
+    .navbar-end
+        flex-flow: column
+
+        .navbar-item
+            width: 80%
 
 
 
