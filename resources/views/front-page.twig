@@ -95,13 +95,11 @@
                             </a>
                             <div class="latest-articles__item-content">
                                 <div class="latest-articles__item-title">
-                                        <a href="{{ post.link }}">
-                                            {{ post.title }}</a></div>
+                                    <a href="{{ post.link }}">{{ post.title }}</a></div>
 
-                                <div class="latest-articles__item-copy">
-                                    {{ post.preview.length(25).force }}
-                                </div>
-                                
+                                    <div class="latest-articles__item-copy">
+                                        {{ post.preview.length(25).force }}
+                                    </div>
                             </div>
                         </div>
                     {% endfor %}

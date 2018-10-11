@@ -11,13 +11,13 @@
             <div class="section-tours__card">
                 <a href="{{ tour.link }}">
                     <div class="section-tours__header" 
-                        style="background-image: url('{{ tour_featured_image.src|resize(640)}}')">
+                        style="background-image: url('{{ tour_featured_image.src|resize(640) }}')">
                         <div class="section-tours__card-title">{{ tour.title }}</div>
                     </div>
                 </a>
                 <div class="section-tours__footer">
                     <div class="section-tours__card-copy">{{ tour.tour_excerpt }}</div>
-                    <a href="{{ tour.link }}" class=" section-tours__card-cta">Read More</a>
+                    <a href="{{ tour.link }}" class=" section-tours__card-cta">{{ __( 'Read more', 'woocommerce' ) }}</a>
                 </div>
             </div>
         </div>
