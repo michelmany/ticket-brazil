@@ -6,29 +6,23 @@
 
     <slick ref="slick" :options="sliderHomeOptions">
 
-        <div class="hero-home__item" style="background-image: url('{{ theme.link }}/resources/assets/images/placeholder-hero-01.jpg')">
+        {% for hero in acf.hero_home %}
+
+        {% set button_style = 'style="background-color:' ~ hero.button_background_color ~ '; border-color:' ~ hero.button_background_color ~ '"' %}
+
+        <div class="hero-home__item" style="background-image: url('{{ hero.hero_background }}')">
             <div class="container">
                 <div class="hero-home__content">
-                    <div class="hero-home__title has-text-yellow">Rio Carnival</div>
-                    <div class="hero-home__title has-text-white">Tickets 2019</div>
-                    <div class="hero-home__cta button is-rounded is-pulled-right">
-                        <i class="icon-cart is-white"></i> Buy Tickets
+                    <div class="hero-home__title has-text-yellow">{{ hero.hero_title_first_line }}</div>
+                    <div class="hero-home__title has-text-white">{{ hero.hero_title_second_line }}</div>
+                    <div class="hero-home__cta button is-rounded is-pulled-right" {{ button_style }}>
+                        <i class="icon-cart is-white"></i> {{ hero.button_label }}
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="hero-home__item" style="background-image: url('{{ theme.link }}/resources/assets/images/placeholder-hero-01.jpg')">
-            <div class="container">
-                <div class="hero-home__content">
-                    <div class="hero-home__title has-text-yellow">Full Day</div>
-                    <div class="hero-home__title has-text-white">Tour in Rio</div>
-                    <div class="hero-home__cta button is-rounded is-pulled-right">
-                        <i class="icon-cart is-white"></i> Learn More
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
 
     </slick> 
     
