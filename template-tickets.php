@@ -5,12 +5,10 @@
 
 use Automattic\WooCommerce\Client;
 
-$host = getenv('HOST');
-
 $woocommerce = new Client(
-    $host,
-    'ck_8db54871486ec2f920fbc42f646cc865ea3106f4', 
-    'cs_60b1d1958cb781b502983b03875442a8a9ca4006',
+    getenv('WOO_HOST'),
+    getenv('WOO_CK'), 
+    getenv('WOO_CS'),
     [
         'wp_api' => true,
         'version' => 'wc/v2',
@@ -18,8 +16,8 @@ $woocommerce = new Client(
     ]
 );
 
-$context         = Timber::get_context();
-$post            = new TimberPost();
+$context = Timber::get_context();
+$post = new TimberPost();
 $context['post'] = $post;
 
 $products = array();
@@ -92,3 +90,4 @@ foreach ($products as $key => $product) {
 }
 
 Timber::render('template-tickets.twig', $context);
+
