@@ -89,6 +89,4 @@ foreach ($products as $key => $product) {
     $context['products'][$key]->acf = get_fields($product->id);
 }
 
-var_dump($context['products']);
-
 Timber::render('template-tickets.twig', $context);
