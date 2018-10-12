@@ -93,7 +93,7 @@
                                 <span>{{ quantity }}x R${{ selected.product.price }}</span>
                             </div>
                             <div class="column">
-                                <a class="purchase__add-to-cart-btn button" :href="`?add-to-cart=${selected.product.id}&quantity=${ quantity }&attribute_pa_date=${selected.date.name}`">
+                                <a class="purchase__add-to-cart-btn button" :href="`?add-to-cart=${selected.product.id}&quantity=${ quantity }`">
                                     {{ this.stepsLabelsArray.add_to_cart }}
                                 </a>
                             </div>

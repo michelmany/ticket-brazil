@@ -1,10 +1,10 @@
 {
-  "admin.css": "css/admin.df0d80edf16dcb47cd8a.css",
-  "admin.js": "js/admin.df0d80edf16dcb47cd8a.js",
-  "app.css": "css/app.df0d80edf16dcb47cd8a.css",
-  "app.js": "js/app.df0d80edf16dcb47cd8a.js",
-  "login.css": "css/login.df0d80edf16dcb47cd8a.css",
-  "login.js": "js/login.df0d80edf16dcb47cd8a.js",
-  "vendor.js": "js/vendor.df0d80edf16dcb47cd8a.js",
+  "admin.css": "css/admin.fd0c267aff1d3efdba49.css",
+  "admin.js": "js/admin.fd0c267aff1d3efdba49.js",
+  "app.css": "css/app.fd0c267aff1d3efdba49.css",
+  "app.js": "js/app.fd0c267aff1d3efdba49.js",
+  "login.css": "css/login.fd0c267aff1d3efdba49.css",
+  "login.js": "js/login.fd0c267aff1d3efdba49.js",
+  "vendor.js": "js/vendor.fd0c267aff1d3efdba49.js",
   "images/base-camp-logo.png": "images/base-camp-logo.png"
 }
