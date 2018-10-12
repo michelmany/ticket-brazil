@@ -90,4 +90,3 @@ foreach ($products as $key => $product) {
 }
 
 Timber::render('template-tickets.twig', $context);
-

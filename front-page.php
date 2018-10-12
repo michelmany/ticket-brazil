@@ -10,6 +10,7 @@ $articles_args = array(
         'date' => 'DESC'
     )
 );
+
 $context['posts']      = new Timber\PostQuery($articles_args);
 $context['is_front_page'] = true;
 $args = array(
