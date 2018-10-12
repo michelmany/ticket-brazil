@@ -28,7 +28,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 		<thead>
 			<tr>
 				<th class="product-remove">&nbsp;</th>
-				<th class="product-thumbnail">&nbsp;</th>
+				<!-- <th class="product-thumbnail">&nbsp;</th> -->
 				<th class="product-name"><?php esc_html_e( 'Product', 'woocommerce' ); ?></th>
 				<th class="product-price"><?php esc_html_e( 'Price', 'woocommerce' ); ?></th>
 				<th class="product-quantity"><?php esc_html_e( 'Quantity', 'woocommerce' ); ?></th>
@@ -61,27 +61,42 @@ do_action( 'woocommerce_before_cart' ); ?>
 							?>
 						</td>
 
+
+						<!-- COMMENTING TO HIDE PRODUCT THUMBNAIL
+
 						<td class="product-thumbnail">
-						<?php
+						<?php /*
 						$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
 
 						if ( ! $product_permalink ) {
 							echo wp_kses_post( $thumbnail );
 						} else {
 							printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), wp_kses_post( $thumbnail ) );
-						}
+						} */
 						?>
 						</td>
+						-->
 
 						<td class="product-name" data-title="<?php esc_attr_e( 'Product', 'woocommerce' ); ?>">
-						<?php
-						if ( ! $product_permalink ) {
-							echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;' );
-						} else {
-							echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key ) );
-						}
 
-						do_action( 'woocommerce_after_cart_item_name', $cart_item, $cart_item_key );
+						<?php // REMOVING THE PRODUCT PERMALINK
+
+						// if ( ! $product_permalink ) {
+						// 	echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;' );
+						// } else {
+						// 	echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key ) );
+						// }
+
+						echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;' );
+
+						do_action( 'woocommerce_after_cart_item_name', $cart_item, $cart_item_key );		
+
+						$prod_acf = get_fields($product_id);
+						?>
+						<div><small><?php echo $prod_acf['seat_type']->name; ?></small></div>
+						<div><small><?php echo $prod_acf['parade']->name; ?></small></div>
+						<div><small><?php echo $prod_acf['date']->name; ?></small></div>
+						<?php
 
 						// Meta data.
 						echo wc_get_formatted_cart_item_data( $cart_item ); // PHPCS: XSS ok.
@@ -91,6 +106,8 @@ do_action( 'woocommerce_before_cart' ); ?>
 							echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'woocommerce' ) . '</p>' ) );
 						}
 						?>
+
+						
 						</td>
 
 						<td class="product-price" data-title="<?php esc_attr_e( 'Price', 'woocommerce' ); ?>">

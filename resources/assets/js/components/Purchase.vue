@@ -4,7 +4,7 @@
 
             <div class="purchase__step step-1" v-show="isStep(1)">
                 <div class="purchase__step-label">
-                    <span class="number">1</span> Select the parade type
+                    <span class="number">1</span> {{ this.stepsLabelsArray.parade }}
                 </div>
                 <div class="purchase__items">
                     <label :for="`parade-${index}`" class="purchase__item button" 
@@ -20,7 +20,7 @@
             <transition name="fade">
                 <div class="purchase__step step-2" v-show="isStep(2)">
                     <div class="purchase__step-label">
-                        <span class="number">2</span> Select the date
+                        <span class="number">2</span> {{ this.stepsLabelsArray.date }}
                     </div>
                     <div class="purchase__items">
                         <label :for="`date-${index}`" class="purchase__item button" 
@@ -35,7 +35,7 @@
             <transition name="fade">
                 <div class="purchase__step step-3" v-show="isStep(3)">
                     <div class="purchase__step-label">
-                        <span class="number">3</span> Select the seat type
+                        <span class="number">3</span> {{ this.stepsLabelsArray.seat }}
                     </div>
                     <div class="purchase__items">
                         <label :for="`seat-${index}`" class="purchase__item button" 
@@ -50,7 +50,7 @@
             <transition name="fade">
                 <div class="purchase__step step-4" v-show="isStep(4)">
                     <div class="purchase__step-label">
-                        <span class="number">4</span> Select the sector
+                        <span class="number">4</span> {{ this.stepsLabelsArray.sector }}
                     </div>
                     <div class="purchase__items">
                         <label :for="`sector-${index}`" class="purchase__item button sector" 
@@ -70,7 +70,7 @@
             <transition name="fade">
                 <div class="purchase__step step-5" v-show="isStep(5)">
                     <div class="purchase__step-label">
-                        <span class="number">5</span> Enter the quantity
+                        <span class="number">5</span> {{ this.stepsLabelsArray.quantity }}
                     </div>
                     <div class="purchase__items">
                         <div class="purchase__item-quantity">
@@ -85,15 +85,19 @@
             <transition name="fade">
                 <div class="purchase__step step-6" v-show="isStep(5)">
                     <div class="purchase__step-label">
-                        <span class="number">6</span> Add to cart
+                        <span class="number">6</span> {{ this.stepsLabelsArray.add_to_cart }}
                     </div>
                     <div class="purchase__item-total">
-                        <span>{{ quantity }}x R${{ selected.product.price }}</span>
-
-                        <a class="purchase__add-to-cart-btn button" 
-                            :href="`?add-to-cart=${selected.product.id}&quantity=${ quantity }`">
-                            Add to cart
-                        </a>
+                        <div class="columns">
+                            <div class="column">
+                                <span>{{ quantity }}x R${{ selected.product.price }}</span>
+                            </div>
+                            <div class="column">
+                                <a class="purchase__add-to-cart-btn button" :href="`?add-to-cart=${selected.product.id}&quantity=${ quantity }&attribute_pa_date=${selected.date.name}`">
+                                    {{ this.stepsLabelsArray.add_to_cart }}
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>             
             </transition>
@@ -104,7 +108,7 @@
 
 <script>
     export default {
-        props: ['products'],
+        props: ['products', 'stepsLabels', 'productsAttr'],
         data() {
             return {
                 currentStep: 1,
@@ -117,50 +121,17 @@
                     quantity: Number
                 },
                 productsList: Array,
-                parades: [
-                    {
-                        name: 'Preliminary Parades',
-                        dates: [
-                            { name: 'Friday (March 01)', slug: 'friday-march-01'},
-                            { name: 'Saturday (March 02)', slug: 'saturday-march-02'}
-                        ],
-                        seats: [
-                            { name: 'Grandstand tickets', slug: 'grandstand-tickets' },
-                            { name: 'Open Front Box seats', slug: 'open-front-box-seats' }
-                        ]
-                    },
-                    {
-                        name: 'Main Parades',
-                        dates: [
-                            { name: 'Sunday (March 03)', slug: 'sunday-march-03'},
-                            { name: 'Monday (March 04)', slug: 'monday-march-04'}
-                        ],
-                        seats: [
-                            { name: 'Grandstand tickets', slug: 'grandstand-tickets' },
-                            { name: 'Open Front Box seats', slug: 'open-front-box-seats' },
-                            { name: 'Private Chairs', slug: 'private-chairs' }
-                        ]
-                    },
-                    {
-                        name: 'Champions’ Parade',
-                        dates: [
-                            { name: 'Saturdar (March 09)', slug: 'saturday-march-09'},
-                        ],
-                        seats: [
-                            { name: 'Grandstand tickets', slug: 'grandstand-tickets' },
-                            { name: 'Open Front Box seats', slug: 'open-front-box-seats' },
-                            { name: 'Private Chairs', slug: 'private-chairs' }
-                        ]
-                    }                    
-                ],
+                stepsLabelsArray: Array,
+                parades: Array,
+                
             }
         },
 
         computed: {
             productsFilter() {
                 const filteredProducts = this.productsList.filter(el => {
-                    return el.acf.date.slug == this.selected.date.slug
-                        && el.acf.seat_type.slug == this.selected.seat.slug
+                    return el.acf.date.name == this.selected.date.name
+                        && el.acf.seat_type.name == this.selected.seat.name
                 })
 
                 return filteredProducts
@@ -220,7 +191,11 @@
         },
 
         created() {
+            this.parades = JSON.parse(this.productsAttr)
+            this.stepsLabelsArray = JSON.parse(this.stepsLabels)
             this.productsList = JSON.parse(this.products)
+            console.log(JSON.parse(this.products))
+            console.log(JSON.parse(this.productsAttr))
         },
         
     }

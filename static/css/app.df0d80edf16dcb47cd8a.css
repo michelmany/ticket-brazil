@@ -8206,10 +8206,6 @@ nav.navbar .navbar-menu {
         padding-left: 0;
         padding-right: 0; } }
 
-.tickets .intro.section {
-  padding-top: 100px;
-  padding-bottom: 100px; }
-
 .tickets .intro__title {
   font-family: "Knewave", cursive;
   font-size: 28px;
@@ -8223,7 +8219,16 @@ nav.navbar .navbar-menu {
   color: #595656;
   letter-spacing: 0.44px;
   line-height: 25px;
-  max-width: 348px; }
+  max-width: 520px; }
+  @media screen and (min-width: 769px), print {
+    .tickets .intro__copy {
+      margin-top: 20px; } }
+
+.tickets .intro__image {
+  max-width: 100%; }
+
+.tickets .purchase.section {
+  padding-top: 0; }
 
 .tickets .purchase__step {
   margin-bottom: 50px; }
@@ -8317,7 +8322,7 @@ nav.navbar .navbar-menu {
 .tickets .purchase__add-to-cart-btn {
   background-color: #2B9AE5;
   border-bottom-color: #248BCF;
-  max-width: 281px; }
+  max-width: 370px; }
   .tickets .purchase__add-to-cart-btn:hover {
     background-color: #2B9AE5;
     border-bottom-color: #248BCF; }

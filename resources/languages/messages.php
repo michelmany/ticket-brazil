@@ -56,6 +56,7 @@ function get_template_messages()
         'single' => [
             'edit'     => __('Edit', 'base-camp'),
             'comments' => __('Comments', 'base-camp'),
-        ],
+        ],     
+     
     ];
 }

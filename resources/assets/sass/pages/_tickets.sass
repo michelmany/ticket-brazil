@@ -3,10 +3,6 @@
 
     .intro
         
-        &.section
-            padding-top: 100px
-            padding-bottom: 100px
-
         &__title
             font-family: $font-title
             font-size: 28px
@@ -20,9 +16,18 @@
             color: $gray-dark
             letter-spacing: 0.44px
             line-height: 25px     
-            max-width: 348px   
+            max-width: 520px   
+
+            +tablet
+                margin-top: 20px
+
+        &__image
+            max-width: 100%
 
     .purchase
+
+        &.section
+            padding-top: 0
 
         &__step
             margin-bottom: 50px
@@ -131,8 +136,9 @@
             @extend .purchase__item.button
             background-color: #2B9AE5
             border-bottom-color: #248BCF
-            max-width: 281px
+            max-width: 370px
 
             &:hover
                 background-color: #2B9AE5
                 border-bottom-color: #248BCF
+                
