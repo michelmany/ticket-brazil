@@ -5,8 +5,10 @@
 
 use Automattic\WooCommerce\Client;
 
+$host = getenv('HOST');
+
 $woocommerce = new Client(
-    'http://ticketbrazil.test', 
+    $host,
     'ck_8db54871486ec2f920fbc42f646cc865ea3106f4', 
     'cs_60b1d1958cb781b502983b03875442a8a9ca4006',
     [
