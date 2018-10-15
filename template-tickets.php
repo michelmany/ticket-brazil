@@ -25,7 +25,8 @@ $products = array();
 $data = array(
     'status' => 'publish',
     'orderby' => 'date',
-    'order' => 'asc'
+    'order' => 'asc',
+    'per_page' => 100
 );
 
 $products = $woocommerce->get('products', $data);
