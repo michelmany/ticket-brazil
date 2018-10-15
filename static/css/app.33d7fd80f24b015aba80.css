@@ -9269,21 +9269,21 @@ nav.navbar .navbar-menu {
     padding: 17px 0;
     border-radius: 50%; }
 
-.tickets .purchase__items {
-  display: flex; }
+@media screen and (min-width: 769px), print {
+  .tickets .purchase__items {
+    display: flex;
+    flex-flow: wrap; } }
 
 .tickets .purchase__item {
   margin-top: 15px; }
-  .tickets .purchase__item:not(:last-child) {
-    margin-right: 10px; }
-    @media screen and (min-width: 769px), print {
-      .tickets .purchase__item:not(:last-child) {
-        margin-right: 30px; } }
+  @media screen and (min-width: 769px), print {
+    .tickets .purchase__item:not(:last-child) {
+      margin-right: 30px; } }
   .tickets .purchase__item.button, .tickets .blog-comment .purchase__item#cancel-comment-reply-link, .blog-comment .tickets .purchase__item#cancel-comment-reply-link, .tickets .wpcf7-form input.purchase__item.wpcf7-submit, .wpcf7-form .tickets input.purchase__item.wpcf7-submit, .tickets .purchase__add-to-cart-btn, .woocommerce .tickets button.purchase__add-to-cart-btn, .tickets .woocommerce button.purchase__add-to-cart-btn, .tickets .woocommerce #respond input.purchase__item#submit, .woocommerce #respond .tickets input.purchase__item#submit {
     font-size: 20px;
     transition: 0.2s;
     width: 100%;
-    max-width: 350px;
+    max-width: 320px;
     background-color: #989898;
     height: 85px;
     border-color: transparent;
@@ -9293,7 +9293,12 @@ nav.navbar .navbar-menu {
     letter-spacing: 0.86px; }
     @media screen and (min-width: 769px), print {
       .tickets .purchase__item.button, .tickets .blog-comment .purchase__item#cancel-comment-reply-link, .blog-comment .tickets .purchase__item#cancel-comment-reply-link, .tickets .wpcf7-form input.purchase__item.wpcf7-submit, .wpcf7-form .tickets input.purchase__item.wpcf7-submit, .tickets .purchase__add-to-cart-btn, .woocommerce .tickets button.purchase__add-to-cart-btn, .tickets .woocommerce button.purchase__add-to-cart-btn, .tickets .woocommerce #respond input.purchase__item#submit, .woocommerce #respond .tickets input.purchase__item#submit {
-        font-size: 32px; } }
+        font-size: 27px;
+        max-width: 328px; } }
+    @media screen and (min-width: 1024px) {
+      .tickets .purchase__item.button, .tickets .blog-comment .purchase__item#cancel-comment-reply-link, .blog-comment .tickets .purchase__item#cancel-comment-reply-link, .tickets .wpcf7-form input.purchase__item.wpcf7-submit, .wpcf7-form .tickets input.purchase__item.wpcf7-submit, .tickets .purchase__add-to-cart-btn, .woocommerce .tickets button.purchase__add-to-cart-btn, .tickets .woocommerce button.purchase__add-to-cart-btn, .tickets .woocommerce #respond input.purchase__item#submit, .woocommerce #respond .tickets input.purchase__item#submit {
+        font-size: 32px;
+        max-width: 342px; } }
     @media screen and (min-width: 1024px) {
       .tickets .purchase__item.button, .tickets .blog-comment .purchase__item#cancel-comment-reply-link, .blog-comment .tickets .purchase__item#cancel-comment-reply-link, .tickets .wpcf7-form input.purchase__item.wpcf7-submit, .wpcf7-form .tickets input.purchase__item.wpcf7-submit, .tickets .purchase__add-to-cart-btn, .woocommerce .tickets button.purchase__add-to-cart-btn, .tickets .woocommerce button.purchase__add-to-cart-btn, .tickets .woocommerce #respond input.purchase__item#submit, .woocommerce #respond .tickets input.purchase__item#submit {
         max-width: calc(100% / 3 - 25px); } }

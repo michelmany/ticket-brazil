@@ -54,13 +54,15 @@
                 border-radius: 50%
 
         &__items
-            display: flex
+            +tablet
+                display: flex
+                flex-flow: wrap
 
         &__item
             margin-top: 15px
 
             &:not(:last-child)
-                margin-right: 10px
+
                 +tablet
                     margin-right: 30px
 
@@ -68,7 +70,7 @@
                 font-size: 20px
                 transition: 0.2s
                 width: 100%
-                max-width: 350px
+                max-width: 320px
                 background-color: $gray-light
                 height: 85px
                 border-color: transparent
@@ -78,7 +80,14 @@
                 letter-spacing: 0.86px
 
                 +tablet
+                    font-size: 27px
+                    max-width: 328px
+
+                +desktop
                     font-size: 32px
+                    max-width: 342px
+
+
 
                 +desktop
                     max-width: calc(100% / 3 - 25px) 
