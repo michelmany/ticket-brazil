@@ -161,15 +161,11 @@
                     return filteredProducts
                 }
                 return
-            },
-            setQuantity() {
-                return this.selected.quantity = this.quantity
             }
         },
 
         methods: {
             getProducts(parade_id) {
-
                 axios
                     .get(`/wp-json/tickets/v1/products/${this.currentLang}`)
                     .then(res => {
@@ -189,7 +185,6 @@
                     })
                     return items.length > 0
                 })
-
                 return filteredItem
             },
 
@@ -207,9 +202,7 @@
                     if (step == 2) {
                         this.getProducts(el.id)
                     }
-                }
-
-                // console.log("step: " + step)          
+                }   
 
                 this.currentStep = step
                 const selected = event.target.parentElement

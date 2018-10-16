@@ -6,7 +6,7 @@ function my_custom_endpoint( $request_data ) {
 
     $args = array(
         'status' => 'publish',
-        'orderby' => 'date',
+        'orderby' => 'name',
         'order' => 'DESC',
         'posts_per_page' => -1,
         'lang' => $lang
