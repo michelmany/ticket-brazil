@@ -1,14 +1,10 @@
 {
-  "admin.css": "css/admin.33d7fd80f24b015aba80.css",
-  "admin.js": "js/admin.33d7fd80f24b015aba80.js",
-  "app.css": "css/app.33d7fd80f24b015aba80.css",
-  "app.js": "js/app.33d7fd80f24b015aba80.js",
-  "login.css": "css/login.33d7fd80f24b015aba80.css",
-  "login.js": "js/login.33d7fd80f24b015aba80.js",
-  "vendor.js": "js/vendor.33d7fd80f24b015aba80.js",
-  "images/arrow-next-white.png": "images/arrow-next-white.png",
-  "images/icon-cart-white.png": "images/icon-cart-white.png",
-  "images/texture-blue-carnival.jpg": "images/texture-blue-carnival.jpg",
-  "images/base-camp-logo.png": "images/base-camp-logo.png",
-  "images/arrow-prev-white.png": "images/arrow-prev-white.png"
+  "admin.css": "css/admin.6b1fb918c255e11fe4f0.css",
+  "admin.js": "js/admin.6b1fb918c255e11fe4f0.js",
+  "app.css": "css/app.6b1fb918c255e11fe4f0.css",
+  "app.js": "js/app.6b1fb918c255e11fe4f0.js",
+  "login.css": "css/login.6b1fb918c255e11fe4f0.css",
+  "login.js": "js/login.6b1fb918c255e11fe4f0.js",
+  "vendor.js": "js/vendor.6b1fb918c255e11fe4f0.js",
+  "images/base-camp-logo.png": "images/base-camp-logo.png"
 }

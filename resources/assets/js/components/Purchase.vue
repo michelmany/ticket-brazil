@@ -7,14 +7,17 @@
                     <span class="number">1</span> {{ this.stepsLabelsArray.parade }}
                 </div>
                 <div class="purchase__items">
-                    <label :for="`parade-${index}`" class="purchase__item button" 
-                        v-for="(parade, index) in parades" :key="index" @click="nextStep(2, index)">
-                        <input :id="`parade-${index}`" type="radio" v-model="selected.parade" :value="parade.name" class="is-hidden">
+                    <label :for="`parade-${index}`" class="purchase__item button" v-for="(parade, index) in parades" :key="index">
+                        <input 
+                            :id="`parade-${index}`" 
+                            type="radio" 
+                            v-model="selected.parade" 
+                            :value="parade" 
+                            class="is-hidden"
+                            @click="nextStep(2, index, parade)">
                         {{ parade.name }}
                     </label>
                 </div>
-
-                <div v-for="(product, index) in products" :key="index">{{ product.categories }}</div>
             </div>
 
             <transition name="fade">
@@ -24,8 +27,14 @@
                     </div>
                     <div class="purchase__items">
                         <label :for="`date-${index}`" class="purchase__item button" 
-                            v-for="(date, index) in setData('dates')" :key="index" @click="nextStep(3, index)">
-                            <input :id="`date-${index}`" type="radio" v-model="selected.date" :value="date" class="is-hidden">
+                            v-for="(date, index) in filterDates()" :key="index" >
+                            <input 
+                                :id="`date-${index}`" 
+                                type="radio" 
+                                v-model="selected.date" 
+                                :value="date" 
+                                class="is-hidden"
+                                @click="nextStep(3, index)">
                             {{ date.name }}
                         </label>                        
                     </div>
@@ -39,8 +48,14 @@
                     </div>
                     <div class="purchase__items">
                         <label :for="`seat-${index}`" class="purchase__item button" 
-                            v-for="(seat, index) in setData('seats')" :key="index" @click="nextStep(4, index)">
-                            <input :id="`seat-${index}`" type="radio" v-model="selected.seat" :value="seat" class="is-hidden">
+                            v-for="(seat, index) in filterSeats()" :key="index" >
+                            <input 
+                                :id="`seat-${index}`" 
+                                type="radio" 
+                                v-model="selected.seat" 
+                                :value="seat" 
+                                class="is-hidden"
+                                @click="nextStep(4, index)">
                             {{ seat.name }}
                         </label> 
                     </div>
@@ -54,15 +69,17 @@
                     </div>
                     <div class="purchase__items">
                         <label :for="`sector-${index}`" class="purchase__item button sector" 
-                            v-for="(ticket, index) in productsFilter" :key="index" @click="nextStep(5, index)">
-                            <input :id="`sector-${index}`" type="radio" v-model="selected.product" :value="ticket" class="is-hidden">
+                            v-for="(ticket, index) in productsFilter" :key="index" >
+                            <input 
+                                :id="`sector-${index}`" 
+                                type="radio" 
+                                v-model="selected.product" 
+                                :value="ticket" 
+                                class="is-hidden"
+                                @click="nextStep(5, index)">
                             {{ ticket.name }} <br>
                             <span class="purchase__item-price">R$ {{ ticket.price }}</span>
-                        </label>                     
-                        <!-- <li class="purchase__item button sector" @click="nextStep(5)" 
-                            v-for="(ticket, i) in productsFilter" :key="i">{{ ticket.name }} <br>
-                            <span class="purchase__item-price">$ {{ ticket.price }}</span>
-                        </li> -->
+                        </label>
                     </div>
                 </div>
             </transition>
@@ -93,7 +110,7 @@
                                 <span>{{ quantity }}x R${{ selected.product.price }}</span>
                             </div>
                             <div class="column">
-                                <a class="purchase__add-to-cart-btn button" :href="`?add-to-cart=${selected.product.id}&quantity=${ quantity }`">
+                                <a class="purchase__add-to-cart-btn button" :href="`?add-to-cart=${selected.product.ID}&quantity=${ quantity }`">
                                     {{ this.stepsLabelsArray.add_to_cart }}
                                 </a>
                             </div>
@@ -107,34 +124,43 @@
 </template>
 
 <script>
+    import axios from 'axios'
+
     export default {
-        props: ['products', 'stepsLabels', 'productsAttr'],
+        props: ['currentLang', 'stepsLabels', 'paradesList', 'datesList', 'seatsList'],
+        
         data() {
             return {
                 currentStep: 1,
                 quantity: 1,
                 selected: {
                     product: Object,
-                    parade: String,
+                    parade: Object,
                     date: Object,
                     seat: Object,
                     quantity: Number
                 },
-                productsList: Array,
+                currentSelectedIdx: -1,
+                productsList: Object,
                 stepsLabelsArray: Array,
                 parades: Array,
+                dates: Array,
+                seats: Array,
+                isProductsLoaded: false
                 
             }
         },
 
         computed: {
             productsFilter() {
-                const filteredProducts = this.productsList.filter(el => {
-                    return el.acf.date.name == this.selected.date.name
-                        && el.acf.seat_type.name == this.selected.seat.name
-                })
-
-                return filteredProducts
+                if (this.isProductsLoaded == true) {
+                    const filteredProducts = this.productsList.filter(el => {
+                        return el.acf.date.name == this.selected.date.name
+                            && el.acf.seat_type.name == this.selected.seat.name
+                    })
+                    return filteredProducts
+                }
+                return
             },
             setQuantity() {
                 return this.selected.quantity = this.quantity
@@ -142,15 +168,49 @@
         },
 
         methods: {
-            setData(data) {
-                const filteredParade = this.parades.filter(parade => {
-                    return parade.name == this.selected.parade
+            getProducts(parade_id) {
+
+                axios
+                    .get(`/wp-json/tickets/v1/products/${this.currentLang}`)
+                    .then(res => {
+                        // console.log(res)
+                        this.productsList = res.data
+                        this.isProductsLoaded = true
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    })
+            },        
+
+            filterSeats() {
+                const filteredItem = this.seats.filter( item => {
+                    const items = item.parade_id.filter( id => {
+                        return id.includes(this.selected.parade.id)
+                    })
+                    return items.length > 0
                 })
-                const filtered = filteredParade.map(a => a[data]);
-                return filtered[0]                
+
+                return filteredItem
             },
 
-            nextStep(step, idx) {
+            filterDates() {
+                const filteredItem = this.dates.filter(item => {
+                    return item.parade_id == this.selected.parade.id
+                })
+                return filteredItem
+            },
+
+            nextStep(step, idx, el) {
+
+                if (this.currentSelectedIdx != idx) {
+                    this.currentSelectedIdx = idx
+                    if (step == 2) {
+                        this.getProducts(el.id)
+                    }
+                }
+
+                // console.log("step: " + step)          
+
                 this.currentStep = step
                 const selected = event.target.parentElement
                 const prevStep = this.currentStep - 1
@@ -191,11 +251,10 @@
         },
 
         created() {
-            this.parades = JSON.parse(this.productsAttr)
+            this.parades = JSON.parse(this.paradesList)
+            this.dates = JSON.parse(this.datesList)
+            this.seats = JSON.parse(this.seatsList)
             this.stepsLabelsArray = JSON.parse(this.stepsLabels)
-            this.productsList = JSON.parse(this.products)
-            console.log(JSON.parse(this.products))
-            console.log(JSON.parse(this.productsAttr))
         },
         
     }

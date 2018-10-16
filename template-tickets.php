@@ -3,24 +3,11 @@
 * Template Name: Tickets
 */
 
-use Automattic\WooCommerce\Client;
-
-$woocommerce = new Client(
-    getenv('WOO_HOST'),
-    getenv('WOO_CK'), 
-    getenv('WOO_CS'),
-    [
-        'wp_api' => true,
-        'version' => 'wc/v2',
-        'verify_ssl' => false,
-    ]
-);
-
 $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
-
-$products = array();
+$lang = pll_current_language();
+$context['current_lang'] = $lang;
 
 $data = array(
     'status' => 'publish',
@@ -28,10 +15,6 @@ $data = array(
     'order' => 'asc',
     'per_page' => 100
 );
-
-$products = $woocommerce->get('products', $data);
-
-$context['products'] = $products;
 
 $steps_labels = [
     'parade' => __('Select the parade type', 'base-camp'),
@@ -44,50 +27,53 @@ $steps_labels = [
 
 $context['steps_labels'] = $steps_labels;
 
-$productsAttr = array(
-    [
-        'name' => __('Preliminary Parades', 'base-camp'),
-        'dates' => [
-            ['name' => __('Friday (March 01)', 'base-camp'), 'slug' => 'friday-march-01'],
-            ['name' => __('Saturday (March 02)', 'base-camp'), 'slug' => 'saturday-march-02']
-        ],
-        'seats' => [
-            ['name' => __('Grandstand tickets', 'base-camp'), 'slug' => 'grandstand-tickets'],
-            ['name' => __('Open Front Box seats', 'base-camp'), 'slug' => 'open-front-box-seats']
-        ]
+// Repetir modo de listagem do Rio Carnival
+$listParades = [
+    "en" => [
+        ["id" => "135", "name" => "Preliminary Parades"],
+        ["id" => "137", "name" => "Main Parades"],
+        ["id" => "139", "name" => "Champion's Parade"]
     ],
-    [
-        'name' => __('Main Parades', 'base-camp'),
-        'dates' => [
-            ['name' => __('Sunday (March 03)', 'base-camp'), 'slug' => 'sunday-march-03'],
-            ['name' => __('Monday (March 04)', 'base-camp'), 'slug' => 'monday-march-04']
-        ],
-        'seats' => [
-            ['name' => __('Grandstand tickets', 'base-camp'), 'slug' => 'grandstand-tickets' ],
-            ['name' => __('Open Front Box seats', 'base-camp'), 'slug' => 'open-front-box-seats' ],
-            ['name' => __('Private Chairs', 'base-camp'), 'slug' => 'private-chairs' ]
-        ]
+    "br" => [
+        ["id" => "150", "name" => "Grupo da Série A"],
+        ["id" => "162", "name" => "Grupo Especial"],
+        ["id" => "164", "name" => "Desfile das Campeães"]
+    ]
+];
+
+$listDates = [
+    "en" => [
+        ["id" => "127", "name" => "Friday (March 01)", "parade_id" => "135"],
+        ["id" => "129", "name" => "Saturday (March 02)", "parade_id" => "135"],
+        ["id" => "131", "name" => "Sunday (March 03)", "parade_id" => "137"],
+        ["id" => "133", "name" => "Monday (March 04)", "parade_id" => "137"],
+        ["id" => "168", "name" => "Saturday (March 09)", "parade_id" => "139"]
     ],
-    [
-        'name' => __('Champions’ Parade', 'base-camp'),
-        'dates' => [
-            ['name' => __('Saturday (March 09)', 'base-camp'), 'slug' => 'saturday-march-09'],
-        ],
-        'seats' => [
-            ['name' => __('Grandstand tickets', 'base-camp'), 'slug' => 'grandstand-tickets'],
-            ['name' => __('Open Front Box seats', 'base-camp'), 'slug' => 'open-front-box-seats'],
-            ['name' => __('Private Chairs', 'base-camp'), 'slug' => 'private-chairs']
-        ]
-    ]                   
-);
+    "br" => [
+        ["id" => "147", "name" => "Sexta (01 de Março)", "parade_id" => "150"],
+        ["id" => "158", "name" => "Sábado (02 de Março)", "parade_id" => "150"],
+        ["id" => "160", "name" => "Domingo (03 de Março)", "parade_id" => "162"],
+        ["id" => "156", "name" => "Segunda (04 de Março)", "parade_id" => "162"],
+        ["id" => "166", "name" => "Sábado (09 de Março)", "parade_id" => "164"]
+    ]
+];
 
-$context['products_attr'] = $productsAttr;
+$listSeats = [
+    "en" => [
+        ["id" => "141", "name" => "Grandstand tickets", "parade_id" => ["135","137","139"]],
+        ["id" => "143", "name" => "Open Front Box seats", "parade_id" => ["135", "137","139"]],
+        ["id" => "145", "name" => "Private Chairs", "parade_id" => ["137","139"]]
+    ],
+    "br" => [
+        ["id" => "153", "name" => "Arquibancadas", "parade_id" => ["150","162","164"]],
+        ["id" => "170", "name" => "Lugares na frisa", "parade_id" => ["150","162","164"]],
+        ["id" => "172", "name" => "Cadeiras Individuais", "parade_id" => ["162","164"]]
+    ]
+];
 
+$context['parades_list'] = $listParades[$lang];
+$context['dates_list'] = $listDates[$lang];
+$context['seats_list'] = $listSeats[$lang];
 $context['tickets_acf'] = get_fields();
-
-// Adding ACF to each product
-foreach ($products as $key => $product) {
-    $context['products'][$key]->acf = get_fields($product->id);
-}
 
 Timber::render('template-tickets.twig', $context);

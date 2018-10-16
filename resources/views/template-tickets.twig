@@ -16,14 +16,12 @@
             </div>
         </div>
 
-        {% set current_lang = function('pll_current_language', 'slug') %}
-
         <purchase
             steps-labels="{{ steps_labels|json_encode|e('html_attr') }}"
-            products-attr="{{ products_attr|json_encode|e('html_attr') }}"
-            products="{{ products|json_encode|e('html_attr') }}"
+            parades-list="{{ parades_list|json_encode|e('html_attr') }}"
+            dates-list="{{ dates_list|json_encode|e('html_attr')}}"
+            seats-list="{{ seats_list|json_encode|e('html_attr')}}"
             current-lang="{{ current_lang }}">
         </purchase>
-
     </div>
 {% endblock %}
