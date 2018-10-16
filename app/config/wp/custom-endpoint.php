@@ -12,7 +12,11 @@ function my_custom_endpoint( $request_data ) {
         'lang' => $lang
     );
 
+    add_filter('posts_orderby', 'orderby_post_title_int' );
+
     $products = wc_get_products( $args );
+
+    remove_filter('posts_orderby', 'orderby_post_title_int' );
 
     foreach ($products as $key => $product) {
         $products[$key]->ID = $product->get_id();
@@ -37,3 +41,8 @@ add_action( 'rest_api_init', function () {
 		)
 	);
 });
+
+// Changing the orderby param
+function orderby_post_title_int( $orderby ) { 
+    return '(wp_posts.post_title+0) ASC'; 
+}
