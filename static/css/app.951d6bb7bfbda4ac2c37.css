@@ -9587,6 +9587,9 @@ body {
 .is-background-cover {
   background: #595656 center/cover no-repeat; }
 
+.select2-dropdown {
+  border: 1px solid #dadada !important; }
+
 .woocommerce .products {
   clear: both; }
 
@@ -9681,6 +9684,9 @@ body {
 
 .woocommerce .select2-container--open .select2-dropdown--below {
   border-color: #dadada; }
+
+.woocommerce .select2-dropdown {
+  border: 1px solid #dadada !important; }
 
 .woocommerce div.product {
   position: relative; }
