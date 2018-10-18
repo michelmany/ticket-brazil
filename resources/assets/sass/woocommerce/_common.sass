@@ -4,6 +4,7 @@ input[type='text'],
 input[type='number'],
 input[type='password']
   @extend .input
+  box-shadow: none
 
 textarea
   @extend .textarea
@@ -108,3 +109,34 @@ label.radio
 
 #customer_details
   margin-bottom: 30px
+
+.woocommerce-billing-fields
+  background-color: #ececec
+  padding: 31px
+  border-radius: 2px
+
+.woocommerce-checkout #payment
+  background: #ececec
+  border-radius: 2px
+
+// Select2 Custom Styles
+.select2-container 
+  .select2-selection--single
+    height: 36px
+  
+.select2-container--default 
+  .select2-selection--single
+    background-color: #fff
+    border: 1px solid #dadada
+    border-radius: 4px
+
+    .select2-selection__rendered
+      color: #444
+      line-height: 34px
+
+    .select2-selection__arrow
+      height: 34px
+
+.select2-container--open 
+  .select2-dropdown--below
+    border-color: #dadada

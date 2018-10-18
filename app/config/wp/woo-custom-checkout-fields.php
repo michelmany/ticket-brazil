@@ -18,7 +18,7 @@ function custom_override_checkout_fields( $fields ) {
 
      return $fields;
 }
-add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
+// add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
 
 /**
  * Display field value on the order edit page

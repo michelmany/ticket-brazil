@@ -9590,6 +9590,13 @@ body {
 .woocommerce .products {
   clear: both; }
 
+.woocommerce input[type='email'],
+.woocommerce input[type='tel'],
+.woocommerce input[type='text'],
+.woocommerce input[type='number'],
+.woocommerce input[type='password'] {
+  box-shadow: none; }
+
 .woocommerce .blog-comment button.alt#cancel-comment-reply-link, .blog-comment .woocommerce button.alt#cancel-comment-reply-link, .woocommerce button.alt.button,
 .woocommerce a.button.alt,
 .woocommerce .blog-comment a.alt#cancel-comment-reply-link,
@@ -9649,6 +9656,31 @@ body {
 
 .woocommerce #customer_details {
   margin-bottom: 30px; }
+
+.woocommerce .woocommerce-billing-fields {
+  background-color: #ececec;
+  padding: 31px;
+  border-radius: 2px; }
+
+.woocommerce .woocommerce-checkout #payment {
+  background: #ececec;
+  border-radius: 2px; }
+
+.woocommerce .select2-container .select2-selection--single {
+  height: 36px; }
+
+.woocommerce .select2-container--default .select2-selection--single {
+  background-color: #fff;
+  border: 1px solid #dadada;
+  border-radius: 4px; }
+  .woocommerce .select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #444;
+    line-height: 34px; }
+  .woocommerce .select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 34px; }
+
+.woocommerce .select2-container--open .select2-dropdown--below {
+  border-color: #dadada; }
 
 .woocommerce div.product {
   position: relative; }
