@@ -14,6 +14,9 @@ new Vue({
     },
     data() {
         return {
+            registerForm: {
+              nationality: ''
+            },
             slickOptions: {
                 dots: true,
                 arrows: false,

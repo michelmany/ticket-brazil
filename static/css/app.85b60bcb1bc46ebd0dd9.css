@@ -9527,6 +9527,9 @@ body {
   .woocommerce .button:disabled:hover, .woocommerce .blog-comment #cancel-comment-reply-link:disabled:hover, .blog-comment .woocommerce #cancel-comment-reply-link:disabled:hover, .woocommerce .wpcf7-form input.wpcf7-submit:disabled:hover, .wpcf7-form .woocommerce input.wpcf7-submit:disabled:hover, .woocommerce #respond input#submit:disabled:hover, .woocommerce .button.disabled:hover, .woocommerce .blog-comment .disabled#cancel-comment-reply-link:hover, .blog-comment .woocommerce .disabled#cancel-comment-reply-link:hover, .woocommerce .wpcf7-form input.disabled.wpcf7-submit:hover, .wpcf7-form .woocommerce input.disabled.wpcf7-submit:hover, .woocommerce #respond input.disabled#submit:hover, .woocommerce .button:disabled[disabled]:hover, .woocommerce .blog-comment #cancel-comment-reply-link:disabled[disabled]:hover, .blog-comment .woocommerce #cancel-comment-reply-link:disabled[disabled]:hover, .woocommerce .wpcf7-form input.wpcf7-submit:disabled[disabled]:hover, .wpcf7-form .woocommerce input.wpcf7-submit:disabled[disabled]:hover, .woocommerce #respond input#submit:disabled[disabled]:hover {
     color: inherit; }
 
+.woocommerce label.radio {
+  display: inline-block; }
+
 .woocommerce div.product {
   position: relative; }
   .woocommerce div.product .woocommerce-product-gallery.woocommerce-product-gallery--with-images {

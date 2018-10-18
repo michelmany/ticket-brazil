@@ -11,6 +11,6 @@ function woocommerce_custom_redirections() {
         wp_redirect( get_permalink( get_option('woocommerce_myaccount_page_id') ) );
 
     /* Case2: Logged user on my account page with something in cart */
-    // if( is_user_logged_in() && ! WC()->cart->is_empty() && is_account_page() )
-    //     wp_redirect( get_permalink( get_option('woocommerce_checkout_page_id') ) );
+    if( is_user_logged_in() && ! WC()->cart->is_empty() && is_account_page() )
+        wp_redirect( get_permalink( get_option('woocommerce_checkout_page_id') ) );
 }
