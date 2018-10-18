@@ -34,22 +34,33 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class="u-column1 col-1">
 
 		<h2 class="title is-4"><?php esc_html_e( 'New User', 'base-camp' ); ?></h2>
+
 		<form method="post" class="woocommerce-form woocommerce-form-register register">
 
-		<p><small><?php echo __('All fields are mandatory.', 'base-camp'); ?></small></p>
-			<br>
+		<p><small><?php echo __('All fields are mandatory.', 'base-camp'); ?></small></p><br>
+
 			<div class="field">
 				<div class="control">
 					<label class="radio">
-						<input type="radio" v-model="registerForm.nationality" name="nationality" value="brazilian">
-						&#160;<?php echo __('Brazilian', 'base-camp'); ?>
+						<input 
+							<?php if ( ! empty( $_POST['nationality'] ) ) checked( $_POST['nationality'], 'brazilian', true ); ?>
+							type="radio"
+							v-model="registerForm.nationality"
+							name="nationality"
+							value="brazilian">
+							&#160;<?php echo __('Brazilian', 'base-camp'); ?>
 					</label>
 					
 					<label class="radio">
-						<input type="radio" v-model="registerForm.nationality" name="nationality" value="foreign">
-						&#160;<?php echo __('Foreign', 'base-camp'); ?>
+						<input
+							<?php if ( ! empty( $_POST['nationality'] ) ) checked( $_POST['nationality'], 'foreign', true ); ?>
+							type="radio" 
+							v-model="registerForm.nationality" 
+							name="nationality" 
+							value="foreign">
+							&#160;<?php echo __('Foreign', 'base-camp'); ?>
 					</label>
-				</div>    
+				</div>
 			</div>
 
 			<p class="form-row form-row-first">
@@ -61,21 +72,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<label for="reg_billing_last_name"><?php _e( 'Last name', 'woocommerce' ); ?><span class="required">*</span></label>
 				<input type="text" class="input-text" name="billing_last_name" id="reg_billing_last_name" value="<?php if ( ! empty( $_POST['billing_last_name'] ) ) esc_attr_e( $_POST['billing_last_name'] ); ?>" />
 			</p>
-
-			<p class="form-row form-row-wide">
-				<label for="reg_billing_state"><?php _e( 'State', 'woocommerce' ); ?></label>
-				<input type="text" class="input-text" name="billing_state" id="reg_billing_state" value="<?php if ( ! empty( $_POST['billing_state'] ) ) esc_attr_e( $_POST['billing_state'] ); ?>" />
-			</p>    
-
-			<p class="form-row form-row-wide">
-				<label for="reg_billing_cpf"><?php _e( 'CPF', 'woocommerce' ); ?></label>
-				<input type="text" class="input-text" name="billing_cpf" id="reg_billing_cpf" value="<?php if ( ! empty( $_POST['billing_cpf'] ) ) esc_attr_e( $_POST['billing_cpf'] ); ?>" />
-			</p>   
-			<p class="form-row form-row-wide">
-				<label for="reg_billing_id"><?php _e( 'ID Number', 'base-camp' ); ?></label>
-				<input type="text" class="input-text" name="billing_id" id="reg_billing_id" value="<?php if ( ! empty( $_POST['billing_id'] ) ) esc_attr_e( $_POST['billing_id'] ); ?>" />
-			</p>     
-			<div class="clear"></div>
 
 
 			<?php do_action( 'woocommerce_register_form_start' ); ?>
@@ -102,6 +98,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</p>
 
 			<?php endif; ?>
+
+			<p class="form-row form-row-wide">
+				<label for="reg_billing_state"><?php _e( 'State', 'woocommerce' ); ?></label>
+				<input type="text" class="input-text" name="billing_state" id="reg_billing_state" value="<?php if ( ! empty( $_POST['billing_state'] ) ) esc_attr_e( $_POST['billing_state'] ); ?>" />
+			</p>    
+
+			<p class="form-row form-row-wide" >
+				<label for="reg_pdocument" v-if="registerForm.nationality == 'brazilian'">CPF</label>
+				<label for="reg_pdocument" v-if="registerForm.nationality != 'brazilian'"><?php _e( 'Passport', 'base-camp' ); ?></label>
+				<input type="text" class="input-text" name="pdocument" id="reg_pdocument" value="<?php if ( ! empty( $_POST['pdocument'] ) ) esc_attr_e( $_POST['pdocument'] ); ?>" />
+			</p>   
+			
+			<p class="form-row form-row-wide">
+				<label for="reg_idnumber"><?php _e( 'ID Number', 'base-camp' ); ?></label>
+				<input type="text" class="input-text" name="idnumber" id="reg_idnumber" value="<?php if ( ! empty( $_POST['idnumber'] ) ) esc_attr_e( $_POST['idnumber'] ); ?>" />
+			</p>     
+			<div class="clear"></div>			
 
 			<?php do_action( 'woocommerce_register_form' ); ?>
 
@@ -156,3 +169,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 <?php endif; ?>
 
 <?php do_action( 'woocommerce_after_customer_login_form' ); ?>
+
+

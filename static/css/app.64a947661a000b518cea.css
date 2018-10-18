@@ -4480,7 +4480,9 @@ a.box:active {
     position: absolute;
     right: 0.5rem;
     top: 0.5rem; }
-  .notification .title, .notification .blog__item-title, .notification .single .main-article__title, .single .notification .main-article__title, .notification .woocommerce .woocommerce-order-details__title, .woocommerce .notification .woocommerce-order-details__title, .notification .woocommerce .cart_totals h2, .woocommerce .cart_totals .notification h2,
+  .notification .title, .notification .blog__item-title, .notification .single .main-article__title, .single .notification .main-article__title, .notification .woocommerce .woocommerce-order-details__title, .woocommerce .notification .woocommerce-order-details__title, .notification .woocommerce .cart_totals h2, .woocommerce .cart_totals .notification h2, .notification .woocommerce .woocommerce-billing-fields h3, .woocommerce .woocommerce-billing-fields .notification h3,
+  .notification .woocommerce .woocommerce-additional-fields h3, .woocommerce .woocommerce-additional-fields .notification h3,
+  .notification .woocommerce #order_review_heading, .woocommerce .notification #order_review_heading,
   .notification .subtitle,
   .notification .woocommerce .woocommerce-column__title,
   .woocommerce .notification .woocommerce-column__title,
@@ -4856,34 +4858,41 @@ a.box:active {
 a.tag:hover {
   text-decoration: underline; }
 
-.title, .blog__item-title, .single .main-article__title, .woocommerce .woocommerce-order-details__title, .woocommerce .cart_totals h2,
+.title, .blog__item-title, .single .main-article__title, .woocommerce .woocommerce-order-details__title, .woocommerce .cart_totals h2, .woocommerce .woocommerce-billing-fields h3,
+.woocommerce .woocommerce-additional-fields h3,
+.woocommerce #order_review_heading,
 .subtitle,
 .woocommerce .woocommerce-column__title {
   word-break: break-word; }
-  .title:not(:last-child), .blog__item-title:not(:last-child), .single .main-article__title:not(:last-child), .woocommerce .woocommerce-order-details__title:not(:last-child), .woocommerce .cart_totals h2:not(:last-child),
+  .title:not(:last-child), .blog__item-title:not(:last-child), .single .main-article__title:not(:last-child), .woocommerce .woocommerce-order-details__title:not(:last-child), .woocommerce .cart_totals h2:not(:last-child), .woocommerce .woocommerce-billing-fields h3:not(:last-child),
+  .woocommerce .woocommerce-additional-fields h3:not(:last-child),
+  .woocommerce #order_review_heading:not(:last-child),
   .subtitle:not(:last-child),
   .woocommerce .woocommerce-column__title:not(:last-child) {
     margin-bottom: 1.5rem; }
-  .title em, .blog__item-title em, .single .main-article__title em, .woocommerce .woocommerce-order-details__title em, .woocommerce .cart_totals h2 em,
+  .title em, .blog__item-title em, .single .main-article__title em, .woocommerce .woocommerce-order-details__title em, .woocommerce .cart_totals h2 em, .woocommerce .woocommerce-billing-fields h3 em, .woocommerce .woocommerce-additional-fields h3 em, .woocommerce #order_review_heading em,
   .title span,
   .blog__item-title span,
   .single .main-article__title span,
   .woocommerce .woocommerce-order-details__title span,
   .woocommerce .cart_totals h2 span,
+  .woocommerce .woocommerce-billing-fields h3 span,
+  .woocommerce .woocommerce-additional-fields h3 span,
+  .woocommerce #order_review_heading span,
   .subtitle em,
   .woocommerce .woocommerce-column__title em,
   .subtitle span,
   .woocommerce .woocommerce-column__title span {
     font-weight: inherit; }
-  .title sub, .blog__item-title sub, .single .main-article__title sub, .woocommerce .woocommerce-order-details__title sub, .woocommerce .cart_totals h2 sub,
+  .title sub, .blog__item-title sub, .single .main-article__title sub, .woocommerce .woocommerce-order-details__title sub, .woocommerce .cart_totals h2 sub, .woocommerce .woocommerce-billing-fields h3 sub, .woocommerce .woocommerce-additional-fields h3 sub, .woocommerce #order_review_heading sub,
   .subtitle sub,
   .woocommerce .woocommerce-column__title sub {
     font-size: 0.75em; }
-  .title sup, .blog__item-title sup, .single .main-article__title sup, .woocommerce .woocommerce-order-details__title sup, .woocommerce .cart_totals h2 sup,
+  .title sup, .blog__item-title sup, .single .main-article__title sup, .woocommerce .woocommerce-order-details__title sup, .woocommerce .cart_totals h2 sup, .woocommerce .woocommerce-billing-fields h3 sup, .woocommerce .woocommerce-additional-fields h3 sup, .woocommerce #order_review_heading sup,
   .subtitle sup,
   .woocommerce .woocommerce-column__title sup {
     font-size: 0.75em; }
-  .title .tag, .blog__item-title .tag, .single .main-article__title .tag, .woocommerce .woocommerce-order-details__title .tag, .woocommerce .cart_totals h2 .tag, .title .woocommerce span.onsale, .woocommerce .title span.onsale, .blog__item-title .woocommerce span.onsale, .woocommerce .blog__item-title span.onsale, .single .main-article__title .woocommerce span.onsale, .woocommerce .single .main-article__title span.onsale, .woocommerce .woocommerce-order-details__title span.onsale, .woocommerce .cart_totals h2 span.onsale,
+  .title .tag, .blog__item-title .tag, .single .main-article__title .tag, .woocommerce .woocommerce-order-details__title .tag, .woocommerce .cart_totals h2 .tag, .woocommerce .woocommerce-billing-fields h3 .tag, .woocommerce .woocommerce-additional-fields h3 .tag, .woocommerce #order_review_heading .tag, .title .woocommerce span.onsale, .woocommerce .title span.onsale, .blog__item-title .woocommerce span.onsale, .woocommerce .blog__item-title span.onsale, .single .main-article__title .woocommerce span.onsale, .woocommerce .single .main-article__title span.onsale, .woocommerce .woocommerce-order-details__title span.onsale, .woocommerce .cart_totals h2 span.onsale, .woocommerce .woocommerce-billing-fields h3 span.onsale, .woocommerce .woocommerce-additional-fields h3 span.onsale, .woocommerce #order_review_heading span.onsale,
   .subtitle .tag,
   .woocommerce .woocommerce-column__title .tag,
   .subtitle .woocommerce span.onsale,
@@ -4891,31 +4900,47 @@ a.tag:hover {
   .woocommerce .woocommerce-column__title span.onsale {
     vertical-align: middle; }
 
-.title, .blog__item-title, .single .main-article__title, .woocommerce .woocommerce-order-details__title, .woocommerce .cart_totals h2 {
+.title, .blog__item-title, .single .main-article__title, .woocommerce .woocommerce-order-details__title, .woocommerce .cart_totals h2, .woocommerce .woocommerce-billing-fields h3,
+.woocommerce .woocommerce-additional-fields h3,
+.woocommerce #order_review_heading {
   color: #363636;
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.125; }
-  .title strong, .blog__item-title strong, .single .main-article__title strong, .woocommerce .woocommerce-order-details__title strong, .woocommerce .cart_totals h2 strong {
+  .title strong, .blog__item-title strong, .single .main-article__title strong, .woocommerce .woocommerce-order-details__title strong, .woocommerce .cart_totals h2 strong, .woocommerce .woocommerce-billing-fields h3 strong, .woocommerce .woocommerce-additional-fields h3 strong, .woocommerce #order_review_heading strong {
     color: inherit;
     font-weight: inherit; }
-  .title + .highlight, .blog__item-title + .highlight, .single .main-article__title + .highlight, .woocommerce .woocommerce-order-details__title + .highlight, .woocommerce .cart_totals h2 + .highlight {
+  .title + .highlight, .blog__item-title + .highlight, .single .main-article__title + .highlight, .woocommerce .woocommerce-order-details__title + .highlight, .woocommerce .cart_totals h2 + .highlight, .woocommerce .woocommerce-billing-fields h3 + .highlight, .woocommerce .woocommerce-additional-fields h3 + .highlight, .woocommerce #order_review_heading + .highlight {
     margin-top: -0.75rem; }
-  .title:not(.is-spaced) + .subtitle, .blog__item-title:not(.is-spaced) + .subtitle, .single .main-article__title:not(.is-spaced) + .subtitle, .woocommerce .woocommerce-order-details__title:not(.is-spaced) + .subtitle, .woocommerce .cart_totals h2:not(.is-spaced) + .subtitle, .woocommerce .title:not(.is-spaced) + .woocommerce-column__title, .woocommerce .blog__item-title:not(.is-spaced) + .woocommerce-column__title, .single .woocommerce .main-article__title:not(.is-spaced) + .woocommerce-column__title, .woocommerce .single .main-article__title:not(.is-spaced) + .woocommerce-column__title, .woocommerce .woocommerce-order-details__title:not(.is-spaced) + .woocommerce-column__title, .woocommerce .cart_totals h2:not(.is-spaced) + .woocommerce-column__title {
+  .title:not(.is-spaced) + .subtitle, .blog__item-title:not(.is-spaced) + .subtitle, .single .main-article__title:not(.is-spaced) + .subtitle, .woocommerce .woocommerce-order-details__title:not(.is-spaced) + .subtitle, .woocommerce .cart_totals h2:not(.is-spaced) + .subtitle, .woocommerce .woocommerce-billing-fields h3:not(.is-spaced) + .subtitle, .woocommerce .woocommerce-additional-fields h3:not(.is-spaced) + .subtitle, .woocommerce #order_review_heading:not(.is-spaced) + .subtitle, .woocommerce .title:not(.is-spaced) + .woocommerce-column__title, .woocommerce .blog__item-title:not(.is-spaced) + .woocommerce-column__title, .single .woocommerce .main-article__title:not(.is-spaced) + .woocommerce-column__title, .woocommerce .single .main-article__title:not(.is-spaced) + .woocommerce-column__title, .woocommerce .woocommerce-order-details__title:not(.is-spaced) + .woocommerce-column__title, .woocommerce .cart_totals h2:not(.is-spaced) + .woocommerce-column__title, .woocommerce .woocommerce-billing-fields h3:not(.is-spaced) + .woocommerce-column__title, .woocommerce .woocommerce-additional-fields h3:not(.is-spaced) + .woocommerce-column__title, .woocommerce #order_review_heading:not(.is-spaced) + .woocommerce-column__title {
     margin-top: -1.5rem; }
-  .title.is-1, .is-1.blog__item-title, .single .is-1.main-article__title, .woocommerce .is-1.woocommerce-order-details__title, .woocommerce .cart_totals h2.is-1 {
+  .title.is-1, .is-1.blog__item-title, .single .is-1.main-article__title, .woocommerce .is-1.woocommerce-order-details__title, .woocommerce .cart_totals h2.is-1, .woocommerce .woocommerce-billing-fields h3.is-1,
+  .woocommerce .woocommerce-additional-fields h3.is-1,
+  .woocommerce .is-1#order_review_heading {
     font-size: 3rem; }
-  .title.is-2, .is-2.blog__item-title, .single .is-2.main-article__title, .woocommerce .is-2.woocommerce-order-details__title, .woocommerce .cart_totals h2.is-2 {
+  .title.is-2, .is-2.blog__item-title, .single .is-2.main-article__title, .woocommerce .is-2.woocommerce-order-details__title, .woocommerce .cart_totals h2.is-2, .woocommerce .woocommerce-billing-fields h3.is-2,
+  .woocommerce .woocommerce-additional-fields h3.is-2,
+  .woocommerce .is-2#order_review_heading {
     font-size: 2.5rem; }
-  .title.is-3, .is-3.blog__item-title, .single .is-3.main-article__title, .woocommerce .is-3.woocommerce-order-details__title, .woocommerce .cart_totals h2.is-3 {
+  .title.is-3, .is-3.blog__item-title, .single .is-3.main-article__title, .woocommerce .is-3.woocommerce-order-details__title, .woocommerce .cart_totals h2.is-3, .woocommerce .woocommerce-billing-fields h3.is-3,
+  .woocommerce .woocommerce-additional-fields h3.is-3,
+  .woocommerce .is-3#order_review_heading {
     font-size: 2rem; }
-  .title.is-4, .is-4.blog__item-title, .single .is-4.main-article__title, .woocommerce .is-4.woocommerce-order-details__title, .woocommerce .cart_totals h2 {
+  .title.is-4, .is-4.blog__item-title, .single .is-4.main-article__title, .woocommerce .is-4.woocommerce-order-details__title, .woocommerce .cart_totals h2, .woocommerce .woocommerce-billing-fields h3,
+  .woocommerce .woocommerce-additional-fields h3,
+  .woocommerce #order_review_heading {
     font-size: 1.5rem; }
-  .title.is-5, .is-5.blog__item-title, .single .is-5.main-article__title, .woocommerce .is-5.woocommerce-order-details__title, .woocommerce .cart_totals h2.is-5 {
+  .title.is-5, .is-5.blog__item-title, .single .is-5.main-article__title, .woocommerce .is-5.woocommerce-order-details__title, .woocommerce .cart_totals h2.is-5, .woocommerce .woocommerce-billing-fields h3.is-5,
+  .woocommerce .woocommerce-additional-fields h3.is-5,
+  .woocommerce .is-5#order_review_heading {
     font-size: 1.25rem; }
-  .title.is-6, .is-6.blog__item-title, .single .is-6.main-article__title, .woocommerce .is-6.woocommerce-order-details__title, .woocommerce .cart_totals h2.is-6 {
+  .title.is-6, .is-6.blog__item-title, .single .is-6.main-article__title, .woocommerce .is-6.woocommerce-order-details__title, .woocommerce .cart_totals h2.is-6, .woocommerce .woocommerce-billing-fields h3.is-6,
+  .woocommerce .woocommerce-additional-fields h3.is-6,
+  .woocommerce .is-6#order_review_heading {
     font-size: 1rem; }
-  .title.is-7, .is-7.blog__item-title, .single .is-7.main-article__title, .woocommerce .is-7.woocommerce-order-details__title, .woocommerce .cart_totals h2.is-7 {
+  .title.is-7, .is-7.blog__item-title, .single .is-7.main-article__title, .woocommerce .is-7.woocommerce-order-details__title, .woocommerce .cart_totals h2.is-7, .woocommerce .woocommerce-billing-fields h3.is-7,
+  .woocommerce .woocommerce-additional-fields h3.is-7,
+  .woocommerce .is-7#order_review_heading {
     font-size: 0.75rem; }
 
 
@@ -4928,7 +4953,11 @@ a.tag:hover {
   .subtitle strong, .woocommerce .woocommerce-column__title strong {
     color: #363636;
     font-weight: 600; }
-  .subtitle:not(.is-spaced) + .title, .woocommerce .woocommerce-column__title:not(.is-spaced) + .title, .subtitle:not(.is-spaced) + .blog__item-title, .woocommerce .woocommerce-column__title:not(.is-spaced) + .blog__item-title, .single .subtitle:not(.is-spaced) + .main-article__title, .woocommerce .single .woocommerce-column__title:not(.is-spaced) + .main-article__title, .single .woocommerce .woocommerce-column__title:not(.is-spaced) + .main-article__title, .woocommerce .subtitle:not(.is-spaced) + .woocommerce-order-details__title, .woocommerce .woocommerce-column__title:not(.is-spaced) + .woocommerce-order-details__title, .woocommerce .cart_totals .subtitle:not(.is-spaced) + h2, .woocommerce .cart_totals .woocommerce-column__title:not(.is-spaced) + h2 {
+  .subtitle:not(.is-spaced) + .title, .woocommerce .woocommerce-column__title:not(.is-spaced) + .title, .subtitle:not(.is-spaced) + .blog__item-title, .woocommerce .woocommerce-column__title:not(.is-spaced) + .blog__item-title, .single .subtitle:not(.is-spaced) + .main-article__title, .woocommerce .single .woocommerce-column__title:not(.is-spaced) + .main-article__title, .single .woocommerce .woocommerce-column__title:not(.is-spaced) + .main-article__title, .woocommerce .subtitle:not(.is-spaced) + .woocommerce-order-details__title, .woocommerce .woocommerce-column__title:not(.is-spaced) + .woocommerce-order-details__title, .woocommerce .cart_totals .subtitle:not(.is-spaced) + h2, .woocommerce .cart_totals .woocommerce-column__title:not(.is-spaced) + h2, .woocommerce .woocommerce-billing-fields .subtitle:not(.is-spaced) + h3, .woocommerce .woocommerce-billing-fields .woocommerce-column__title:not(.is-spaced) + h3,
+  .woocommerce .woocommerce-additional-fields .subtitle:not(.is-spaced) + h3,
+  .woocommerce .woocommerce-additional-fields .woocommerce-column__title:not(.is-spaced) + h3,
+  .woocommerce .subtitle:not(.is-spaced) + #order_review_heading,
+  .woocommerce .woocommerce-column__title:not(.is-spaced) + #order_review_heading {
     margin-top: -1.5rem; }
   .subtitle.is-1, .woocommerce .is-1.woocommerce-column__title {
     font-size: 3rem; }
@@ -4936,7 +4965,11 @@ a.tag:hover {
     font-size: 2.5rem; }
   .subtitle.is-3, .woocommerce .is-3.woocommerce-column__title {
     font-size: 2rem; }
-  .subtitle.is-4, .woocommerce .is-4.woocommerce-column__title, .woocommerce .cart_totals h2.woocommerce-column__title, .woocommerce .cart_totals h2.subtitle {
+  .subtitle.is-4, .woocommerce .is-4.woocommerce-column__title, .woocommerce .cart_totals h2.woocommerce-column__title, .woocommerce .woocommerce-billing-fields h3.woocommerce-column__title,
+  .woocommerce .woocommerce-additional-fields h3.woocommerce-column__title,
+  .woocommerce .woocommerce-column__title#order_review_heading, .woocommerce .cart_totals h2.subtitle, .woocommerce .woocommerce-billing-fields h3.subtitle,
+  .woocommerce .woocommerce-additional-fields h3.subtitle,
+  .woocommerce .subtitle#order_review_heading {
     font-size: 1.5rem; }
   .subtitle.is-5, .woocommerce .is-5.woocommerce-column__title {
     font-size: 1.25rem; }
@@ -5268,7 +5301,9 @@ a.dropdown-item {
   flex-grow: 0;
   flex-shrink: 0;
   justify-content: center; }
-  .level-item .title, .level-item .blog__item-title, .level-item .single .main-article__title, .single .level-item .main-article__title, .level-item .woocommerce .woocommerce-order-details__title, .woocommerce .level-item .woocommerce-order-details__title, .level-item .woocommerce .cart_totals h2, .woocommerce .cart_totals .level-item h2,
+  .level-item .title, .level-item .blog__item-title, .level-item .single .main-article__title, .single .level-item .main-article__title, .level-item .woocommerce .woocommerce-order-details__title, .woocommerce .level-item .woocommerce-order-details__title, .level-item .woocommerce .cart_totals h2, .woocommerce .cart_totals .level-item h2, .level-item .woocommerce .woocommerce-billing-fields h3, .woocommerce .woocommerce-billing-fields .level-item h3,
+  .level-item .woocommerce .woocommerce-additional-fields h3, .woocommerce .woocommerce-additional-fields .level-item h3,
+  .level-item .woocommerce #order_review_heading, .woocommerce .level-item #order_review_heading,
   .level-item .subtitle,
   .level-item .woocommerce .woocommerce-column__title,
   .woocommerce .level-item .woocommerce-column__title {
@@ -7017,7 +7052,9 @@ label.panel-block {
     width: 25%; }
   .columns.is-mobile > .column.is-offset-3 {
     margin-left: 25%; }
-  .columns.is-mobile > .column.is-4, .woocommerce .cart_totals .columns.is-mobile > h2.column {
+  .columns.is-mobile > .column.is-4, .woocommerce .cart_totals .columns.is-mobile > h2.column, .woocommerce .woocommerce-billing-fields .columns.is-mobile > h3.column,
+  .woocommerce .woocommerce-additional-fields .columns.is-mobile > h3.column,
+  .woocommerce .columns.is-mobile > .column#order_review_heading {
     flex: none;
     width: 33.33333%; }
   .columns.is-mobile > .column.is-offset-4 {
@@ -7239,7 +7276,9 @@ label.panel-block {
       width: 25%; }
     .column.is-offset-3, .column.is-offset-3-tablet {
       margin-left: 25%; }
-    .column.is-4, .woocommerce .cart_totals h2.column, .column.is-4-tablet {
+    .column.is-4, .woocommerce .cart_totals h2.column, .woocommerce .woocommerce-billing-fields h3.column,
+    .woocommerce .woocommerce-additional-fields h3.column,
+    .woocommerce .column#order_review_heading, .column.is-4-tablet {
       flex: none;
       width: 33.33333%; }
     .column.is-offset-4, .column.is-offset-4-tablet {
@@ -7778,7 +7817,9 @@ label.panel-block {
     --columnGap: 0.5rem; }
   .columns.is-variable.is-3 {
     --columnGap: 0.75rem; }
-  .columns.is-variable.is-4, .woocommerce .cart_totals h2.columns.is-variable {
+  .columns.is-variable.is-4, .woocommerce .cart_totals h2.columns.is-variable, .woocommerce .woocommerce-billing-fields h3.columns.is-variable,
+  .woocommerce .woocommerce-additional-fields h3.columns.is-variable,
+  .woocommerce .columns.is-variable#order_review_heading {
     --columnGap: 1rem; }
   .columns.is-variable.is-5 {
     --columnGap: 1.25rem; }
@@ -7824,7 +7865,9 @@ label.panel-block {
     .tile.is-3 {
       flex: none;
       width: 25%; }
-    .tile.is-4, .woocommerce .cart_totals h2.tile {
+    .tile.is-4, .woocommerce .cart_totals h2.tile, .woocommerce .woocommerce-billing-fields h3.tile,
+    .woocommerce .woocommerce-additional-fields h3.tile,
+    .woocommerce .tile#order_review_heading {
       flex: none;
       width: 33.33333%; }
     .tile.is-5 {
@@ -7867,7 +7910,9 @@ label.panel-block {
     .hero.is-white a:not(.button):not(.dropdown-item):not(.tag),
     .hero.is-white strong {
       color: inherit; }
-    .hero.is-white .title, .hero.is-white .blog__item-title, .hero.is-white .single .main-article__title, .single .hero.is-white .main-article__title, .hero.is-white .woocommerce .woocommerce-order-details__title, .woocommerce .hero.is-white .woocommerce-order-details__title, .hero.is-white .woocommerce .cart_totals h2, .woocommerce .cart_totals .hero.is-white h2 {
+    .hero.is-white .title, .hero.is-white .blog__item-title, .hero.is-white .single .main-article__title, .single .hero.is-white .main-article__title, .hero.is-white .woocommerce .woocommerce-order-details__title, .woocommerce .hero.is-white .woocommerce-order-details__title, .hero.is-white .woocommerce .cart_totals h2, .woocommerce .cart_totals .hero.is-white h2, .hero.is-white .woocommerce .woocommerce-billing-fields h3, .woocommerce .woocommerce-billing-fields .hero.is-white h3,
+    .hero.is-white .woocommerce .woocommerce-additional-fields h3, .woocommerce .woocommerce-additional-fields .hero.is-white h3,
+    .hero.is-white .woocommerce #order_review_heading, .woocommerce .hero.is-white #order_review_heading {
       color: #0a0a0a; }
     .hero.is-white .subtitle, .hero.is-white .woocommerce .woocommerce-column__title, .woocommerce .hero.is-white .woocommerce-column__title {
       color: rgba(10, 10, 10, 0.9); }
@@ -7913,7 +7958,9 @@ label.panel-block {
     .hero.is-black a:not(.button):not(.dropdown-item):not(.tag),
     .hero.is-black strong {
       color: inherit; }
-    .hero.is-black .title, .hero.is-black .blog__item-title, .hero.is-black .single .main-article__title, .single .hero.is-black .main-article__title, .hero.is-black .woocommerce .woocommerce-order-details__title, .woocommerce .hero.is-black .woocommerce-order-details__title, .hero.is-black .woocommerce .cart_totals h2, .woocommerce .cart_totals .hero.is-black h2 {
+    .hero.is-black .title, .hero.is-black .blog__item-title, .hero.is-black .single .main-article__title, .single .hero.is-black .main-article__title, .hero.is-black .woocommerce .woocommerce-order-details__title, .woocommerce .hero.is-black .woocommerce-order-details__title, .hero.is-black .woocommerce .cart_totals h2, .woocommerce .cart_totals .hero.is-black h2, .hero.is-black .woocommerce .woocommerce-billing-fields h3, .woocommerce .woocommerce-billing-fields .hero.is-black h3,
+    .hero.is-black .woocommerce .woocommerce-additional-fields h3, .woocommerce .woocommerce-additional-fields .hero.is-black h3,
+    .hero.is-black .woocommerce #order_review_heading, .woocommerce .hero.is-black #order_review_heading {
       color: white; }
     .hero.is-black .subtitle, .hero.is-black .woocommerce .woocommerce-column__title, .woocommerce .hero.is-black .woocommerce-column__title {
       color: rgba(255, 255, 255, 0.9); }
@@ -7959,7 +8006,9 @@ label.panel-block {
     .hero.is-light a:not(.button):not(.dropdown-item):not(.tag),
     .hero.is-light strong {
       color: inherit; }
-    .hero.is-light .title, .hero.is-light .blog__item-title, .hero.is-light .single .main-article__title, .single .hero.is-light .main-article__title, .hero.is-light .woocommerce .woocommerce-order-details__title, .woocommerce .hero.is-light .woocommerce-order-details__title, .hero.is-light .woocommerce .cart_totals h2, .woocommerce .cart_totals .hero.is-light h2 {
+    .hero.is-light .title, .hero.is-light .blog__item-title, .hero.is-light .single .main-article__title, .single .hero.is-light .main-article__title, .hero.is-light .woocommerce .woocommerce-order-details__title, .woocommerce .hero.is-light .woocommerce-order-details__title, .hero.is-light .woocommerce .cart_totals h2, .woocommerce .cart_totals .hero.is-light h2, .hero.is-light .woocommerce .woocommerce-billing-fields h3, .woocommerce .woocommerce-billing-fields .hero.is-light h3,
+    .hero.is-light .woocommerce .woocommerce-additional-fields h3, .woocommerce .woocommerce-additional-fields .hero.is-light h3,
+    .hero.is-light .woocommerce #order_review_heading, .woocommerce .hero.is-light #order_review_heading {
       color: #363636; }
     .hero.is-light .subtitle, .hero.is-light .woocommerce .woocommerce-column__title, .woocommerce .hero.is-light .woocommerce-column__title {
       color: rgba(54, 54, 54, 0.9); }
@@ -8005,7 +8054,9 @@ label.panel-block {
     .hero.is-dark a:not(.button):not(.dropdown-item):not(.tag),
     .hero.is-dark strong {
       color: inherit; }
-    .hero.is-dark .title, .hero.is-dark .blog__item-title, .hero.is-dark .single .main-article__title, .single .hero.is-dark .main-article__title, .hero.is-dark .woocommerce .woocommerce-order-details__title, .woocommerce .hero.is-dark .woocommerce-order-details__title, .hero.is-dark .woocommerce .cart_totals h2, .woocommerce .cart_totals .hero.is-dark h2 {
+    .hero.is-dark .title, .hero.is-dark .blog__item-title, .hero.is-dark .single .main-article__title, .single .hero.is-dark .main-article__title, .hero.is-dark .woocommerce .woocommerce-order-details__title, .woocommerce .hero.is-dark .woocommerce-order-details__title, .hero.is-dark .woocommerce .cart_totals h2, .woocommerce .cart_totals .hero.is-dark h2, .hero.is-dark .woocommerce .woocommerce-billing-fields h3, .woocommerce .woocommerce-billing-fields .hero.is-dark h3,
+    .hero.is-dark .woocommerce .woocommerce-additional-fields h3, .woocommerce .woocommerce-additional-fields .hero.is-dark h3,
+    .hero.is-dark .woocommerce #order_review_heading, .woocommerce .hero.is-dark #order_review_heading {
       color: whitesmoke; }
     .hero.is-dark .subtitle, .hero.is-dark .woocommerce .woocommerce-column__title, .woocommerce .hero.is-dark .woocommerce-column__title {
       color: rgba(245, 245, 245, 0.9); }
@@ -8066,7 +8117,37 @@ label.panel-block {
     .wpcf7-form .woocommerce input.hero.alt.wpcf7-submit strong,
     .woocommerce .hero.checkout-button strong {
       color: inherit; }
-    .hero.is-primary .title, .woocommerce #respond input.hero#submit .title, .woocommerce .blog-comment button.hero.alt#cancel-comment-reply-link .title, .blog-comment .woocommerce button.hero.alt#cancel-comment-reply-link .title, .woocommerce button.hero.alt.button .title, .woocommerce a.hero.button.alt .title, .woocommerce .blog-comment a.hero.alt#cancel-comment-reply-link .title, .blog-comment .woocommerce a.hero.alt#cancel-comment-reply-link .title, .woocommerce input.hero.button.alt .title, .woocommerce .blog-comment input.hero.alt#cancel-comment-reply-link .title, .blog-comment .woocommerce input.hero.alt#cancel-comment-reply-link .title, .woocommerce .wpcf7-form input.hero.alt.wpcf7-submit .title, .wpcf7-form .woocommerce input.hero.alt.wpcf7-submit .title, .woocommerce .hero.checkout-button .title, .hero.is-primary .blog__item-title, .woocommerce #respond input.hero#submit .blog__item-title, .woocommerce .blog-comment button.hero.alt#cancel-comment-reply-link .blog__item-title, .blog-comment .woocommerce button.hero.alt#cancel-comment-reply-link .blog__item-title, .woocommerce button.hero.alt.button .blog__item-title, .woocommerce a.hero.button.alt .blog__item-title, .woocommerce .blog-comment a.hero.alt#cancel-comment-reply-link .blog__item-title, .blog-comment .woocommerce a.hero.alt#cancel-comment-reply-link .blog__item-title, .woocommerce input.hero.button.alt .blog__item-title, .woocommerce .blog-comment input.hero.alt#cancel-comment-reply-link .blog__item-title, .blog-comment .woocommerce input.hero.alt#cancel-comment-reply-link .blog__item-title, .woocommerce .wpcf7-form input.hero.alt.wpcf7-submit .blog__item-title, .wpcf7-form .woocommerce input.hero.alt.wpcf7-submit .blog__item-title, .woocommerce .hero.checkout-button .blog__item-title, .hero.is-primary .single .main-article__title, .single .hero.is-primary .main-article__title, .woocommerce #respond input.hero#submit .single .main-article__title, .single .woocommerce #respond input.hero#submit .main-article__title, .woocommerce .blog-comment button.hero.alt#cancel-comment-reply-link .single .main-article__title, .single .woocommerce .blog-comment button.hero.alt#cancel-comment-reply-link .main-article__title, .blog-comment .woocommerce button.hero.alt#cancel-comment-reply-link .single .main-article__title, .single .blog-comment .woocommerce button.hero.alt#cancel-comment-reply-link .main-article__title, .woocommerce button.hero.alt.button .single .main-article__title, .single .woocommerce button.hero.alt.button .main-article__title, .woocommerce a.hero.button.alt .single .main-article__title, .single .woocommerce a.hero.button.alt .main-article__title, .woocommerce .blog-comment a.hero.alt#cancel-comment-reply-link .single .main-article__title, .single .woocommerce .blog-comment a.hero.alt#cancel-comment-reply-link .main-article__title, .blog-comment .woocommerce a.hero.alt#cancel-comment-reply-link .single .main-article__title, .single .blog-comment .woocommerce a.hero.alt#cancel-comment-reply-link .main-article__title, .woocommerce input.hero.button.alt .single .main-article__title, .single .woocommerce input.hero.button.alt .main-article__title, .woocommerce .blog-comment input.hero.alt#cancel-comment-reply-link .single .main-article__title, .single .woocommerce .blog-comment input.hero.alt#cancel-comment-reply-link .main-article__title, .blog-comment .woocommerce input.hero.alt#cancel-comment-reply-link .single .main-article__title, .single .blog-comment .woocommerce input.hero.alt#cancel-comment-reply-link .main-article__title, .woocommerce .wpcf7-form input.hero.alt.wpcf7-submit .single .main-article__title, .single .woocommerce .wpcf7-form input.hero.alt.wpcf7-submit .main-article__title, .wpcf7-form .woocommerce input.hero.alt.wpcf7-submit .single .main-article__title, .single .wpcf7-form .woocommerce input.hero.alt.wpcf7-submit .main-article__title, .woocommerce .hero.checkout-button .single .main-article__title, .single .woocommerce .hero.checkout-button .main-article__title, .hero.is-primary .woocommerce .woocommerce-order-details__title, .woocommerce .hero.is-primary .woocommerce-order-details__title, .woocommerce #respond input.hero#submit .woocommerce-order-details__title, .woocommerce .blog-comment button.hero.alt#cancel-comment-reply-link .woocommerce-order-details__title, .blog-comment .woocommerce button.hero.alt#cancel-comment-reply-link .woocommerce-order-details__title, .woocommerce button.hero.alt.button .woocommerce-order-details__title, .woocommerce a.hero.button.alt .woocommerce-order-details__title, .woocommerce .blog-comment a.hero.alt#cancel-comment-reply-link .woocommerce-order-details__title, .blog-comment .woocommerce a.hero.alt#cancel-comment-reply-link .woocommerce-order-details__title, .woocommerce input.hero.button.alt .woocommerce-order-details__title, .woocommerce .blog-comment input.hero.alt#cancel-comment-reply-link .woocommerce-order-details__title, .blog-comment .woocommerce input.hero.alt#cancel-comment-reply-link .woocommerce-order-details__title, .woocommerce .wpcf7-form input.hero.alt.wpcf7-submit .woocommerce-order-details__title, .wpcf7-form .woocommerce input.hero.alt.wpcf7-submit .woocommerce-order-details__title, .woocommerce .hero.checkout-button .woocommerce-order-details__title, .hero.is-primary .woocommerce .cart_totals h2, .woocommerce .cart_totals .hero.is-primary h2, .woocommerce #respond input.hero#submit .cart_totals h2, .woocommerce .cart_totals #respond input.hero#submit h2, .woocommerce .blog-comment button.hero.alt#cancel-comment-reply-link .cart_totals h2, .woocommerce .cart_totals .blog-comment button.hero.alt#cancel-comment-reply-link h2, .blog-comment .woocommerce button.hero.alt#cancel-comment-reply-link .cart_totals h2, .blog-comment .woocommerce .cart_totals button.hero.alt#cancel-comment-reply-link h2, .woocommerce button.hero.alt.button .cart_totals h2, .woocommerce .cart_totals button.hero.alt.button h2, .woocommerce a.hero.button.alt .cart_totals h2, .woocommerce .cart_totals a.hero.button.alt h2, .woocommerce .blog-comment a.hero.alt#cancel-comment-reply-link .cart_totals h2, .woocommerce .cart_totals .blog-comment a.hero.alt#cancel-comment-reply-link h2, .blog-comment .woocommerce a.hero.alt#cancel-comment-reply-link .cart_totals h2, .blog-comment .woocommerce .cart_totals a.hero.alt#cancel-comment-reply-link h2, .woocommerce input.hero.button.alt .cart_totals h2, .woocommerce .cart_totals input.hero.button.alt h2, .woocommerce .blog-comment input.hero.alt#cancel-comment-reply-link .cart_totals h2, .woocommerce .cart_totals .blog-comment input.hero.alt#cancel-comment-reply-link h2, .blog-comment .woocommerce input.hero.alt#cancel-comment-reply-link .cart_totals h2, .blog-comment .woocommerce .cart_totals input.hero.alt#cancel-comment-reply-link h2, .woocommerce .wpcf7-form input.hero.alt.wpcf7-submit .cart_totals h2, .woocommerce .cart_totals .wpcf7-form input.hero.alt.wpcf7-submit h2, .wpcf7-form .woocommerce input.hero.alt.wpcf7-submit .cart_totals h2, .wpcf7-form .woocommerce .cart_totals input.hero.alt.wpcf7-submit h2, .woocommerce .hero.checkout-button .cart_totals h2, .woocommerce .cart_totals .hero.checkout-button h2 {
+    .hero.is-primary .title, .woocommerce #respond input.hero#submit .title, .woocommerce .blog-comment button.hero.alt#cancel-comment-reply-link .title, .blog-comment .woocommerce button.hero.alt#cancel-comment-reply-link .title, .woocommerce button.hero.alt.button .title, .woocommerce a.hero.button.alt .title, .woocommerce .blog-comment a.hero.alt#cancel-comment-reply-link .title, .blog-comment .woocommerce a.hero.alt#cancel-comment-reply-link .title, .woocommerce input.hero.button.alt .title, .woocommerce .blog-comment input.hero.alt#cancel-comment-reply-link .title, .blog-comment .woocommerce input.hero.alt#cancel-comment-reply-link .title, .woocommerce .wpcf7-form input.hero.alt.wpcf7-submit .title, .wpcf7-form .woocommerce input.hero.alt.wpcf7-submit .title, .woocommerce #respond input.hero.alt#submit .title, .woocommerce .hero.checkout-button .title, .hero.is-primary .blog__item-title, .woocommerce #respond input.hero#submit .blog__item-title, .woocommerce .blog-comment button.hero.alt#cancel-comment-reply-link .blog__item-title, .blog-comment .woocommerce button.hero.alt#cancel-comment-reply-link .blog__item-title, .woocommerce button.hero.alt.button .blog__item-title, .woocommerce a.hero.button.alt .blog__item-title, .woocommerce .blog-comment a.hero.alt#cancel-comment-reply-link .blog__item-title, .blog-comment .woocommerce a.hero.alt#cancel-comment-reply-link .blog__item-title, .woocommerce input.hero.button.alt .blog__item-title, .woocommerce .blog-comment input.hero.alt#cancel-comment-reply-link .blog__item-title, .blog-comment .woocommerce input.hero.alt#cancel-comment-reply-link .blog__item-title, .woocommerce .wpcf7-form input.hero.alt.wpcf7-submit .blog__item-title, .wpcf7-form .woocommerce input.hero.alt.wpcf7-submit .blog__item-title, .woocommerce #respond input.hero.alt#submit .blog__item-title, .woocommerce .hero.checkout-button .blog__item-title, .hero.is-primary .single .main-article__title, .single .hero.is-primary .main-article__title, .woocommerce #respond input.hero#submit .single .main-article__title, .single .woocommerce #respond input.hero#submit .main-article__title, .woocommerce .blog-comment button.hero.alt#cancel-comment-reply-link .single .main-article__title, .single .woocommerce .blog-comment button.hero.alt#cancel-comment-reply-link .main-article__title, .blog-comment .woocommerce button.hero.alt#cancel-comment-reply-link .single .main-article__title, .single .blog-comment .woocommerce button.hero.alt#cancel-comment-reply-link .main-article__title, .woocommerce button.hero.alt.button .single .main-article__title, .single .woocommerce button.hero.alt.button .main-article__title, .woocommerce a.hero.button.alt .single .main-article__title, .single .woocommerce a.hero.button.alt .main-article__title, .woocommerce .blog-comment a.hero.alt#cancel-comment-reply-link .single .main-article__title, .single .woocommerce .blog-comment a.hero.alt#cancel-comment-reply-link .main-article__title, .blog-comment .woocommerce a.hero.alt#cancel-comment-reply-link .single .main-article__title, .single .blog-comment .woocommerce a.hero.alt#cancel-comment-reply-link .main-article__title, .woocommerce input.hero.button.alt .single .main-article__title, .single .woocommerce input.hero.button.alt .main-article__title, .woocommerce .blog-comment input.hero.alt#cancel-comment-reply-link .single .main-article__title, .single .woocommerce .blog-comment input.hero.alt#cancel-comment-reply-link .main-article__title, .blog-comment .woocommerce input.hero.alt#cancel-comment-reply-link .single .main-article__title, .single .blog-comment .woocommerce input.hero.alt#cancel-comment-reply-link .main-article__title, .woocommerce .wpcf7-form input.hero.alt.wpcf7-submit .single .main-article__title, .single .woocommerce .wpcf7-form input.hero.alt.wpcf7-submit .main-article__title, .wpcf7-form .woocommerce input.hero.alt.wpcf7-submit .single .main-article__title, .single .wpcf7-form .woocommerce input.hero.alt.wpcf7-submit .main-article__title, .woocommerce #respond input.hero.alt#submit .single .main-article__title, .single .woocommerce #respond input.hero.alt#submit .main-article__title, .woocommerce .hero.checkout-button .single .main-article__title, .single .woocommerce .hero.checkout-button .main-article__title, .hero.is-primary .woocommerce .woocommerce-order-details__title, .woocommerce .hero.is-primary .woocommerce-order-details__title, .woocommerce #respond input.hero#submit .woocommerce-order-details__title, .woocommerce .blog-comment button.hero.alt#cancel-comment-reply-link .woocommerce-order-details__title, .blog-comment .woocommerce button.hero.alt#cancel-comment-reply-link .woocommerce-order-details__title, .woocommerce button.hero.alt.button .woocommerce-order-details__title, .woocommerce a.hero.button.alt .woocommerce-order-details__title, .woocommerce .blog-comment a.hero.alt#cancel-comment-reply-link .woocommerce-order-details__title, .blog-comment .woocommerce a.hero.alt#cancel-comment-reply-link .woocommerce-order-details__title, .woocommerce input.hero.button.alt .woocommerce-order-details__title, .woocommerce .blog-comment input.hero.alt#cancel-comment-reply-link .woocommerce-order-details__title, .blog-comment .woocommerce input.hero.alt#cancel-comment-reply-link .woocommerce-order-details__title, .woocommerce .wpcf7-form input.hero.alt.wpcf7-submit .woocommerce-order-details__title, .wpcf7-form .woocommerce input.hero.alt.wpcf7-submit .woocommerce-order-details__title, .woocommerce #respond input.hero.alt#submit .woocommerce-order-details__title, .woocommerce .hero.checkout-button .woocommerce-order-details__title, .hero.is-primary .woocommerce .cart_totals h2, .woocommerce .cart_totals .hero.is-primary h2, .woocommerce #respond input.hero#submit .cart_totals h2, .woocommerce .cart_totals #respond input.hero#submit h2, .woocommerce .blog-comment button.hero.alt#cancel-comment-reply-link .cart_totals h2, .woocommerce .cart_totals .blog-comment button.hero.alt#cancel-comment-reply-link h2, .blog-comment .woocommerce button.hero.alt#cancel-comment-reply-link .cart_totals h2, .blog-comment .woocommerce .cart_totals button.hero.alt#cancel-comment-reply-link h2, .woocommerce button.hero.alt.button .cart_totals h2, .woocommerce .cart_totals button.hero.alt.button h2, .woocommerce a.hero.button.alt .cart_totals h2, .woocommerce .cart_totals a.hero.button.alt h2, .woocommerce .blog-comment a.hero.alt#cancel-comment-reply-link .cart_totals h2, .woocommerce .cart_totals .blog-comment a.hero.alt#cancel-comment-reply-link h2, .blog-comment .woocommerce a.hero.alt#cancel-comment-reply-link .cart_totals h2, .blog-comment .woocommerce .cart_totals a.hero.alt#cancel-comment-reply-link h2, .woocommerce input.hero.button.alt .cart_totals h2, .woocommerce .cart_totals input.hero.button.alt h2, .woocommerce .blog-comment input.hero.alt#cancel-comment-reply-link .cart_totals h2, .woocommerce .cart_totals .blog-comment input.hero.alt#cancel-comment-reply-link h2, .blog-comment .woocommerce input.hero.alt#cancel-comment-reply-link .cart_totals h2, .blog-comment .woocommerce .cart_totals input.hero.alt#cancel-comment-reply-link h2, .woocommerce .wpcf7-form input.hero.alt.wpcf7-submit .cart_totals h2, .woocommerce .cart_totals .wpcf7-form input.hero.alt.wpcf7-submit h2, .wpcf7-form .woocommerce input.hero.alt.wpcf7-submit .cart_totals h2, .wpcf7-form .woocommerce .cart_totals input.hero.alt.wpcf7-submit h2, .woocommerce #respond input.hero.alt#submit .cart_totals h2, .woocommerce .cart_totals #respond input.hero.alt#submit h2, .woocommerce .hero.checkout-button .cart_totals h2, .woocommerce .cart_totals .hero.checkout-button h2, .hero.is-primary .woocommerce .woocommerce-billing-fields h3, .woocommerce .woocommerce-billing-fields .hero.is-primary h3, .woocommerce #respond input.hero#submit .woocommerce-billing-fields h3, .woocommerce .woocommerce-billing-fields #respond input.hero#submit h3, .woocommerce .blog-comment button.hero.alt#cancel-comment-reply-link .woocommerce-billing-fields h3, .woocommerce .woocommerce-billing-fields .blog-comment button.hero.alt#cancel-comment-reply-link h3, .blog-comment .woocommerce button.hero.alt#cancel-comment-reply-link .woocommerce-billing-fields h3, .blog-comment .woocommerce .woocommerce-billing-fields button.hero.alt#cancel-comment-reply-link h3, .woocommerce button.hero.alt.button .woocommerce-billing-fields h3, .woocommerce .woocommerce-billing-fields button.hero.alt.button h3, .woocommerce a.hero.button.alt .woocommerce-billing-fields h3, .woocommerce .woocommerce-billing-fields a.hero.button.alt h3, .woocommerce .blog-comment a.hero.alt#cancel-comment-reply-link .woocommerce-billing-fields h3, .woocommerce .woocommerce-billing-fields .blog-comment a.hero.alt#cancel-comment-reply-link h3, .blog-comment .woocommerce a.hero.alt#cancel-comment-reply-link .woocommerce-billing-fields h3, .blog-comment .woocommerce .woocommerce-billing-fields a.hero.alt#cancel-comment-reply-link h3, .woocommerce input.hero.button.alt .woocommerce-billing-fields h3, .woocommerce .woocommerce-billing-fields input.hero.button.alt h3, .woocommerce .blog-comment input.hero.alt#cancel-comment-reply-link .woocommerce-billing-fields h3, .woocommerce .woocommerce-billing-fields .blog-comment input.hero.alt#cancel-comment-reply-link h3, .blog-comment .woocommerce input.hero.alt#cancel-comment-reply-link .woocommerce-billing-fields h3, .blog-comment .woocommerce .woocommerce-billing-fields input.hero.alt#cancel-comment-reply-link h3, .woocommerce .wpcf7-form input.hero.alt.wpcf7-submit .woocommerce-billing-fields h3, .woocommerce .woocommerce-billing-fields .wpcf7-form input.hero.alt.wpcf7-submit h3, .wpcf7-form .woocommerce input.hero.alt.wpcf7-submit .woocommerce-billing-fields h3, .wpcf7-form .woocommerce .woocommerce-billing-fields input.hero.alt.wpcf7-submit h3, .woocommerce #respond input.hero.alt#submit .woocommerce-billing-fields h3, .woocommerce .woocommerce-billing-fields #respond input.hero.alt#submit h3, .woocommerce .hero.checkout-button .woocommerce-billing-fields h3, .woocommerce .woocommerce-billing-fields .hero.checkout-button h3,
+    .hero.is-primary .woocommerce .woocommerce-additional-fields h3, .woocommerce .woocommerce-additional-fields .hero.is-primary h3,
+    .woocommerce #respond input.hero#submit .woocommerce-additional-fields h3, .woocommerce .woocommerce-additional-fields #respond input.hero#submit h3,
+    .woocommerce .blog-comment button.hero.alt#cancel-comment-reply-link .woocommerce-additional-fields h3, .woocommerce .woocommerce-additional-fields .blog-comment button.hero.alt#cancel-comment-reply-link h3,
+    .blog-comment .woocommerce button.hero.alt#cancel-comment-reply-link .woocommerce-additional-fields h3, .blog-comment .woocommerce .woocommerce-additional-fields button.hero.alt#cancel-comment-reply-link h3,
+    .woocommerce button.hero.alt.button .woocommerce-additional-fields h3, .woocommerce .woocommerce-additional-fields button.hero.alt.button h3,
+    .woocommerce a.hero.button.alt .woocommerce-additional-fields h3, .woocommerce .woocommerce-additional-fields a.hero.button.alt h3,
+    .woocommerce .blog-comment a.hero.alt#cancel-comment-reply-link .woocommerce-additional-fields h3, .woocommerce .woocommerce-additional-fields .blog-comment a.hero.alt#cancel-comment-reply-link h3,
+    .blog-comment .woocommerce a.hero.alt#cancel-comment-reply-link .woocommerce-additional-fields h3, .blog-comment .woocommerce .woocommerce-additional-fields a.hero.alt#cancel-comment-reply-link h3,
+    .woocommerce input.hero.button.alt .woocommerce-additional-fields h3, .woocommerce .woocommerce-additional-fields input.hero.button.alt h3,
+    .woocommerce .blog-comment input.hero.alt#cancel-comment-reply-link .woocommerce-additional-fields h3, .woocommerce .woocommerce-additional-fields .blog-comment input.hero.alt#cancel-comment-reply-link h3,
+    .blog-comment .woocommerce input.hero.alt#cancel-comment-reply-link .woocommerce-additional-fields h3, .blog-comment .woocommerce .woocommerce-additional-fields input.hero.alt#cancel-comment-reply-link h3,
+    .woocommerce .wpcf7-form input.hero.alt.wpcf7-submit .woocommerce-additional-fields h3, .woocommerce .woocommerce-additional-fields .wpcf7-form input.hero.alt.wpcf7-submit h3,
+    .wpcf7-form .woocommerce input.hero.alt.wpcf7-submit .woocommerce-additional-fields h3, .wpcf7-form .woocommerce .woocommerce-additional-fields input.hero.alt.wpcf7-submit h3,
+    .woocommerce #respond input.hero.alt#submit .woocommerce-additional-fields h3, .woocommerce .woocommerce-additional-fields #respond input.hero.alt#submit h3,
+    .woocommerce .hero.checkout-button .woocommerce-additional-fields h3, .woocommerce .woocommerce-additional-fields .hero.checkout-button h3,
+    .hero.is-primary .woocommerce #order_review_heading, .woocommerce .hero.is-primary #order_review_heading,
+    .woocommerce #respond input.hero#submit #order_review_heading,
+    .woocommerce .blog-comment button.hero.alt#cancel-comment-reply-link #order_review_heading,
+    .blog-comment .woocommerce button.hero.alt#cancel-comment-reply-link #order_review_heading,
+    .woocommerce button.hero.alt.button #order_review_heading,
+    .woocommerce a.hero.button.alt #order_review_heading,
+    .woocommerce .blog-comment a.hero.alt#cancel-comment-reply-link #order_review_heading,
+    .blog-comment .woocommerce a.hero.alt#cancel-comment-reply-link #order_review_heading,
+    .woocommerce input.hero.button.alt #order_review_heading,
+    .woocommerce .blog-comment input.hero.alt#cancel-comment-reply-link #order_review_heading,
+    .blog-comment .woocommerce input.hero.alt#cancel-comment-reply-link #order_review_heading,
+    .woocommerce .wpcf7-form input.hero.alt.wpcf7-submit #order_review_heading,
+    .wpcf7-form .woocommerce input.hero.alt.wpcf7-submit #order_review_heading,
+    .woocommerce #respond input.hero.alt#submit #order_review_heading,
+    .woocommerce .hero.checkout-button #order_review_heading {
       color: #fff; }
     .hero.is-primary .subtitle, .woocommerce #respond input.hero#submit .subtitle, .woocommerce .blog-comment button.hero.alt#cancel-comment-reply-link .subtitle, .blog-comment .woocommerce button.hero.alt#cancel-comment-reply-link .subtitle, .woocommerce button.hero.alt.button .subtitle, .woocommerce a.hero.button.alt .subtitle, .woocommerce .blog-comment a.hero.alt#cancel-comment-reply-link .subtitle, .blog-comment .woocommerce a.hero.alt#cancel-comment-reply-link .subtitle, .woocommerce input.hero.button.alt .subtitle, .woocommerce .blog-comment input.hero.alt#cancel-comment-reply-link .subtitle, .blog-comment .woocommerce input.hero.alt#cancel-comment-reply-link .subtitle, .woocommerce .wpcf7-form input.hero.alt.wpcf7-submit .subtitle, .wpcf7-form .woocommerce input.hero.alt.wpcf7-submit .subtitle, .woocommerce .hero.checkout-button .subtitle, .hero.is-primary .woocommerce .woocommerce-column__title, .woocommerce .hero.is-primary .woocommerce-column__title, .woocommerce #respond input.hero#submit .woocommerce-column__title, .woocommerce .blog-comment button.hero.alt#cancel-comment-reply-link .woocommerce-column__title, .blog-comment .woocommerce button.hero.alt#cancel-comment-reply-link .woocommerce-column__title, .woocommerce button.hero.alt.button .woocommerce-column__title, .woocommerce a.hero.button.alt .woocommerce-column__title, .woocommerce .blog-comment a.hero.alt#cancel-comment-reply-link .woocommerce-column__title, .blog-comment .woocommerce a.hero.alt#cancel-comment-reply-link .woocommerce-column__title, .woocommerce input.hero.button.alt .woocommerce-column__title, .woocommerce .blog-comment input.hero.alt#cancel-comment-reply-link .woocommerce-column__title, .blog-comment .woocommerce input.hero.alt#cancel-comment-reply-link .woocommerce-column__title, .woocommerce .wpcf7-form input.hero.alt.wpcf7-submit .woocommerce-column__title, .wpcf7-form .woocommerce input.hero.alt.wpcf7-submit .woocommerce-column__title, .woocommerce .hero.checkout-button .woocommerce-column__title {
       color: rgba(255, 255, 255, 0.9); }
@@ -8180,7 +8261,11 @@ label.panel-block {
     .hero.is-link strong,
     .wpcf7-form input.hero.wpcf7-submit strong {
       color: inherit; }
-    .hero.is-link .title, .wpcf7-form input.hero.wpcf7-submit .title, .hero.is-link .blog__item-title, .wpcf7-form input.hero.wpcf7-submit .blog__item-title, .hero.is-link .single .main-article__title, .single .hero.is-link .main-article__title, .wpcf7-form input.hero.wpcf7-submit .single .main-article__title, .single .wpcf7-form input.hero.wpcf7-submit .main-article__title, .hero.is-link .woocommerce .woocommerce-order-details__title, .woocommerce .hero.is-link .woocommerce-order-details__title, .wpcf7-form input.hero.wpcf7-submit .woocommerce .woocommerce-order-details__title, .woocommerce .wpcf7-form input.hero.wpcf7-submit .woocommerce-order-details__title, .hero.is-link .woocommerce .cart_totals h2, .woocommerce .cart_totals .hero.is-link h2, .wpcf7-form input.hero.wpcf7-submit .woocommerce .cart_totals h2, .woocommerce .cart_totals .wpcf7-form input.hero.wpcf7-submit h2 {
+    .hero.is-link .title, .wpcf7-form input.hero.wpcf7-submit .title, .hero.is-link .blog__item-title, .wpcf7-form input.hero.wpcf7-submit .blog__item-title, .hero.is-link .single .main-article__title, .single .hero.is-link .main-article__title, .wpcf7-form input.hero.wpcf7-submit .single .main-article__title, .single .wpcf7-form input.hero.wpcf7-submit .main-article__title, .hero.is-link .woocommerce .woocommerce-order-details__title, .woocommerce .hero.is-link .woocommerce-order-details__title, .wpcf7-form input.hero.wpcf7-submit .woocommerce .woocommerce-order-details__title, .woocommerce .wpcf7-form input.hero.wpcf7-submit .woocommerce-order-details__title, .hero.is-link .woocommerce .cart_totals h2, .woocommerce .cart_totals .hero.is-link h2, .wpcf7-form input.hero.wpcf7-submit .woocommerce .cart_totals h2, .woocommerce .cart_totals .wpcf7-form input.hero.wpcf7-submit h2, .hero.is-link .woocommerce .woocommerce-billing-fields h3, .woocommerce .woocommerce-billing-fields .hero.is-link h3, .wpcf7-form input.hero.wpcf7-submit .woocommerce .woocommerce-billing-fields h3, .woocommerce .woocommerce-billing-fields .wpcf7-form input.hero.wpcf7-submit h3,
+    .hero.is-link .woocommerce .woocommerce-additional-fields h3, .woocommerce .woocommerce-additional-fields .hero.is-link h3,
+    .wpcf7-form input.hero.wpcf7-submit .woocommerce .woocommerce-additional-fields h3, .woocommerce .woocommerce-additional-fields .wpcf7-form input.hero.wpcf7-submit h3,
+    .hero.is-link .woocommerce #order_review_heading, .woocommerce .hero.is-link #order_review_heading,
+    .wpcf7-form input.hero.wpcf7-submit .woocommerce #order_review_heading, .woocommerce .wpcf7-form input.hero.wpcf7-submit #order_review_heading {
       color: #fff; }
     .hero.is-link .subtitle, .wpcf7-form input.hero.wpcf7-submit .subtitle, .hero.is-link .woocommerce .woocommerce-column__title, .woocommerce .hero.is-link .woocommerce-column__title, .wpcf7-form input.hero.wpcf7-submit .woocommerce .woocommerce-column__title, .woocommerce .wpcf7-form input.hero.wpcf7-submit .woocommerce-column__title {
       color: rgba(255, 255, 255, 0.9); }
@@ -8232,7 +8317,9 @@ label.panel-block {
     .hero.is-info a:not(.button):not(.dropdown-item):not(.tag),
     .hero.is-info strong {
       color: inherit; }
-    .hero.is-info .title, .hero.is-info .blog__item-title, .hero.is-info .single .main-article__title, .single .hero.is-info .main-article__title, .hero.is-info .woocommerce .woocommerce-order-details__title, .woocommerce .hero.is-info .woocommerce-order-details__title, .hero.is-info .woocommerce .cart_totals h2, .woocommerce .cart_totals .hero.is-info h2 {
+    .hero.is-info .title, .hero.is-info .blog__item-title, .hero.is-info .single .main-article__title, .single .hero.is-info .main-article__title, .hero.is-info .woocommerce .woocommerce-order-details__title, .woocommerce .hero.is-info .woocommerce-order-details__title, .hero.is-info .woocommerce .cart_totals h2, .woocommerce .cart_totals .hero.is-info h2, .hero.is-info .woocommerce .woocommerce-billing-fields h3, .woocommerce .woocommerce-billing-fields .hero.is-info h3,
+    .hero.is-info .woocommerce .woocommerce-additional-fields h3, .woocommerce .woocommerce-additional-fields .hero.is-info h3,
+    .hero.is-info .woocommerce #order_review_heading, .woocommerce .hero.is-info #order_review_heading {
       color: #fff; }
     .hero.is-info .subtitle, .hero.is-info .woocommerce .woocommerce-column__title, .woocommerce .hero.is-info .woocommerce-column__title {
       color: rgba(255, 255, 255, 0.9); }
@@ -8278,7 +8365,9 @@ label.panel-block {
     .hero.is-success a:not(.button):not(.dropdown-item):not(.tag),
     .hero.is-success strong {
       color: inherit; }
-    .hero.is-success .title, .hero.is-success .blog__item-title, .hero.is-success .single .main-article__title, .single .hero.is-success .main-article__title, .hero.is-success .woocommerce .woocommerce-order-details__title, .woocommerce .hero.is-success .woocommerce-order-details__title, .hero.is-success .woocommerce .cart_totals h2, .woocommerce .cart_totals .hero.is-success h2 {
+    .hero.is-success .title, .hero.is-success .blog__item-title, .hero.is-success .single .main-article__title, .single .hero.is-success .main-article__title, .hero.is-success .woocommerce .woocommerce-order-details__title, .woocommerce .hero.is-success .woocommerce-order-details__title, .hero.is-success .woocommerce .cart_totals h2, .woocommerce .cart_totals .hero.is-success h2, .hero.is-success .woocommerce .woocommerce-billing-fields h3, .woocommerce .woocommerce-billing-fields .hero.is-success h3,
+    .hero.is-success .woocommerce .woocommerce-additional-fields h3, .woocommerce .woocommerce-additional-fields .hero.is-success h3,
+    .hero.is-success .woocommerce #order_review_heading, .woocommerce .hero.is-success #order_review_heading {
       color: #fff; }
     .hero.is-success .subtitle, .hero.is-success .woocommerce .woocommerce-column__title, .woocommerce .hero.is-success .woocommerce-column__title {
       color: rgba(255, 255, 255, 0.9); }
@@ -8324,7 +8413,9 @@ label.panel-block {
     .hero.is-warning a:not(.button):not(.dropdown-item):not(.tag),
     .hero.is-warning strong {
       color: inherit; }
-    .hero.is-warning .title, .hero.is-warning .blog__item-title, .hero.is-warning .single .main-article__title, .single .hero.is-warning .main-article__title, .hero.is-warning .woocommerce .woocommerce-order-details__title, .woocommerce .hero.is-warning .woocommerce-order-details__title, .hero.is-warning .woocommerce .cart_totals h2, .woocommerce .cart_totals .hero.is-warning h2 {
+    .hero.is-warning .title, .hero.is-warning .blog__item-title, .hero.is-warning .single .main-article__title, .single .hero.is-warning .main-article__title, .hero.is-warning .woocommerce .woocommerce-order-details__title, .woocommerce .hero.is-warning .woocommerce-order-details__title, .hero.is-warning .woocommerce .cart_totals h2, .woocommerce .cart_totals .hero.is-warning h2, .hero.is-warning .woocommerce .woocommerce-billing-fields h3, .woocommerce .woocommerce-billing-fields .hero.is-warning h3,
+    .hero.is-warning .woocommerce .woocommerce-additional-fields h3, .woocommerce .woocommerce-additional-fields .hero.is-warning h3,
+    .hero.is-warning .woocommerce #order_review_heading, .woocommerce .hero.is-warning #order_review_heading {
       color: rgba(0, 0, 0, 0.7); }
     .hero.is-warning .subtitle, .hero.is-warning .woocommerce .woocommerce-column__title, .woocommerce .hero.is-warning .woocommerce-column__title {
       color: rgba(0, 0, 0, 0.9); }
@@ -8372,7 +8463,13 @@ label.panel-block {
     .blog-comment .hero#cancel-comment-reply-link strong,
     .woocommerce span.hero.onsale strong {
       color: inherit; }
-    .hero.is-danger .title, .blog-comment .hero#cancel-comment-reply-link .title, .woocommerce span.hero.onsale .title, .hero.is-danger .blog__item-title, .blog-comment .hero#cancel-comment-reply-link .blog__item-title, .woocommerce span.hero.onsale .blog__item-title, .hero.is-danger .single .main-article__title, .single .hero.is-danger .main-article__title, .blog-comment .hero#cancel-comment-reply-link .single .main-article__title, .single .blog-comment .hero#cancel-comment-reply-link .main-article__title, .woocommerce span.hero.onsale .single .main-article__title, .single .woocommerce span.hero.onsale .main-article__title, .hero.is-danger .woocommerce .woocommerce-order-details__title, .woocommerce .hero.is-danger .woocommerce-order-details__title, .blog-comment .hero#cancel-comment-reply-link .woocommerce .woocommerce-order-details__title, .woocommerce .blog-comment .hero#cancel-comment-reply-link .woocommerce-order-details__title, .woocommerce span.hero.onsale .woocommerce-order-details__title, .hero.is-danger .woocommerce .cart_totals h2, .woocommerce .cart_totals .hero.is-danger h2, .blog-comment .hero#cancel-comment-reply-link .woocommerce .cart_totals h2, .woocommerce .cart_totals .blog-comment .hero#cancel-comment-reply-link h2, .woocommerce span.hero.onsale .cart_totals h2, .woocommerce .cart_totals span.hero.onsale h2 {
+    .hero.is-danger .title, .blog-comment .hero#cancel-comment-reply-link .title, .woocommerce span.hero.onsale .title, .hero.is-danger .blog__item-title, .blog-comment .hero#cancel-comment-reply-link .blog__item-title, .woocommerce span.hero.onsale .blog__item-title, .hero.is-danger .single .main-article__title, .single .hero.is-danger .main-article__title, .blog-comment .hero#cancel-comment-reply-link .single .main-article__title, .single .blog-comment .hero#cancel-comment-reply-link .main-article__title, .woocommerce span.hero.onsale .single .main-article__title, .single .woocommerce span.hero.onsale .main-article__title, .hero.is-danger .woocommerce .woocommerce-order-details__title, .woocommerce .hero.is-danger .woocommerce-order-details__title, .blog-comment .hero#cancel-comment-reply-link .woocommerce .woocommerce-order-details__title, .woocommerce .blog-comment .hero#cancel-comment-reply-link .woocommerce-order-details__title, .woocommerce span.hero.onsale .woocommerce-order-details__title, .hero.is-danger .woocommerce .cart_totals h2, .woocommerce .cart_totals .hero.is-danger h2, .blog-comment .hero#cancel-comment-reply-link .woocommerce .cart_totals h2, .woocommerce .cart_totals .blog-comment .hero#cancel-comment-reply-link h2, .woocommerce span.hero.onsale .cart_totals h2, .woocommerce .cart_totals span.hero.onsale h2, .hero.is-danger .woocommerce .woocommerce-billing-fields h3, .woocommerce .woocommerce-billing-fields .hero.is-danger h3, .blog-comment .hero#cancel-comment-reply-link .woocommerce .woocommerce-billing-fields h3, .woocommerce .woocommerce-billing-fields .blog-comment .hero#cancel-comment-reply-link h3, .woocommerce span.hero.onsale .woocommerce-billing-fields h3, .woocommerce .woocommerce-billing-fields span.hero.onsale h3,
+    .hero.is-danger .woocommerce .woocommerce-additional-fields h3, .woocommerce .woocommerce-additional-fields .hero.is-danger h3,
+    .blog-comment .hero#cancel-comment-reply-link .woocommerce .woocommerce-additional-fields h3, .woocommerce .woocommerce-additional-fields .blog-comment .hero#cancel-comment-reply-link h3,
+    .woocommerce span.hero.onsale .woocommerce-additional-fields h3, .woocommerce .woocommerce-additional-fields span.hero.onsale h3,
+    .hero.is-danger .woocommerce #order_review_heading, .woocommerce .hero.is-danger #order_review_heading,
+    .blog-comment .hero#cancel-comment-reply-link .woocommerce #order_review_heading, .woocommerce .blog-comment .hero#cancel-comment-reply-link #order_review_heading,
+    .woocommerce span.hero.onsale #order_review_heading {
       color: #fff; }
     .hero.is-danger .subtitle, .blog-comment .hero#cancel-comment-reply-link .subtitle, .woocommerce span.hero.onsale .subtitle, .hero.is-danger .woocommerce .woocommerce-column__title, .woocommerce .hero.is-danger .woocommerce-column__title, .blog-comment .hero#cancel-comment-reply-link .woocommerce .woocommerce-column__title, .woocommerce .blog-comment .hero#cancel-comment-reply-link .woocommerce-column__title, .woocommerce span.hero.onsale .woocommerce-column__title {
       color: rgba(255, 255, 255, 0.9); }
@@ -9530,6 +9627,29 @@ body {
 .woocommerce label.radio {
   display: inline-block; }
 
+.woocommerce .woo_offline_credit_card_payment_method-card-type {
+  display: block;
+  padding: 8px 70px 8px 13px !important;
+  max-width: 100%;
+  background: url(/wp-content/themes/ticket-brazil/static/images/down-arrow.png) 98% center no-repeat;
+  background-color: #fff;
+  background-size: 22.50px 15px;
+  color: #444444;
+  font-size: 14px;
+  line-height: 16px !important;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none; }
+  .woocommerce .woo_offline_credit_card_payment_method-card-type option {
+    padding: 0 4px; }
+  .woocommerce .woo_offline_credit_card_payment_method-card-type::-ms-expand {
+    display: none; }
+  .woocommerce .woo_offline_credit_card_payment_method-card-type:disabled::-ms-expand {
+    background: #f60; }
+
+.woocommerce #customer_details {
+  margin-bottom: 30px; }
+
 .woocommerce div.product {
   position: relative; }
   .woocommerce div.product .woocommerce-product-gallery.woocommerce-product-gallery--with-images {
@@ -9601,4 +9721,16 @@ body {
 
 .woocommerce thead .woocommerce-table__product-table.product-total {
   background: #e4e4e4; }
+
+.woocommerce li .payment_method_woo_offline_credit_card_payment_method {
+  box-shadow: none; }
+
+.woocommerce .woocommerce-checkout #payment div.payment_box.payment_method_woo_offline_credit_card_payment_method {
+  background-color: transparent; }
+  .woocommerce .woocommerce-checkout #payment div.payment_box.payment_method_woo_offline_credit_card_payment_method:before {
+    display: none; }
+
+.woocommerce #wc-woo_offline_credit_card_payment_method-cc-form {
+  border-top: 1px solid #d3ced2 !important;
+  padding-top: 5px !important; }
 

@@ -15,7 +15,7 @@ new Vue({
     data() {
         return {
             registerForm: {
-              nationality: ''
+              nationality: 'brazilian'
             },
             slickOptions: {
                 dots: true,

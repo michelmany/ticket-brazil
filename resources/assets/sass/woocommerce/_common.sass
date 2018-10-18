@@ -75,3 +75,36 @@ span.onsale
 
 label.radio
   display: inline-block
+
+
+.woo_offline_credit_card_payment_method-card-type
+  display: block
+  padding: 8px 70px 8px 13px !important
+  max-width: 100%
+  background: url($images + '/down-arrow.png') 98% center no-repeat
+  background-color: #fff
+  background-size: 22.50px 15px
+  color: #444444
+  font-size: 14px
+  line-height: 16px !important
+  appearance: none
+  -webkit-appearance: none
+  -moz-appearance: none  
+
+  option
+    padding: 0 4px
+
+  &::-ms-expand
+    display: none
+  
+  &:disabled::-ms-expand
+    background: #f60
+
+.woocommerce-billing-fields h3,
+.woocommerce-additional-fields h3,
+#order_review_heading
+    @extend .title
+    @extend .is-4
+
+#customer_details
+  margin-bottom: 30px
