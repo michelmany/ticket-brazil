@@ -11,13 +11,14 @@ textarea
 
 label
   @extend .label
+  &:not(:last-child)
+    margin-bottom: 0 !important
 
 button.button
   @extend .button
 
 #respond input#submit
   @extend .button
-
   @extend .is-primary
 
 button.button.alt,
