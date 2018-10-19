@@ -10,7 +10,6 @@ function remove_my_action() {
 
 add_action( 'woocommerce_register_form', 'remove_my_action', 10);
 
-
 /**
  * Validate the extra register fields.
  *
@@ -49,7 +48,10 @@ function wooc_save_extra_register_fields( $customer_id ) {
     }
     if ( isset( $_POST['billing_state']) && !empty($_POST['billing_state'] ) ) {
         update_user_meta( $customer_id, 'billing_state', sanitize_text_field($_POST['billing_state'] ) );
-	}
+    }
+    if ( isset( $_POST['billing_country']) && !empty($_POST['billing_country'] ) ) {
+        update_user_meta( $customer_id, 'billing_country', sanitize_text_field($_POST['billing_country'] ) );
+	}    
     if ( isset( $_POST['pdocument']) && !empty($_POST['pdocument'] ) ) {
         update_user_meta( $customer_id, 'pdocument', sanitize_text_field($_POST['pdocument'] ) );
 	}

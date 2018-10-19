@@ -64,12 +64,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 
 			<p class="form-row form-row-first">
-				<label for="reg_billing_first_name"><?php _e( 'First name', 'woocommerce' ); ?><span class="required">*</span></label>
+				<label for="reg_billing_first_name"><?php _e( 'First name', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
 				<input type="text" class="input-text" name="billing_first_name" id="reg_billing_first_name" value="<?php if ( ! empty( $_POST['billing_first_name'] ) ) esc_attr_e( $_POST['billing_first_name'] ); ?>" />
 			</p>
 
 			<p class="form-row form-row-last">
-				<label for="reg_billing_last_name"><?php _e( 'Last name', 'woocommerce' ); ?><span class="required">*</span></label>
+				<label for="reg_billing_last_name"><?php _e( 'Last name', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
 				<input type="text" class="input-text" name="billing_last_name" id="reg_billing_last_name" value="<?php if ( ! empty( $_POST['billing_last_name'] ) ) esc_attr_e( $_POST['billing_last_name'] ); ?>" />
 			</p>
 
@@ -99,29 +99,60 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<?php endif; ?>
 
-			<p class="form-row form-row-wide">
-				<label for="reg_billing_state"><?php _e( 'State', 'woocommerce' ); ?></label>
-				<input type="text" class="input-text" name="billing_state" id="reg_billing_state" value="<?php if ( ! empty( $_POST['billing_state'] ) ) esc_attr_e( $_POST['billing_state'] ); ?>" />
-			</p>    
+			<?php
+				$woo_countries = new WC_Countries();
+				// Get default country
+				$default_country = $woo_countries->get_base_country();
+				// Get states in default country
+				$states = $woo_countries->get_states( $default_country );
+			?>			
+		
+			<div class="form-row form-row-wide" v-if="isBrazilian">
+				<label for="reg_billing_state"><?php _e( 'State / County', 'woocommerce' ); ?> <span class="required">*</span></label>
+				<div class="select" v-if="isBrazilian">
+					<select class="state_select js_field-state select short" name="billing_state" id="reg_billing_state">
+						<option value=""><?php _e( 'Select a state&hellip;', 'woocommerce' ) ?></option>
+						<?php foreach ($states as $state_key => $state) : ?>
+							<option value="<?php echo $state_key; ?>"><?php echo $state; ?></option>
+						<?php endforeach; ?>
+					</select>
+				</div>
+			</div>		
 
-			<p class="form-row form-row-wide" >
-				<label for="reg_pdocument" v-if="registerForm.nationality == 'brazilian'">CPF</label>
-				<label for="reg_pdocument" v-if="registerForm.nationality != 'brazilian'"><?php _e( 'Passport', 'base-camp' ); ?></label>
+			<input type="hidden" name="billing_country" value="BR" v-if="isBrazilian">
+		
+			<div class="form-row form-row-wide" v-if="!isBrazilian">
+				<label for="reg_billing_country"><?php _e( 'Country', 'woocommerce' ); ?> <span class="required">*</span></label>
+				<div class="select" v-if="!isBrazilian">
+					<select class="country_select js_field-country select short" name="billing_country" id="reg_billing_country">
+						<option value=""><?php _e( 'Select a country&hellip;', 'woocommerce' ) ?></option>
+						<option v-if="isBrazilian" value="<?php echo $default_country; ?>" selected>Brasil</option>
+						<?php foreach ($woo_countries->countries as $country_key => $country) : ?>
+							<option value="<?php echo $country_key; ?>"><?php echo $country; ?></option>
+						<?php endforeach; ?>
+					</select>
+				</div>
+			</div>							
+
+			<div class="form-row form-row-wide" >
+				<label for="reg_pdocument" v-if="isBrazilian">CPF <abbr title="required" class="required">*</abbr></label>
+				<label for="reg_pdocument" v-else><?php _e( 'Passport', 'base-camp' ); ?> <abbr title="required" class="required">*</abbr></label>
 				<input type="text" class="input-text" name="pdocument" id="reg_pdocument" value="<?php if ( ! empty( $_POST['pdocument'] ) ) esc_attr_e( $_POST['pdocument'] ); ?>" />
-			</p>   
+			</div>   
 			
-			<p class="form-row form-row-wide">
-				<label for="reg_idnumber"><?php _e( 'ID Number', 'base-camp' ); ?></label>
+			<div class="form-row form-row-wide">
+				<label for="reg_idnumber"><?php _e( 'ID Number', 'base-camp' ); ?> <abbr title="required" class="required">*</abbr></label>
 				<input type="text" class="input-text" name="idnumber" id="reg_idnumber" value="<?php if ( ! empty( $_POST['idnumber'] ) ) esc_attr_e( $_POST['idnumber'] ); ?>" />
-			</p>     
+			</div>     
+
 			<div class="clear"></div>			
 
 			<?php do_action( 'woocommerce_register_form' ); ?>
 
-			<p class="woocommerce-FormRow form-row">
+			<div class="woocommerce-FormRow form-row">
 				<?php wp_nonce_field( 'woocommerce-register', 'woocommerce-register-nonce' ); ?>
 				<button type="submit" class="woocommerce-Button button is-success is-medium is-fullwidth" name="register" value="<?php esc_attr_e( 'Register', 'woocommerce' ); ?>"><?php esc_html_e( 'Register', 'woocommerce' ); ?></button>
-			</p>
+			</div>
 
 			<?php do_action( 'woocommerce_register_form_end' ); ?>
 
@@ -137,27 +168,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<?php do_action( 'woocommerce_login_form_start' ); ?>
 
-			<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+			<div class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
 				<label for="username"><?php esc_html_e( 'Username or email address', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
 				<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="username" autocomplete="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>" /><?php // @codingStandardsIgnoreLine ?>
-			</p>
-			<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+			</div>
+			<div class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
 				<label for="password"><?php esc_html_e( 'Password', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
 				<input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password" id="password" autocomplete="current-password" />
-			</p>
+			</div>
 
 			<?php do_action( 'woocommerce_login_form' ); ?>
 
-			<p class="form-row">
+			<div class="form-row">
 				<?php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); ?>
 				<button type="submit" class="woocommerce-Button button is-info is-medium is-fullwidth" name="login" value="<?php esc_attr_e( 'Log in', 'woocommerce' ); ?>"><?php esc_html_e( 'Log in', 'woocommerce' ); ?></button>
 				<label class="woocommerce-form__label woocommerce-form__label-for-checkbox inline">
 					<input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span><?php esc_html_e( 'Remember me', 'woocommerce' ); ?></span>
 				</label>
-			</p>
-			<p class="woocommerce-LostPassword lost_password">
+			</div>
+			<div class="woocommerce-LostPassword lost_password">
 				<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php esc_html_e( 'Lost your password?', 'woocommerce' ); ?></a>
-			</p>
+			</div>
 
 			<?php do_action( 'woocommerce_login_form_end' ); ?>
 

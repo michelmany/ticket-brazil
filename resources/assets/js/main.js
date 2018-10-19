@@ -82,6 +82,11 @@ new Vue({
               touchThreshold: 50,               
             }
         }    
+    },
+    computed: {
+      isBrazilian() {
+        return this.registerForm.nationality == 'brazilian'
+      }
     }
 })
 

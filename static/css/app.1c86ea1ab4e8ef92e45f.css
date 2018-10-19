@@ -9590,6 +9590,9 @@ body {
 .select2-dropdown {
   border: 1px solid #dadada !important; }
 
+.woocommerce-form-register .select {
+  width: 100%; }
+
 .woocommerce .products {
   clear: both; }
 
@@ -9684,9 +9687,6 @@ body {
 
 .woocommerce .select2-container--open .select2-dropdown--below {
   border-color: #dadada; }
-
-.woocommerce .select2-dropdown {
-  border: 1px solid #dadada !important; }
 
 .woocommerce div.product {
   position: relative; }
