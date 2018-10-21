@@ -19,6 +19,12 @@ function base_camp_scripts_and_styles()
     wp_enqueue_style('slick-style');
     wp_enqueue_style('base-camp-styles');
 
+    wp_localize_script('base-camp-scripts', 'ajax_var', array(
+        'url' => admin_url('admin-ajax.php'),
+        'nonce' => wp_create_nonce('ajaxnonce')
+    ));   
+
+
     // comment reply script for threaded comments
     if (is_singular() && comments_open() && (get_option('thread_comments') == 1)) {
         wp_enqueue_script('comment-reply');
@@ -26,6 +32,10 @@ function base_camp_scripts_and_styles()
 }
 
 add_action('wp_enqueue_scripts', 'base_camp_scripts_and_styles', 999);
+
+add_action( 'wp_ajax_MySaveOptions', 'MySaveOptions' );
+add_action( 'wp_ajax_nopriv_MySaveOptions', 'MySaveOptions' );
+
 
 /**
  * Register Login Page scripts and styles and enqueue them

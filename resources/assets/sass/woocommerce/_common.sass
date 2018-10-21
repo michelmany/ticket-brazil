@@ -11,8 +11,8 @@ textarea
 
 label
   @extend .label
-  &:not(:last-child)
-    margin-bottom: 0 !important
+  // &:not(:last-child)
+  //   margin-bottom: 0 !important
 
 button.button
   @extend .button
@@ -141,3 +141,29 @@ label.radio
 .select2-container--open 
   .select2-dropdown--below
     border-color: #dadada
+
+input[name='update_cart']
+  display: none !important
+
+.woocommerce-message
+    border-top-color: #43b962
+
+.woocommerce-message::before
+    content: '\e015'
+    color: #43b962
+
+.woocommerce-cart table.cart input
+  margin: 10px 6px 10px
+
+.cart__delivery
+  padding: 10px
+  text-align: right
+  border: 1px solid rgba(0,0,0,.1)
+  margin-bottom: 50px
+  border-radius: 4px
+
+.woocommerce-form-register
+    .select
+        width: 100%
+
+

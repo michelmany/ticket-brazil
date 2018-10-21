@@ -87,6 +87,8 @@ function add_to_context($data)
 
     $data['options'] = get_fields('options');
 
+    $data['cart_count'] = WC()->cart->get_cart_contents_count();
+
     return $data;
 }
 

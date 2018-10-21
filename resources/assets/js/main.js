@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Slick from 'vue-slick';
 import Example from './components/Example';
 import Purchase from './components/Purchase';
+import axios from 'axios'
 
 Vue.component('slick', Slick)
 Vue.component('purchase', Purchase)
@@ -14,6 +15,10 @@ new Vue({
     },
     data() {
         return {
+            modalDelivery: {
+              delivery: 'no',
+              isOpen: 'no'
+            },
             registerForm: {
               nationality: 'brazilian'
             },
@@ -83,11 +88,80 @@ new Vue({
             }
         }    
     },
+
     computed: {
       isBrazilian() {
         return this.registerForm.nationality == 'brazilian'
       }
+    },
+
+    mounted() {
+      this.updateCartOnChangeQuantity()
+    },    
+
+    methods: {
+      openDeliveryModal() {
+        this.modalDelivery.isOpen = 'yes'
+      },
+
+      closeDeliveryModal(action) {
+        if (action == 'save') {
+          this.modalDelivery.isOpen = 'no'
+          this.modalDelivery.delivery = 'yes'
+          this.updateCart()
+          this.saveOptionToDatabase()
+          return
+        }
+        this.modalDelivery.isOpen = 'no'
+        this.modalDelivery.delivery = 'no'
+        this.updateCart()
+        this.saveOptionToDatabase()
+      },
+
+      updateCartOnChangeQuantity() {
+        let timeout;
+        $('div.woocommerce')
+          .on('change textInput input',
+              'form.woocommerce-cart-form input.qty', function(){
+                
+          if (typeof timeout !== undefined) clearTimeout(timeout)
+
+          if ($(this).val() == '') return; //Not if empty
+
+          timeout = setTimeout(function() {
+              $('[name="update_cart"]').trigger('click')
+          }, 1500)
+        })
+      },
+
+      updateCart() {
+        $('[name="update_cart"]').removeAttr('disabled')
+        $('[name="update_cart"]').trigger('click')
+      },
+
+      saveOptionToDatabase() {
+
+        const data = {
+          action: 'MySaveOptions',
+          nonce: ajax_var.nonce,
+          delivery_enabled: this.modalDelivery.delivery
+        }
+
+        axios
+          .post(ajax_var.url, $.param(data))
+          .then(res => {
+            console.log(res)
+            
+          })
+          .catch(error => {
+            console.log(error.data)
+          })
+
+
+      },
+
     }
+
 })
 
 // Hide Page Loader when DOM and images are ready

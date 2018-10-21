@@ -13,7 +13,9 @@
       <img src="{{ theme.link }}/resources/assets/images/icon-user-solid.png" alt="My Account">
     </a>
     <a class="navbar-item" href="{{ icons_menu.get_items[1].link }}">
-      <img src="{{ theme.link }}/resources/assets/images/icon-cart-gray.png" alt="Cart">
+      <span class="header-icon-cart badge is-badge-danger is-badge-small" data-badge="{{ cart_count }}">
+        <img src="{{ theme.link }}/resources/assets/images/icon-cart-gray.png" alt="Cart">
+      </span>
     </a>
   </div>
 

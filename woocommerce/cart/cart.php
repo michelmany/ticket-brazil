@@ -148,7 +148,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 			<?php do_action( 'woocommerce_cart_contents' ); ?>
 
 			<tr>
-				<td colspan="6" class="actions">
+				<td colspan="6" class="actions" style="display:none;">
 
 					<?php if ( wc_coupons_enabled() ) { ?>
 						<div class="coupon">
@@ -158,6 +158,8 @@ do_action( 'woocommerce_before_cart' ); ?>
 					<?php } ?>
 
 					<button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
+					
+											
 
 					<?php do_action( 'woocommerce_cart_actions' ); ?>
 
@@ -168,19 +170,57 @@ do_action( 'woocommerce_before_cart' ); ?>
 			<?php do_action( 'woocommerce_after_cart_contents' ); ?>
 		</tbody>
 	</table>
+
 	<?php do_action( 'woocommerce_after_cart_table' ); ?>
 </form>
 
-<div class="cart-collaterals">
-	<?php
-		/**
-		 * Cart collaterals hook.
-		 *
-		 * @hooked woocommerce_cross_sell_display
-		 * @hooked woocommerce_cart_totals - 10
-		 */
-		do_action( 'woocommerce_cart_collaterals' );
-	?>
+
+<div class="cart__delivery">
+	Delivery? 
+	<input type="radio" id="deliveryYes" class="is-checkradio" v-model="modalDelivery.delivery" v-on:click="openDeliveryModal()" value="yes">
+	<label for="deliveryYes" class="radio">Yes</label>
+	
+	<input type="radio" id="deliveryNo" class="is-checkradio" v-model="modalDelivery.delivery" v-on:click="closeDeliveryModal()" value="no">
+	<label for="deliveryNo" class="radio">No</label>
+</div>	
+</div>
+
+<div class="woocommerce">
+	<div class="cart-collaterals">
+		<?php
+			/**
+			 * Cart collaterals hook.
+			 *
+			 * @hooked woocommerce_cross_sell_display
+			 * @hooked woocommerce_cart_totals - 10
+			 */
+			do_action( 'woocommerce_cart_collaterals' );
+		?>
+	</div>
 </div>
 
 <?php do_action( 'woocommerce_after_cart' ); ?>
+
+<div class="modal" v-bind:class="{ 'is-active': modalDelivery.isOpen == 'yes' }">
+	<div class="modal-background"></div>
+	<div class="modal-card">
+		<header class="modal-card-head">
+			<p class="modal-card-title">Delivery </p>
+			<button class="delete" aria-label="close" v-on:click="closeDeliveryModal()"></button>
+		</header>
+		<section class="modal-card-body">
+			<div class="columns">
+				<div class="column">
+					<h2>Select the staying period</h2>
+				</div>
+				<div class="column">
+					<h2>Select the staying period</h2>
+				</div>
+			</div>
+		</section>
+		<footer class="modal-card-foot">
+			<button class="button is-success" v-on:click="closeDeliveryModal('save')">Save</button>
+			<button class="button" v-on:click="closeDeliveryModal()">Remove Delivery</button>
+		</footer>
+	</div>
+</div>	
