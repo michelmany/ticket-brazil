@@ -1,10 +1,16 @@
 {
-  "admin.css": "css/admin.2cc866204591d0fa5993.css",
-  "admin.js": "js/admin.2cc866204591d0fa5993.js",
-  "app.css": "css/app.2cc866204591d0fa5993.css",
-  "app.js": "js/app.2cc866204591d0fa5993.js",
-  "login.css": "css/login.2cc866204591d0fa5993.css",
-  "login.js": "js/login.2cc866204591d0fa5993.js",
-  "vendor.js": "js/vendor.2cc866204591d0fa5993.js",
-  "images/base-camp-logo.png": "images/base-camp-logo.png"
+  "app.css": "css/app.162694f3f671e63954f1.css",
+  "app.js": "js/app.79fbce9afac7a224524e.js",
+  "login.css": "css/login.4148e63c0b1927954ce1.css",
+  "login.js": "js/login.e79ad7260691a7dd0472.js",
+  "admin.css": "css/admin.9f555a48ff167050cc4b.css",
+  "admin.js": "js/admin.17b87ccb8f773ea111ea.js",
+  "vendor.js": "js/vendor.853f3660ced39e480340.js",
+  "images/logo.png": "images/logo.png",
+  "images/arrow-next-white.png": "images/arrow-next-white.png",
+  "images/texture-blue-carnival.jpg": "images/texture-blue-carnival.jpg",
+  "images/icon-cart-white.png": "images/icon-cart-white.png",
+  "images/down-arrow.png": "images/down-arrow.png",
+  "images/base-camp-logo.png": "images/base-camp-logo.png",
+  "images/arrow-prev-white.png": "images/arrow-prev-white.png"
 }

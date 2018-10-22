@@ -176,14 +176,18 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 
 <div class="cart__delivery">
-	Delivery? 
+	<?php _e('Delivery', 'base-camp'); ?>?
 	<input type="radio" id="deliveryYes" class="is-checkradio" v-model="modalDelivery.delivery" v-on:click="openDeliveryModal()" value="yes">
 	<label for="deliveryYes" class="radio">Yes</label>
 	
 	<input type="radio" id="deliveryNo" class="is-checkradio" v-model="modalDelivery.delivery" v-on:click="closeDeliveryModal()" value="no">
 	<label for="deliveryNo" class="radio">No</label>
+
+	<div class="cart_delivery-details" v-if="modalDelivery.delivery == 'yes'">
+		<p v-if="modalDelivery.type" class="is-capitalized"><strong><?php _e('Location type', 'base-camp'); ?>:</strong> {{ modalDelivery.type }}</p>
+	</div>	
 </div>	
-</div>
+
 
 <div class="woocommerce">
 	<div class="cart-collaterals">
@@ -201,26 +205,132 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 <?php do_action( 'woocommerce_after_cart' ); ?>
 
-<div class="modal" v-bind:class="{ 'is-active': modalDelivery.isOpen == 'yes' }">
+<div class="modal modal-delivery" v-bind:class="{ 'is-active': modalDelivery.isOpen == 'yes' }">
 	<div class="modal-background"></div>
 	<div class="modal-card">
 		<header class="modal-card-head">
 			<p class="modal-card-title">Delivery </p>
 			<button class="delete" aria-label="close" v-on:click="closeDeliveryModal()"></button>
 		</header>
+
 		<section class="modal-card-body">
-			<div class="columns">
-				<div class="column">
-					<h2>Select the staying period</h2>
-				</div>
-				<div class="column">
-					<h2>Select the staying period</h2>
+			<h2 class="title is-5 modal-delivery__title">Place of stay</h2>
+
+			<div class="field">
+				<label class="label">Location type</label>
+				<div class="control">
+					<div class="select">
+						<select v-model="modalDelivery.type">
+							<option><?php _e('Select', 'base-camp'); ?></option>
+							<option value="hotel">Hotel</option>
+							<!-- <option value="residence">Residence</option> -->
+							<option value="ship"><?php _e('Ship', 'base-camp'); ?></option>
+							<!-- <option value="other">Other</option> -->
+						</select>
+					</div>
 				</div>
 			</div>
+
+			<br>
+
+			<h2 class="title is-5 modal-delivery__title">Staying period</h2>
+
+			<div class="columns">
+				<div class="column">
+					<div class="field">
+						<div class="control">
+							<div class="field">
+								<label class="label">Arrival Date</label>
+								<datepicker :language="lang.br" input-class="input" :bootstrap-styling="true" v-model="modalDelivery.arrival_date"></datepicker>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="column">
+					<div class="field">
+						<div class="control">
+							<div class="field">
+								<label class="label">Departure Date</label>
+								<datepicker :language="lang.br" input-class="input" v-model="modalDelivery.departure_date"></datepicker>
+							</div>
+						</div>
+					</div>	
+				</div>				
+			</div>
+
+			<br>
+
+			<!-- Hotel -->
+			<div v-if="modalDelivery.type == 'hotel'">
+				<h2 class="title is-5 modal-delivery__title">Hotel</h2>
+
+				<div class="field">
+					<div class="control">
+						<div class="field">
+							<label class="label">Hotel Name</label>
+							<div class="select">
+								<select v-model="modalDelivery.hotel.name">
+									<option>Select</option>
+									<option value="1">SOFITEL IPANEMA HOTEL Av. Vieira Souto, 460</option><option value="2">IPANEMA PLAZA HOTEL R. Farme de Amoedo, 34</option><option value="3">COPACABANA RIO HOTEL Av. Nossa Sra. de Copacabana, 1256</option><option value="4">MAR PALACE HOTEL Av. Nossa Sra. de Copacabana, 552</option><option value="5">EVEREST PARK HOTEL R. Maria Quitéria, 25</option><option value="6">EVEREST RIO HOTEL R. Prudente de Morais, 1117</option><option value="7">RIO DESIGN PORTINARI HOTEL R. Francisco Sá, 17</option><option value="8">SOFITEL RIO HOTEL, Av. Atlantica, 02</option><option value="9">WINDSOR EXCELSIOR HOTEL Av. Atlântica, 1800</option><option value="10">WINDSOR BARRA HOTEL Av. Lúcio Costa, 2630</option><option value="11">WINDSOR MIRAMAR HOTEL Av. Atlântica, 3668</option><option value="12">WINDSOR PLAZA COPACABANA HOTEL Av. Princesa Isabel</option><option value="13">WINDSOR PALACE HOTEL Rua Domingos Ferreira, 6</option><option value="14">WINDSOR MARTINIQUE HOTEL R. Sá Ferreira, 30</option><option value="15">WINDSOR FLORIDA HOTEL R. Ferreira Viana, 81</option><option value="17">WINDSOR ASTURIAS HOTEL R. Sen. Dantas, 14</option><option value="18">BELMOND COPACABANA PALACE HOTEL Av. Atlântica, 1702 </option><option value="19">PORTO BAY RIO INTERNACIONAL HOTEL Av. Atlântica, 1500</option><option value="20">RIO OTHON PALACE HOTEL Av. Atlântica, 3264</option><option value="21">ARENA LEME HOTEL Av. Atlântica, 324</option><option value="23">OLINDA RIO HOTEL Av. Atlântica, 2230</option><option value="25">LANCASTER OTHON TRAVEL HOTEL Av. Atlântica, 1470</option><option value="26">SAVOY OTHON TRAVEL HOTEL Av. Nossa Sra. de Copacabana, 995</option><option value="27">AEROPORTO OTHON TRAVEL HOTEL </option><option value="28">SHERATON RIO HOTEL &amp; RESORT Av. Niemeyer, 121</option><option value="29">ASTORIA PALACE HOTEL Av. Atlântica, 1866</option><option value="30">BANDEIRANTES HOTEL R. Barata Ribeiro, 548</option><option value="31">ATLANTICO COPACABANA HOTEL Rua Siqueira Campos, 90</option><option value="32">ASTORIA COPACABANA HOTEL R. República do Peru, 345</option><option value="33">HILTON HOTEL Meridien- Av Princesa Isabel, 10</option><option value="34">MAR IPANEMA HOTEL R. Visc. de Pirajá, 539</option><option value="37">ORLA COPACABANA HOTEL Av. Atlântica, 4122</option><option value="40">ROYALTY COPACABANA HOTEL Rua Tonelero, 154</option><option value="42">PREMIER COPACABANA HOTEL Rua Tonelero, 205</option><option value="44">MERLIN COPACABANA HOTEL Av. Princesa Isabel, 392</option><option value="46">ACAPULCO COPACABANA HOTEL - Rua Gustavo Sampaio</option><option value="48">COPACABANA MAR HOTEL R. Min. Viveiros de Castro, 155</option><option value="49">MIRASOL COPACABANA HOTEL R. Rodolfo Dantas, 86</option><option value="50">VERMONT HOTEL R. Visc. de Pirajá, 254</option><option value="51">OWN VISCONTI HOTEL R. Prudente de Morais, 1050</option><option value="52">AUGUSTO`S COPACABANA HOTEL R. Bolívar, 119</option><option value="54">GRAND MERCURE COPACABANA HOTEL Av. Atlântica, 3716</option><option value="55">IPANEMA INN HOTEL R. Maria Quitéria, 27</option><option value="56">NOVOTEL RIO DE JANEIRO HOTEL Av. Marechal Câmara, 300</option><option value="58">MERCURE COPACABANA HOTEL Av. Atlântica, 2554</option><option value="63">PULLMAN HOTEL Av. Aquarela do Brasil, 75</option><option value="71">MERCURE BOTAFOGO MOURISCO HOTEL Rua da Passagem, 39</option><option value="73">PESTANA RIO ATLANTICA HOTEL Av. Atlântica, 2964</option><option value="77">TRANSAMERICA BARRA HOTEL Av. Gastão Sengés, 395</option><option value="80">PRAIA IPANEMA HOTEL Av. Vieira Souto, 706</option><option value="82">NOVO MUNDO HOTEL Praia do Flamengo, 20</option><option value="85">ARPOADOR INN HOTEL R. Francisco Otaviano, 177</option><option value="87">SOUTH AMERICAN COPACABANA HOTEL R. Francisco Sá, 90</option><option value="91">NOVOTEL COPACABANA R. Gustavo Sampaio, 320</option><option value="92">FASANO HOTEL Av. Vieira Souto, 80</option><option value="93">J W MARRIOTT HOTEL Av. Atlântica, 2600</option><option value="94">SOL IPANEMA HOTEL Av. Vieira Souto, 320</option><option value="95">MARINA PALACE HOTEL Av. Delfim Moreira, 630</option><option value="96">BRISA BARRA HOTEL Av. Lúcio Costa, 5700</option><option value="97">TROPICAL BARRA HOTEL Av. do Pepê, 500</option><option value="99">IBIS SANTOS DUMONT HOTEL Av. Mal. Câmara, 280</option><option value="100">O.K. HOTEL R. Senador Dantas, 24</option><option value="101">ATLANTICO BUSINESS HOTEL R. Sen. Dantas, 25</option><option value="102">ROYALTY BARRA HOTEL Av. do Pepê, 675</option><option value="103">GRAN NOBILE BARRA HOTEL Av. Lúcio Costa, 3.150</option><option value="105">AUGUSTO`S COPACABANA HOTEL R. Bolívar, 119</option><option value="106">WINDSOR COPACABANA HOTEL Av. Nossa Sra. de Copacabana, 335</option><option value="107">AUGUSTO'S RIO COPACABANA HOTEL Av. Princesa Isabel, 370</option><option value="108">ATLANTICO PRAIA OURO VERDE HOTEL Av. Atlântica, 1456</option><option value="109">ARENA COPACABANA HOTEL Av. Atlântica, 2064</option><option value="110">OCEANO COPACABANA HOTEL Rua Hilário de Gouvêia, 17</option><option value="111">J W MARRIOTT HOTEL Av. Atlântica, 2600</option><option value="112">J W MARRIOTT HOTEL Av. Atlântica, 2600</option><option value="113">VILAMAR COPACABANA HOTEL R. Bolívar, 75</option><option value="114">DEBRET HOTEL R. Alm. Gonçalves, 5</option><option value="115">RIO DESIGN PORTINARI HOTEL R. Francisco Sá, 17</option><option value="116">COPA SUL HOTEL Av. Nossa Sra. de Copacabana, 1284</option><option value="117">COPACABANA PRAIA HOTEL R. Francisco Otaviano, 38</option><option value="118">MERCURE ARPOADOR HOTEL R. Francisco Otaviano, 61</option><option value="119">ATLANTIS COPACABANA HOTEL R. Bulhões de Carvalho, 61</option><option value="121">REAL PALACE HOTEL R. Duvivier, 70</option><option value="122">ROYAL RIO PALACE HOTEL R. Duvivier, 82</option><option value="123">IBIS COPACABANA HOTEL Rua Ministro Viveiros de Castro, 134</option><option value="124">COPACABANA HOTEL RESIDENCIA R. Barata Ribeiro, 222</option><option value="125">APA HOTEL R. República do Peru, 305</option><option value="126">MIRADOR HOTEL Rua Tonelero, 338</option><option value="127">BENIDORM PALACE HOTEL R. Barata Ribeiro, 547</option><option value="130">CANADA HOTEL Av. Nossa Sra. de Copacabana, 687</option><option value="131">SAN MARCO HOTEL R. Visc. de Pirajá, 524</option><option value="132">IPANEMA TOWER HOTEL R. Prudente de Morais, 1008</option><option value="133">VERMONT HOTEL R. Visc. de Pirajá, 254</option><option value="134">VERMONT HOTEL R. Visc. de Pirajá, 254</option><option value="136">MARINA ALL SUITES HOTEL Av. Delfim Moreira, 696</option><option value="137">PULLMAN HOTEL Av. Aquarela do Brasil, 75</option><option value="138">SOL DA BARRA HOTEL Av. Lúcio Costa, 880</option><option value="144">ARGENTINA HOTEL R. Cruz Lima, 30</option><option value="149">CAIS DO PORTO Ponto de Encontro</option><option value="150">MERCURE BARRA HOTEL Av. do Pepê, 56</option><option value="151">IBIS BARRA HOTEL Av. Gilberto Amado, 41</option><option value="152">WINDSOR LEME PALACE Av. Atlântica, 656</option>
+								</select>
+															
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="columns">
+					<div class="column field">
+						<div class="control">
+							<div class="field">
+								<label class="label">Reservation #</label>
+								<input type="text" class="input" v-model="modalDelivery.hotel.reservation">
+							</div>
+						</div>
+					</div>
+
+					<div class="column field">
+						<div class="control">
+							<div class="field">
+								<label class="label">Customer name</label>
+								<input type="text" class="input" v-model="modalDelivery.hotel.customer_name">
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<!-- Ship -->
+			<div v-if="modalDelivery.type == 'ship'">
+				<h2 class="title is-5 modal-delivery__title">Ship</h2>
+
+				<div class="columns">
+					<div class="column field">
+						<div class="control">
+							<div class="field">
+								<label class="label">Ship name</label>
+								<input type="text" class="input">
+							</div>
+						</div>
+					</div>
+
+					<div class="column field">
+						<div class="control">
+							<div class="field">
+								<label class="label">Cabin number</label>
+								<input type="text" class="input">
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>			
+
 		</section>
 		<footer class="modal-card-foot">
-			<button class="button is-success" v-on:click="closeDeliveryModal('save')">Save</button>
-			<button class="button" v-on:click="closeDeliveryModal()">Remove Delivery</button>
+			<button class="button is-danger" v-on:click="closeDeliveryModal()">Remove Delivery</button>
+			<button class="button is-success" v-on:click="closeDeliveryModal('save')">Save Delivery</button>
 		</footer>
 	</div>
 </div>	

@@ -3,22 +3,45 @@ import Slick from 'vue-slick';
 import Example from './components/Example';
 import Purchase from './components/Purchase';
 import axios from 'axios'
+import Datepicker from 'vuejs-datepicker'
+import {en, ptBR} from 'vuejs-datepicker/dist/locale'
 
 Vue.component('slick', Slick)
 Vue.component('purchase', Purchase)
+
+function defaultModalDeliveryData() {
+  return {
+    delivery: 'no',
+    isOpen: 'no',
+    type: 'hotel',
+    arrival_date: '',
+    departure_date: '',
+    hotel: {
+      name: '',
+      reservation: '',
+      customer_name: ''
+    },
+    ship: {
+      name: '',
+      cabin_number: ''
+    }
+  }
+}
 
 new Vue({
     el: '#app',
     components: {
         Example,
-        Purchase
+        Purchase,
+        Datepicker
     },
     data() {
         return {
-            modalDelivery: {
-              delivery: 'no',
-              isOpen: 'no'
+            lang: {
+              en,
+              br: ptBR
             },
+            modalDelivery: defaultModalDeliveryData(),
             registerForm: {
               nationality: 'brazilian'
             },
@@ -114,7 +137,7 @@ new Vue({
         }
         this.modalDelivery.isOpen = 'no'
         this.modalDelivery.delivery = 'no'
-        this.updateCart()
+        this.resetModalDeliveryData()
         this.saveOptionToDatabase()
       },
 
@@ -140,25 +163,26 @@ new Vue({
       },
 
       saveOptionToDatabase() {
-
         const data = {
-          action: 'MySaveOptions',
-          nonce: ajax_var.nonce,
+          action: 'my_save_options',
+          nonce_ajax: ajax_var.nonce,
           delivery_enabled: this.modalDelivery.delivery
         }
 
         axios
           .post(ajax_var.url, $.param(data))
           .then(res => {
-            console.log(res)
+            console.log(res.data)
             
           })
           .catch(error => {
             console.log(error.data)
           })
-
-
       },
+
+    resetModalDeliveryData: function (){
+        this.$data.modalDelivery = defaultModalDeliveryData();
+    }
 
     }
 

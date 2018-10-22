@@ -1,23 +1,21 @@
 <?php
 
-function MySaveOptions() {
-    global $woocommerce;
+function my_save_options() {
+    $nonce = $_POST['nonce_ajax'];
 
-    $nonce = $_POST['nonce']; 
+    // if ( ! wp_verify_nonce( $nonce, 'ajax-nonce' ) )
+        // die ( 'Busted!');
     
-    if (isset($_POST['delivery_enabled']) ) {
+    if ( isset($_POST['delivery_enabled']) ) {
         $delivery_enabled = $_POST['delivery_enabled'];
-        update_option('wacs_delivery_enabled', $delivery_enabled);
+        // update_option('wacs_delivery_enabled', $delivery_enabled);
 
         if ( $delivery_enabled == 'yes' ) {
-            $_SESSION['delivery'] = 'yes';
-            echo 'wacs_delivery_enabled option saved YES';
-            return;
+            echo 'TUDO CERTO!';
+        } else {
+            echo 'ALGO ERRADO!';
         }
-
-        $_SESSION['delivery'] = 'no';
-        echo 'wacs_delivery_enabled option saved NO';
-    } 
+    }
   
     exit;
 }
