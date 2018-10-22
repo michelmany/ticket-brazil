@@ -14,3 +14,11 @@ function woocommerce_custom_redirections() {
     // if( is_user_logged_in() && ! WC()->cart->is_empty() && is_account_page() )
     //     wp_redirect( get_permalink( get_option('woocommerce_checkout_page_id') ) );
 }
+
+
+
+add_action( 'woocommerce_checkout_create_order_line_item', 'wdm_add_custom_order_line_item_meta',10,4 );
+
+function wdm_add_custom_order_line_item_meta($item, $cart_item_key, $values, $order) {
+    $item->add_meta_data('_many_test', 'test');
+}  

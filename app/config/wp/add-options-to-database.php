@@ -19,3 +19,10 @@ function my_save_options() {
   
     exit;
 }
+
+
+function before_checkout_create_order( $order, $data ) {
+    $order->update_meta_data( '_custom_meta_key', 'value' );
+}        
+
+add_action('woocommerce_checkout_create_order', 'before_checkout_create_order', 20, 2);
