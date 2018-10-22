@@ -16,7 +16,6 @@ function my_custom_endpoint( $request_data ) {
 
     $products = wc_get_products( $args );
 
-    remove_filter('posts_orderby', 'orderby_post_title_int' );
 
     foreach ($products as $key => $product) {
         $products[$key]->ID = $product->get_id();
@@ -29,6 +28,8 @@ function my_custom_endpoint( $request_data ) {
         // $products[$key]->image = $product->get_image();
         $products[$key]->acf = get_fields($product->get_id());
     }
+
+    remove_filter('posts_orderby', 'orderby_post_title_int' );
 
 	return $products;
 }

@@ -61,13 +61,12 @@
         &__item
             margin-top: 15px
 
-            &:not(:last-child)
-
-                +tablet
-                    margin-right: 30px
+            +tablet
+                margin-right: 10px
+                margin-left: 10px
 
             &.button
-                font-size: 20px
+                font-size: 24px
                 transition: 0.2s
                 width: 100%
                 max-width: 320px
@@ -84,14 +83,11 @@
                     max-width: 328px
 
                 +desktop
-                    font-size: 32px
-                    max-width: 342px
-
-
-
-                +desktop
+                    font-size: 26px
                     max-width: calc(100% / 3 - 25px) 
 
+                +widescreen
+                    font-size: 32px
 
                 &:hover,
                 &.selected
@@ -103,12 +99,16 @@
                         transform: scale(1.05)
 
                 &.sector
-                    display: block
-                    max-width: calc(50% - 10px)
+                    display: inline-block
                     height: 105px
+                    max-width: 320px
 
                     +tablet
-                        max-width: 195px
+                        max-width: calc((100% / 3) - 22px)
+                        font-size: 24px
+
+                    +widescreen
+                        max-width: calc((100% / 5) - 22px)
 
             &-total
                 display: flex
@@ -126,7 +126,9 @@
                 color: #fff
                 font-size: 14px
                 position: relative
-                top: -3px
+                top: 2px;
+                font-weight: bold
+                color: blanchedalmond
 
             &-quantity
                 display: flex
