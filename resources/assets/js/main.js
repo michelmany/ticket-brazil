@@ -5,6 +5,8 @@ import Purchase from './components/Purchase';
 import axios from 'axios'
 import Datepicker from 'vuejs-datepicker'
 import {en, ptBR} from 'vuejs-datepicker/dist/locale'
+import VueCookie from 'vue-cookie'
+Vue.use(VueCookie)
 
 Vue.component('slick', Slick)
 Vue.component('purchase', Purchase)
@@ -41,6 +43,7 @@ new Vue({
               en,
               br: ptBR
             },
+            openModal: false,
             modalDelivery: defaultModalDeliveryData(),
             registerForm: {
               nationality: 'brazilian'
@@ -120,23 +123,33 @@ new Vue({
 
     mounted() {
       this.updateCartOnChangeQuantity()
+     
     },    
+
+    created() {
+      this.modalDelivery.delivery = this.$cookie.get('custom_delivery')
+    },
 
     methods: {
       openDeliveryModal() {
-        this.modalDelivery.isOpen = 'yes'
+        this.openModal = true
       },
 
       closeDeliveryModal(action) {
         if (action == 'save') {
+          this.openModal = false
           this.modalDelivery.isOpen = 'no'
           this.modalDelivery.delivery = 'yes'
+          this.$cookie.set('custom_delivery', 'yes')
           this.updateCart()
           this.saveOptionToDatabase()
           return
         }
+        this.openModal = false
         this.modalDelivery.isOpen = 'no'
         this.modalDelivery.delivery = 'no'
+        this.$cookie.set('custom_delivery', 'no')
+        this.updateCart()
         this.resetModalDeliveryData()
         this.saveOptionToDatabase()
       },
@@ -166,23 +179,23 @@ new Vue({
         const data = {
           action: 'my_save_options',
           nonce_ajax: ajax_var.nonce,
-          delivery_enabled: this.modalDelivery.delivery
+          delivery_enabled: this.modalDelivery.delivery,
         }
 
         axios
           .post(ajax_var.url, $.param(data))
           .then(res => {
             console.log(res.data)
-            
+            window.location.reload(true)
           })
           .catch(error => {
             console.log(error.data)
           })
       },
 
-    resetModalDeliveryData: function (){
-        this.$data.modalDelivery = defaultModalDeliveryData();
-    }
+      resetModalDeliveryData: function (){
+          this.$data.modalDelivery = defaultModalDeliveryData();
+      }
 
     }
 

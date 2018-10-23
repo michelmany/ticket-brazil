@@ -50,6 +50,7 @@
     "i": "^0.3.6",
     "jquery": "^3.3.1",
     "vue": "^2.5.16",
+    "vue-cookie": "^1.1.4",
     "vuejs-datepicker": "^1.5.3",
     "woocommerce-api": "^1.4.2"
   }

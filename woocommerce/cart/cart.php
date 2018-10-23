@@ -176,16 +176,18 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 
 <div class="cart__delivery">
-	<?php _e('Delivery', 'base-camp'); ?>?
+	<?php _e('Custom Delivery', 'base-camp'); ?>?
 	<input type="radio" id="deliveryYes" class="is-checkradio" v-model="modalDelivery.delivery" v-on:click="openDeliveryModal()" value="yes">
 	<label for="deliveryYes" class="radio">Yes</label>
 	
 	<input type="radio" id="deliveryNo" class="is-checkradio" v-model="modalDelivery.delivery" v-on:click="closeDeliveryModal()" value="no">
 	<label for="deliveryNo" class="radio">No</label>
 
+	<?php /*
 	<div class="cart_delivery-details" v-if="modalDelivery.delivery == 'yes'">
 		<p v-if="modalDelivery.type" class="is-capitalized"><strong><?php _e('Location type', 'base-camp'); ?>:</strong> {{ modalDelivery.type }}</p>
 	</div>	
+	*/ ?>
 </div>	
 
 
@@ -205,11 +207,11 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 <?php do_action( 'woocommerce_after_cart' ); ?>
 
-<div class="modal modal-delivery" v-bind:class="{ 'is-active': modalDelivery.isOpen == 'yes' }">
+<div class="modal modal-delivery" v-bind:class="{ 'is-active': openModal == true }">
 	<div class="modal-background"></div>
 	<div class="modal-card">
 		<header class="modal-card-head">
-			<p class="modal-card-title">Delivery </p>
+			<p class="modal-card-title">Custom Delivery </p>
 			<button class="delete" aria-label="close" v-on:click="closeDeliveryModal()"></button>
 		</header>
 
@@ -254,8 +256,8 @@ do_action( 'woocommerce_before_cart' ); ?>
 								<datepicker :language="lang.br" input-class="input" v-model="modalDelivery.departure_date"></datepicker>
 							</div>
 						</div>
-					</div>	
-				</div>				
+					</div>
+				</div>
 			</div>
 
 			<br>
