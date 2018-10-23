@@ -12,3 +12,7 @@ function iconic_cart_count_fragments( $fragments ) {
     return $fragments;
     
 }
+
+
+
+

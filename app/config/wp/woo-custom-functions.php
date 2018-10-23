@@ -22,3 +22,4 @@ add_action( 'woocommerce_checkout_create_order_line_item', 'wdm_add_custom_order
 function wdm_add_custom_order_line_item_meta($item, $cart_item_key, $values, $order) {
     $item->add_meta_data('_many_test', 'test');
 }  
+

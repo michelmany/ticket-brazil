@@ -5,8 +5,8 @@ function my_save_options() {
 
     $delivery_enabled = $_POST['delivery_enabled'];
 
-    WC()->session->custom_delivery = $delivery_enabled;
-    // var_dump(WC()->session->custom_delivery);
+
+    WC()->session->set('custom_delivery', $delivery_enabled);
 
     wp_send_json( array( 'success' => true, 'message' => 'Saved', 'val' => $delivery_enabled ) );
 

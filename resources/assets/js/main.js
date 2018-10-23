@@ -127,7 +127,7 @@ new Vue({
     },    
 
     created() {
-      this.modalDelivery.delivery = this.$cookie.get('custom_delivery')
+      this.modalDelivery.delivery = this.$cookie.get('custom_delivery') || 'no'
     },
 
     methods: {
@@ -141,7 +141,6 @@ new Vue({
           this.modalDelivery.isOpen = 'no'
           this.modalDelivery.delivery = 'yes'
           this.$cookie.set('custom_delivery', 'yes')
-          this.updateCart()
           this.saveOptionToDatabase()
           return
         }
@@ -149,7 +148,6 @@ new Vue({
         this.modalDelivery.isOpen = 'no'
         this.modalDelivery.delivery = 'no'
         this.$cookie.set('custom_delivery', 'no')
-        this.updateCart()
         this.resetModalDeliveryData()
         this.saveOptionToDatabase()
       },
@@ -186,7 +184,7 @@ new Vue({
           .post(ajax_var.url, $.param(data))
           .then(res => {
             console.log(res.data)
-            window.location.reload(true)
+            this.updateCart()
           })
           .catch(error => {
             console.log(error.data)
