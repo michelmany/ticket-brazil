@@ -159,8 +159,6 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 					<button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
 					
-											
-
 					<?php do_action( 'woocommerce_cart_actions' ); ?>
 
 					<?php wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' ); ?>
@@ -176,18 +174,11 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 
 <div class="cart__delivery">
-	<?php _e('Custom Delivery', 'base-camp'); ?>?
 	<input type="radio" id="deliveryYes" class="is-checkradio" v-model="modalDelivery.delivery" v-on:click="openDeliveryModal()" value="yes">
-	<label for="deliveryYes" class="radio">Yes</label>
+	<label for="deliveryYes" class="radio"><?php _e('Delivery', 'base-camp'); ?></label>
 	
 	<input type="radio" id="deliveryNo" class="is-checkradio" v-model="modalDelivery.delivery" v-on:click="closeDeliveryModal()" value="no">
-	<label for="deliveryNo" class="radio">No</label>
-
-	<?php /*
-	<div class="cart_delivery-details" v-if="modalDelivery.delivery == 'yes'">
-		<p v-if="modalDelivery.type" class="is-capitalized"><strong><?php _e('Location type', 'base-camp'); ?>:</strong> {{ modalDelivery.type }}</p>
-	</div>	
-	*/ ?>
+	<label for="deliveryNo" class="radio"><?php _e('Pickup', 'base-camp'); ?></label>
 </div>	
 
 
@@ -211,7 +202,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 	<div class="modal-background"></div>
 	<div class="modal-card">
 		<header class="modal-card-head">
-			<p class="modal-card-title">Custom Delivery </p>
+			<p class="modal-card-title">Delivery </p>
 			<button class="delete" aria-label="close" v-on:click="closeDeliveryModal()"></button>
 		</header>
 
@@ -224,9 +215,10 @@ do_action( 'woocommerce_before_cart' ); ?>
 					<div class="select">
 						<select v-model="modalDelivery.type">
 							<option><?php _e('Select', 'base-camp'); ?></option>
-							<option value="hotel">Hotel</option>
+							<option value="hotel"><?php _e('Hotel', 'base-camp'); ?></option>
 							<!-- <option value="residence">Residence</option> -->
 							<option value="ship"><?php _e('Ship', 'base-camp'); ?></option>
+							<option value="residence"><?php _e('Residence', 'base-camp'); ?></option>
 							<!-- <option value="other">Other</option> -->
 						</select>
 					</div>
@@ -240,21 +232,17 @@ do_action( 'woocommerce_before_cart' ); ?>
 			<div class="columns">
 				<div class="column">
 					<div class="field">
+						<label class="label">Arrival Date</label>
 						<div class="control">
-							<div class="field">
-								<label class="label">Arrival Date</label>
-								<datepicker :language="lang.br" input-class="input" :bootstrap-styling="true" v-model="modalDelivery.arrival_date"></datepicker>
-							</div>
+							<datepicker :language="lang.br" input-class="input" :bootstrap-styling="true" v-model="modalDelivery.arrival_date"></datepicker>
 						</div>
 					</div>
 				</div>
 				<div class="column">
 					<div class="field">
+						<label class="label">Departure Date</label>
 						<div class="control">
-							<div class="field">
-								<label class="label">Departure Date</label>
-								<datepicker :language="lang.br" input-class="input" v-model="modalDelivery.departure_date"></datepicker>
-							</div>
+							<datepicker :language="lang.br" input-class="input" v-model="modalDelivery.departure_date"></datepicker>
 						</div>
 					</div>
 				</div>
