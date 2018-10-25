@@ -1,7 +1,29 @@
 
 .wpcf7-form
+    background: $off-light
+    padding: 40px
+
     > p
         @extend .field
+
+    h2, h3, h4, h5, h6
+        @extend .title
+        color: $blue
+        font-weight: 500
+
+        +mobile
+            font-size: 1.5rem        
+
+    h2
+        @extend .is-2
+    h3
+        @extend .is-3
+    h4
+        @extend .is-4
+    h5
+        @extend .is-5
+    h6
+        @extend .is-3
 
     label
         @extend .label
@@ -12,6 +34,7 @@
     input
         &:not([type="submit"])
             @extend .input
+            box-shadow: none
 
         &.wpcf7-submit
             @extend .button
@@ -27,6 +50,7 @@
 
     textarea
         @extend .textarea
+        box-shadow: none
         
     span.wpcf7-not-valid-tip
         color: #f00

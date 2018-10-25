@@ -11,8 +11,8 @@ textarea
 
 label
   @extend .label
-  // &:not(:last-child)
-  //   margin-bottom: 0 !important
+  &:not(:last-child)
+    margin-bottom: 0 !important
 
 button.button
   @extend .button
@@ -112,12 +112,12 @@ label.radio
   margin-bottom: 30px
 
 .woocommerce-billing-fields
-  background-color: #ececec
+  background-color: $off-light
   padding: 31px
   border-radius: 2px
 
 .woocommerce-checkout #payment
-  background: #ececec
+  background: $off-light
   border-radius: 2px
 
 // Select2 Custom Styles

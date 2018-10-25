@@ -1,16 +1,21 @@
 {
-  "app.css": "css/app.cd7fb5d4b77f1c552dab.css",
-  "app.js": "js/app.9a3d1a571d3ea42019d0.js",
+  "app.css": "css/app.e53f2840341fa61dcb81.css",
+  "app.js": "js/app.3291053a49cd2c975c18.js",
   "login.css": "css/login.1d74128b88bfc70aea2f.css",
   "login.js": "js/login.9caa3fd3b4682e79cf02.js",
   "admin.css": "css/admin.2013b7037ab119ed3b29.css",
   "admin.js": "js/admin.45e1d7f519c849113793.js",
   "vendor.js": "js/vendor.7196053fda12b7810276.js",
+  "images/icon-cart-white.png": "images/icon-cart-white.png",
   "images/logo.png": "images/logo.png",
+  "fonts/fontawesome-webfont.woff2?v=4.7.0": "fonts/fontawesome-webfont.af7ae50.woff2",
+  "fonts/fontawesome-webfont.woff?v=4.7.0": "fonts/fontawesome-webfont.fee66e7.woff",
+  "fonts/fontawesome-webfont.ttf?v=4.7.0": "fonts/fontawesome-webfont.b06871f.ttf",
+  "images/fontawesome-webfont.svg?v=4.7.0": "images/fontawesome-webfont.svg",
+  "images/arrow-prev-white.png": "images/arrow-prev-white.png",
   "images/arrow-next-white.png": "images/arrow-next-white.png",
   "images/texture-blue-carnival.jpg": "images/texture-blue-carnival.jpg",
-  "images/icon-cart-white.png": "images/icon-cart-white.png",
+  "fonts/fontawesome-webfont.eot": "fonts/fontawesome-webfont.674f50d.eot",
   "images/down-arrow.png": "images/down-arrow.png",
-  "images/base-camp-logo.png": "images/base-camp-logo.png",
-  "images/arrow-prev-white.png": "images/arrow-prev-white.png"
+  "images/base-camp-logo.png": "images/base-camp-logo.png"
 }

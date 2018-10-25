@@ -6,7 +6,18 @@
         <div class="container">
             <div class="columns">
                 <div class="column">
-                    {{ post.content }}
+                    <div class="section-contact__column-left">
+                        {{ post.content }}
+
+                        {% if security_warning_text is not empty %}
+                        <div class="section-contact__security-warning">
+                            {% if security_warning_image  is not empty %}
+                            <img src="{{ security_warning_image }}" alt="Attention icon">
+                            {% endif %}
+                            <p>{{ security_warning_text }}</p>
+                        </div>
+                        {% endif %}
+                    </div>
                 </div>
                 <div class="column">
                     {{ contact_shortcode }}
