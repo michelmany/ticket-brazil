@@ -12,9 +12,11 @@ function my_custom_endpoint( $request_data ) {
         'lang' => $lang
     );
 
-    add_filter('posts_orderby', 'orderby_post_title_int' );
+    // add_filter('posts_orderby', 'orderby_post_title_int' );
 
     $products = wc_get_products( $args );
+
+    sort($products, SORT_NATURAL);
 
 
     foreach ($products as $key => $product) {
@@ -29,7 +31,7 @@ function my_custom_endpoint( $request_data ) {
         $products[$key]->acf = get_fields($product->get_id());
     }
 
-    remove_filter('posts_orderby', 'orderby_post_title_int' );
+    // remove_filter('posts_orderby', 'orderby_post_title_int' );
 
 	return $products;
 }
@@ -44,6 +46,6 @@ add_action( 'rest_api_init', function () {
 });
 
 // Changing the orderby param
-function orderby_post_title_int( $orderby ) { 
-    return '(wp_posts.post_title+0) ASC'; 
-}
+// function orderby_post_title_int( $orderby ) { 
+//     return '(wp_posts.post_title+0) ASC'; 
+// }
