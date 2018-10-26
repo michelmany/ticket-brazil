@@ -18,10 +18,11 @@ function woocommerce_custom_redirections() {
         wp_redirect( get_permalink( get_option('woocommerce_checkout_page_id') ) );
 }
 
-
-
 add_action( 'woocommerce_checkout_create_order_line_item', 'wdm_add_custom_order_line_item_meta',10,4 );
 
 function wdm_add_custom_order_line_item_meta($item, $cart_item_key, $values, $order) {
-    $item->add_meta_data('_many_test', 'test');
+    $prods_acf = get_fields($values['product_id']);
+    foreach ($prods_acf as $acf_key => $prod_acf) {
+        $item->add_meta_data($acf_key, $prod_acf->name);
+    }
 }

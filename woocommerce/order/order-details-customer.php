@@ -42,7 +42,7 @@ $show_shipping = ! wc_ship_to_billing_address_only() && $order->needs_shipping_a
 			<p class="woocommerce-customer-details--email"><?php echo esc_html( $order->get_billing_email() ); ?></p>
 		<?php endif; ?>
 
-		<p>CPF: <?php echo get_post_meta( $order->get_id(), '_billing_cpf', true ); ?></p>
+		<?php /* <p>CPF: <?php echo get_user_meta( $order->get_customer_id(), 'pdocument', true ); ?></p> */ ?>
 	</address>
 
 	<?php if ( $show_shipping ) : ?>

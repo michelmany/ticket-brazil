@@ -202,24 +202,22 @@ do_action( 'woocommerce_before_cart' ); ?>
 	<div class="modal-background"></div>
 	<div class="modal-card">
 		<header class="modal-card-head">
-			<p class="modal-card-title">Delivery </p>
+			<p class="modal-card-title"><?php _e('Delivery', 'base-camp'); ?></p>
 			<button class="delete" aria-label="close" v-on:click="closeDeliveryModal()"></button>
 		</header>
 
 		<section class="modal-card-body">
-			<h2 class="title is-5 modal-delivery__title">Place of stay</h2>
+			<h2 class="title is-5 modal-delivery__title"><?php _e('Place of stay', 'base-camp'); ?></h2>
 
 			<div class="field">
-				<label class="label">Location type</label>
+				<label class="label"><?php _e('Location type', 'base-camp'); ?></label>
 				<div class="control">
 					<div class="select">
 						<select v-model="modalDelivery.type">
 							<option><?php _e('Select', 'base-camp'); ?></option>
 							<option value="hotel"><?php _e('Hotel', 'base-camp'); ?></option>
-							<!-- <option value="residence">Residence</option> -->
 							<option value="ship"><?php _e('Ship', 'base-camp'); ?></option>
 							<option value="residence"><?php _e('Residence', 'base-camp'); ?></option>
-							<!-- <option value="other">Other</option> -->
 						</select>
 					</div>
 				</div>
@@ -227,12 +225,12 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 			<br>
 
-			<h2 class="title is-5 modal-delivery__title">Staying period</h2>
+			<h2 class="title is-5 modal-delivery__title"><?php _e('Staying period', 'base-camp'); ?></h2>
 
 			<div class="columns">
 				<div class="column">
 					<div class="field">
-						<label class="label">Arrival Date</label>
+						<label class="label"><?php _e('Arrival Date', 'base-camp'); ?></label>
 						<div class="control">
 							<datepicker :language="lang.br" input-class="input" v-model="modalDelivery.arrival_date"></datepicker>
 						</div>
@@ -240,7 +238,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 				</div>
 				<div class="column">
 					<div class="field">
-						<label class="label">Departure Date</label>
+						<label class="label"><?php _e('Departure Date', 'base-camp'); ?></label>
 						<div class="control">
 							<datepicker :language="lang.br" input-class="input" v-model="modalDelivery.departure_date"></datepicker>
 						</div>
@@ -252,12 +250,12 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 			<!-- Hotel -->
 			<div v-if="modalDelivery.type == 'hotel'">
-				<h2 class="title is-5 modal-delivery__title">Hotel</h2>
+				<h2 class="title is-5 modal-delivery__title"><?php _e('Hotel', 'base-camp'); ?></h2>
 
 				<div class="field">
 					<div class="control">
 						<div class="field">
-							<label class="label">Hotel Name</label>
+							<label class="label"><?php _e('Hotel Name', 'base-camp'); ?></label>
 							<div class="select">
 								<select v-model="modalDelivery.hotel.hotel_name">
 									<option>Select</option>
@@ -273,7 +271,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 					<div class="column field">
 						<div class="control">
 							<div class="field">
-								<label class="label">Reservation #</label>
+								<label class="label"><?php _e('Reservation #', 'base-camp'); ?></label>
 								<input type="text" class="input" v-model="modalDelivery.hotel.hotel_reservation">
 							</div>
 						</div>
@@ -282,7 +280,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 					<div class="column field">
 						<div class="control">
 							<div class="field">
-								<label class="label">Customer name</label>
+								<label class="label"><?php _e('Customer name', 'base-camp'); ?></label>
 								<input type="text" class="input" v-model="modalDelivery.hotel.hotel_customer_name">
 							</div>
 						</div>
@@ -293,13 +291,13 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 			<!-- Ship -->
 			<div v-if="modalDelivery.type == 'ship'">
-				<h2 class="title is-5 modal-delivery__title">Ship</h2>
+				<h2 class="title is-5 modal-delivery__title"><?php _e('Ship', 'base-camp'); ?></h2>
 
 				<div class="columns">
 					<div class="column field">
 						<div class="control">
 							<div class="field">
-								<label class="label">Ship name</label>
+								<label class="label"><?php _e('Ship name', 'base-camp'); ?></label>
 								<input type="text" class="input" v-model="modalDelivery.ship.ship_name">
 							</div>
 						</div>
@@ -308,7 +306,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 					<div class="column field">
 						<div class="control">
 							<div class="field">
-								<label class="label">Cabin number</label>
+								<label class="label"><?php _e('Cabin number', 'base-camp'); ?></label>
 								<input type="text" class="input" v-model="modalDelivery.ship.ship_cabin_number">
 							</div>
 						</div>
@@ -317,10 +315,61 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 			</div>			
 
+			<!-- Residence -->
+			<div v-if="modalDelivery.type == 'residence'">
+				<h2 class="title is-5 modal-delivery__title"><?php _e('Residence', 'base-camp'); ?></h2>
+
+				<div class="columns">
+					<div class="column is-one-third control">
+						<div class="field">
+							<label class="label"><?php _e('Zip code', 'base-camp'); ?></label>
+							<input type="text" class="input" v-model="modalDelivery.residence.residence_cep">
+						</div>
+					</div>		
+
+					<div class="column control">
+						<div class="field">
+							<label class="label"><?php _e('Address', 'base-camp'); ?></label>
+							<input type="text" class="input" v-model="modalDelivery.residence.residence_logradouro">
+						</div>
+					</div>
+				</div>
+
+				<div class="columns">
+					<div class="column is-one-fifth">
+						<div class="control">
+							<div class="field">
+								<label class="label"><?php _e('Number', 'base-camp'); ?></label>
+								<input type="text" class="input" v-model="modalDelivery.residence.residence_numero">
+							</div>
+						</div>
+					</div>
+
+					<div class="column">
+						<div class="control">
+							<div class="field">
+								<label class="label"><?php _e('Neighborhood', 'base-camp'); ?></label>
+								<input type="text" class="input" v-model="modalDelivery.residence.residence_bairro">
+							</div>
+						</div>
+					</div>
+
+					<div class="column">
+						<div class="control">
+							<div class="field">
+								<label class="label"><?php _e('Other information', 'base-camp'); ?></label>
+								<input type="text" class="input" v-model="modalDelivery.residence.residence_complemento">
+							</div>
+						</div>
+					</div>
+				</div>				
+
+			</div>				
+
 		</section>
 		<footer class="modal-card-foot">
-			<button class="button is-danger" v-on:click="closeDeliveryModal()">Remove Delivery</button>
-			<button class="button is-success" v-on:click="closeDeliveryModal('save')">Save Delivery</button>
+			<button class="button is-danger" v-on:click="closeDeliveryModal()"><?php _e('Remove Delivery', 'base-camp'); ?></button>
+			<button class="button is-success" v-on:click="closeDeliveryModal('save')"><?php _e('Save Delivery', 'base-camp'); ?></button>
 		</footer>
 	</div>
 </div>	

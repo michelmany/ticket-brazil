@@ -29,13 +29,15 @@ function my_save_options() {
 */
 function before_checkout_create_order( $order, $data ) {
 
-    $custom_delivery = WC()->session->get('delivery_enabled');
+    $delivery_enabled = WC()->session->get('delivery_enabled');
    
-    if ( !empty($custom_delivery) && $custom_delivery == 'yes' ) :
+    if ( !empty($delivery_enabled) && $delivery_enabled == 'yes' ) :
+        $order->update_meta_data( '_delivery_enabled', $delivery_enabled );
+
         $delivery_type = WC()->session->get('delivery_type');
         $delivery_arrival_date = WC()->session->get('delivery_arrival_date');
-        $delivery_departure_date = WC()->session->get('delivery_departure_date');
-                
+        $delivery_departure_date = WC()->session->get('delivery_departure_date');        
+            
         if ( !empty($delivery_type) )
             $order->update_meta_data( '_delivery_type', $delivery_type );
 
@@ -53,8 +55,10 @@ function before_checkout_create_order( $order, $data ) {
         }
     endif;
 
-    if ( !empty($custom_delivery) && $custom_delivery == 'no' )
+    if ( !empty($delivery_enabled) && $delivery_enabled == 'no' ) {
+        $order->update_meta_data( '_delivery_enabled', $delivery_enabled );
         $order->update_meta_data( '_delivery_type', 'pickup' );
+    }
 
 }        
 add_action('woocommerce_checkout_create_order', 'before_checkout_create_order', 20, 2);
