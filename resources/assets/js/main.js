@@ -7,8 +7,10 @@ import Datepicker from 'vuejs-datepicker'
 import {en, ptBR} from 'vuejs-datepicker/dist/locale'
 import VueCookie from 'vue-cookie'
 import moment from 'moment'
-Vue.use(VueCookie)
+import VueTheMask from 'vue-the-mask'
 
+Vue.use(VueCookie)
+Vue.use(VueTheMask)
 
 Vue.component('slick', Slick)
 Vue.component('purchase', Purchase)
@@ -54,6 +56,7 @@ new Vue({
             },
             openModal: false,
             modalDelivery: defaultModalDeliveryData(),
+            isLoading: false,
             registerForm: {
               nationality: 'brazilian'
             },
@@ -216,9 +219,27 @@ new Vue({
           })
       },
 
-      resetModalDeliveryData: function (){
+      resetModalDeliveryData(){
           this.$data.modalDelivery = defaultModalDeliveryData();
-      }
+      },
+
+      getcep() {
+        if ( this.modalDelivery.residence.residence_cep.length === 9 ) {
+          this.isLoading = true
+          console.log('Consultando cep...')  
+
+          axios.get('https://viacep.com.br/ws/' + this.modalDelivery.residence.residence_cep + '/json/', { crossdomain: true })
+            .then( res => {
+              this.isLoading = false
+              let cep = res.data
+              this.modalDelivery.residence.residence_logradouro = cep.logradouro
+              this.modalDelivery.residence.residence_bairro = cep.bairro
+              this.modalDelivery.residence.residence_cidade = cep.localidade
+              this.modalDelivery.residence.residence_complemento = cep.complemento
+              this.modalDelivery.residence.residence_uf = cep.uf
+            })
+        }
+      },      
 
     }
 

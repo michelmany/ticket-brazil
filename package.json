@@ -52,6 +52,7 @@
     "moment": "^2.22.2",
     "vue": "^2.5.16",
     "vue-cookie": "^1.1.4",
+    "vue-the-mask": "^0.11.1",
     "vuejs-datepicker": "^1.5.3",
     "woocommerce-api": "^1.4.2"
   }
