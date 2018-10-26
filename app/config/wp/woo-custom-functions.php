@@ -14,7 +14,7 @@ function woocommerce_custom_redirections() {
 
     /* Case2: Logged user on my account page with something in cart */
     $is_checkout = isset($_GET['ischeckout']) ?: false;
-    if( is_user_logged_in() && ! WC()->cart->is_empty() && is_account_page() && $is_checkout == true)
+    if ( is_user_logged_in() && ! WC()->cart->is_empty() && is_account_page() && $is_checkout == true )
         wp_redirect( get_permalink( get_option('woocommerce_checkout_page_id') ) );
 }
 

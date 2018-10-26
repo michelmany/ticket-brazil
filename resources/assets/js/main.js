@@ -6,7 +6,9 @@ import axios from 'axios'
 import Datepicker from 'vuejs-datepicker'
 import {en, ptBR} from 'vuejs-datepicker/dist/locale'
 import VueCookie from 'vue-cookie'
+import moment from 'moment'
 Vue.use(VueCookie)
+
 
 Vue.component('slick', Slick)
 Vue.component('purchase', Purchase)
@@ -19,13 +21,20 @@ function defaultModalDeliveryData() {
     arrival_date: '',
     departure_date: '',
     hotel: {
-      name: '',
-      reservation: '',
-      customer_name: ''
+      hotel_name: '',
+      hotel_reservation: '',
+      hotel_customer_name: ''
     },
     ship: {
-      name: '',
-      cabin_number: ''
+      ship_name: '',
+      ship_cabin_number: ''
+    },
+    residence: {
+      residence_cep: '',
+      residence_logradouro: '',
+      residence_numero: '',
+      residence_bairro: '',
+      residence_complemento: ''
     }
   }
 }
@@ -155,7 +164,7 @@ new Vue({
       updateCartOnChangeQuantity() {
         let timeout;
         $('div.woocommerce')
-          .on('change textInput input',
+            .on('change textInput input',
               'form.woocommerce-cart-form input.qty', function(){
                 
           if (typeof timeout !== undefined) clearTimeout(timeout)
@@ -174,10 +183,26 @@ new Vue({
       },
 
       saveOptionToDatabase() {
+        let deliveryTo = this.modalDelivery.hotel
+
+        if ( this.modalDelivery.type == 'hotel' ) {
+          deliveryTo = this.modalDelivery.hotel
+        }
+        if ( this.modalDelivery.type == 'ship' ) {
+          deliveryTo = this.modalDelivery.ship
+        }
+        if ( this.modalDelivery.type == 'residence' ) {
+          deliveryTo = this.modalDelivery.residence
+        }
+
         const data = {
           action: 'my_save_options',
           nonce_ajax: ajax_var.nonce,
           delivery_enabled: this.modalDelivery.delivery,
+          delivery_type: this.modalDelivery.type,
+          delivery_arrival_date: moment(this.modalDelivery.arrival_date).format('DD MMM YYYY'),
+          delivery_departure_date: moment(this.modalDelivery.departure_date).format('DD MMM YYYY'),
+          delivery_to: deliveryTo
         }
 
         axios

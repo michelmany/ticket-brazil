@@ -6,19 +6,19 @@
 function custom_override_checkout_fields( $fields ) {
     unset($fields['billing']['billing_company']);
 
-    $nationality = get_user_meta(get_current_user_id(), 'nationality');
-    $pdocument_label = ($nationality == 'brazilian') ? 'CPF' : 'Passport';
+    // $nationality = get_user_meta(get_current_user_id(), 'nationality');
+    // $pdocument_label = ($nationality == 'brazilian') ? 'CPF' : 'Passport';
 
-     $fields['billing']['pdocument'] = array(
-        'label'     => __($pdocument_label, 'base-camp'),
-        'required'  => true,
-        'class'     => array('form-row-wide'),
-        'clear'     => true
-     );
+    //  $fields['billing']['pdocument'] = array(
+    //     'label'     => __($pdocument_label, 'base-camp'),
+    //     'required'  => true,
+    //     'class'     => array('form-row-wide'),
+    //     'clear'     => true
+    //  );
 
      return $fields;
 }
-// add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
+add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
 
 
 
