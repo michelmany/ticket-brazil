@@ -1,37 +1,75 @@
+.home
+    .section-about
 
-.section-about
+        &.section
+            padding-top: 94px
+            padding-bottom: 110px
 
-    &.section
-        padding-top: 94px
-        padding-bottom: 110px
+        +mobile
+            max-width: 365px
+            margin-left: auto
+            margin-right: auto
 
-    +mobile
-        max-width: 365px
-        margin-left: auto
-        margin-right: auto
+        .section-title
+            margin-bottom: 25px
 
-    .section-title
-        margin-bottom: 25px
+        .section-copy
+            font-family: $font-text
+            font-size: 16px
+            color: $gray-dark
+            letter-spacing: 0.44px
+            line-height: 25px
+            margin-bottom: 25px
+            max-width: 297px
 
-    .section-copy
-        font-family: $font-text
-        font-size: 16px
-        color: $gray-dark
-        letter-spacing: 0.44px
-        line-height: 25px
-        margin-bottom: 25px
-        max-width: 297px
+            +tablet
+                max-width: 414px
 
-        +tablet
-            max-width: 414px
+        .button
+            font-family: $font-text
+            font-size: 14px
+            color: #fff
+            letter-spacing: 1.75px
+            text-align: center
+            padding: 10px 25px
+            text-transform: uppercase
+            font-weight: 700
+            background-color: $bc-primary
 
-    .button
-        font-family: $font-text
-        font-size: 14px
-        color: #fff
-        letter-spacing: 1.75px
-        text-align: center
-        padding: 10px 25px
-        text-transform: uppercase
-        font-weight: 700
-        background-color: $bc-primary
+.page-template-template-about
+    .section-about
+        h4
+            font-size: 1.15em
+            font-weight: bold
+            margin-bottom: 0.4em    
+        
+        h3
+            font-size: 1.25em
+            margin-bottom: 1.6em  
+            font-weight: bold
+
+        &__column-left
+            padding-top: 15px
+            @extend .content
+
+            &-intro
+                +tablet
+                    padding-left: 35px
+
+                p
+                    margin-bottom: 2em !important
+
+            +tablet
+                max-width: 90%
+
+            i.fa-whatsapp
+                color: #25CC63
+
+        &__privacy-text-box
+            margin-top: 35px
+            font-size: 16px
+            background-color: $off-light
+            padding: 40px
+
+            p
+                margin-bottom: 2em !important

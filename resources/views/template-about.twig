@@ -1,0 +1,25 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+    <section class="section-about section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-7">
+                    <div class="section-about__column-left">
+                        <div class="section-about__column-left-intro">{{ post.content }}</div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img src="{{ sidebar_image }}" alt="Sidebar image" class="section-about__image">
+                </div>
+            </div>
+            {% if privacy_text_box is not empty %}
+            <div class="section-about__privacy-text-box">
+                {{ privacy_text_box }}
+            </div>
+            {% endif %}
+        </div>
+    </section>
+
+{% endblock %}
