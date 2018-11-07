@@ -23,5 +23,11 @@
             seats-list="{{ seats_list|json_encode|e('html_attr')}}"
             current-lang="{{ current_lang }}">
         </purchase>
+
+        <div class="content section">
+            <div class="container">
+                {{ post.content }}
+            </div>
+        </div>
     </div>
 {% endblock %}
