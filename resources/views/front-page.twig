@@ -98,7 +98,7 @@
                                     <a href="{{ post.link }}">{{ post.title }}</a></div>
 
                                     <div class="latest-articles__item-copy">
-                                        {{ post.preview.length(25).force }}
+                                        {{ post.preview.length(30).force.read_more('') }}
                                     </div>
                             </div>
                         </div>

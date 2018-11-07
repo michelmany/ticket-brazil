@@ -5,17 +5,9 @@
 * [Yarn](https://yarnpkg.com/en/) >= v1.7.0 **or** [npm](https://www.npmjs.com/) >= v6.1.0
 * [Nodejs](https://nodejs.org/en/) >= v8.11.1
 
-## Installation
-* Go your themes folder and run`composer create-project suomato/base-camp`
-* `cd base-camp`
-* `yarn` **or** `npm install`
-* define your custom webpack config to `build/config.js` file
-* `yarn watch` **or** `npm run watch`
-* Happy developing :)
-
 ## Structure
 ```
-base-camp/                                          # Theme root
+ticket-brazil/                                      # Theme root
 ├── app/                                            # Theme logic
 │   ├── config/                                     # Theme config
 │   │   ├── wp/                                     # WordPress specific config

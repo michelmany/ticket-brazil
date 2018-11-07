@@ -1,10 +1,12 @@
-<div class="blog__item column is-half-tablet is-one-quarter-desktop" id="post-{{ post.ID }}">
 
-    {% set post_thumb = TimberImage(post.thumbnail) %}
-    
+<div class="blog__item" id="post-{{ post.ID }}">
+
     <a href="{{ post.link }}">
-        <div class="blog__item-thumbnail" 
-            style="background-image: url('{{ post_thumb.src|resize(1320)}}')"></div>
+        <div class="blog__item-thumbnail" style="background-image: url('{{ post.thumbnail.src|resize(1320)}}')">
+            <div class="thumbnail-overlay">
+                <div class="thumbnail-overlay__text">{{ __('Read more', 'base-camp') }}</div>
+            </div>
+        </div>
     </a>
 
     <h2 class="blog__item-title">
@@ -15,7 +17,7 @@
         <time class="timestamp"><i class="fa fa-calendar" aria-hidden="true"></i> <span>{{ post.date }}</span></time>
     </div>
     
-    <p class="content">{{ post.preview.length(30).force }}</p>
+    <p class="content">{{ post.preview.length(100).force.read_more('') }}</p>
     
     <ul class="article-tags">
         {% for tag in post.tags %}

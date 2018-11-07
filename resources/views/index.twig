@@ -3,11 +3,17 @@
 {% block content %}
     <section class="blog section">
         <div class="container">
-            <div class="columns">
-                {% for post in posts %}
-                    {% include 'components/article.twig' %}
-                {% endfor %}
+            <div class="columns is-desktop">
+                <div class="column is-8-desktop is-7-widescreen">
+                    {% for post in posts %}
+                        {% include 'components/article.twig' %}
+                    {% endfor %}
+                </div>
+                <div class="column is-3-desktop is-offset-1-desktop is-3-widescreen is-offset-2-widescreen">
+                    {{ main_sidebar }}
+                </div>
             </div>
+            
         </div>
     </section>
 
