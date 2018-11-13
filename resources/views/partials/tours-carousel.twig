@@ -4,14 +4,12 @@
     <slick ref="slick" :options="slickOptions">
 
     {% for tour in tours %}
-
-        {% set tour_featured_image = TimberImage(tour.thumbnail) %}
             
         <div class="column">
             <div class="section-tours__card">
                 <a href="{{ tour.link }}">
                     <div class="section-tours__header" 
-                        style="background-image: url('{{ tour_featured_image.src|resize(640) }}')">
+                        style="background-image: url('{{ tour.thumbnail.src|resize(640) }}')">
                         <div class="section-tours__card-title">{{ tour.title }}</div>
                     </div>
                 </a>
