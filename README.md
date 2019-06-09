@@ -1,3 +1,6 @@
+# Ticket Brazil
+Website for selling Carnival tickets in Rio de Janeiro - Brazil
+
 ## Requirements
 * [Wordpress](https://wordpress.org/) >= v4.9.6
 * [Composer](https://getcomposer.org/download/) >= v1.6.5
